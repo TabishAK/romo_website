@@ -1,0 +1,133 @@
+.nav-bar {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  .menus {
+    display: none;
+    width: 100%;
+    left: 0%;
+    position: absolute;
+    background-color: white;
+    height: 24rem;
+
+    .product-names {
+      display: none;
+      justify-content: center;
+      position: relative;
+      top: 115px;
+      li {
+        top: 32%;
+        margin: 0px 60px;
+        position: relative;
+
+        ul {
+          text-align: center;
+          display: table;
+          position: absolute;
+          margin: 21px -98px;
+          width: min-content;
+          li {
+          }
+        }
+      }
+    }
+    .show-prods {
+      display: block;
+    }
+
+    .falana-names {
+      display: none;
+      justify-content: center;
+      position: relative;
+      top: 115px;
+      li {
+        top: 32%;
+        margin: 0px 60px;
+        position: relative;
+
+        ul {
+          text-align: center;
+          display: table;
+          position: absolute;
+          margin: 21px -98px;
+          width: min-content;
+          li {
+          }
+        }
+      }
+    }
+    .show-falana {
+      display: block;
+    }
+  }
+
+  .show {
+    display: block;
+    color: gray !important;
+    .product-names {
+      display: flex;
+    }
+  }
+  .logo-section {
+    top: 25px;
+    position: absolute;
+    float: left;
+    left: 18px;
+  }
+
+  .nav-items {
+    position: absolute;
+    top: 40px;
+    left: 28%;
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      .sub {
+        color: white;
+        width: max-content;
+        margin: 0px 28px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .admin-controls {
+    position: relative;
+    float: right;
+    top: 42px;
+    ul {
+      display: flex;
+    }
+    li {
+      margin: 0px 8px;
+    }
+    float: right;
+  }
+
+  .hamburger {
+    display: none;
+    position: relative;
+    float: right;
+    top: 34px;
+    right: 20px;
+    svg {
+      fill: white;
+      font-size: 32px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .hamburger {
+    display: block !important;
+  }
+  .admin-controls {
+    display: none !important;
+  }
+  .nav-items {
+    display: none !important;
+  }
+}
