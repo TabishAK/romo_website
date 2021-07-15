@@ -10,4 +10,9 @@ video {
   z-index: -1;
 }
 .carousel-item {
+  position: relative;
+  img {
+    height: fit-content;
+    width: fit-content !important;
+  }
 }

@@ -1,7 +1,36 @@
 .nav-bar {
   position: absolute;
+  height: 220px;
   top: 0;
   z-index: 100;
+
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0.3)),
+    color-stop(25%, rgba(0, 0, 0, 0.25)),
+    color-stop(50%, rgba(0, 0, 0, 0.15)),
+    color-stop(75%, rgba(0, 0, 0, 0.05)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.25) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.05) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.25) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.05) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-bottom: none;
   .menus {
     display: none;
     width: 100%;
@@ -9,13 +38,20 @@
     position: absolute;
     background-color: white;
     height: 24rem;
+    box-shadow: 0px 6px 17px -7px #000;
 
     .product-names {
       display: none;
       justify-content: center;
       position: relative;
-      top: 115px;
+      top: 150px;
+
       li {
+        a {
+          font-weight: 500;
+        }
+        cursor: pointer;
+        width: max-content;
         top: 32%;
         margin: 0px 60px;
         position: relative;
@@ -24,23 +60,87 @@
           text-align: center;
           display: table;
           position: absolute;
-          margin: 21px -98px;
+          margin: 12px -98px;
           width: min-content;
           li {
+            margin-bottom: -15px !important;
+            font-size: 16px !important;
+          }
+
+          li:after,
+          li:before {
+            position: absolute;
+            z-index: -1;
+          }
+
+          li:after {
+            content: "";
+            width: 3px;
+            height: 3px;
+            bottom: 8px;
+            left: 0;
+          }
+
+          li:focus:after,
+          li:hover:after {
+            width: 50%;
+            height: 3px;
+          }
+
+          li:before {
+            content: "";
+            width: 3px;
+            height: 3px;
+            bottom: 8px;
+            right: 0;
+          }
+
+          li:focus:before,
+          li:hover:before {
+            width: 50%;
+            height: 3px;
+          }
+
+          li {
+            font-family: cursive;
+            font-size: 13px !important;
+            line-height: 38px;
+            z-index: 2;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+
+          li:focus:after,
+          li:focus:before,
+          li:hover:after,
+          li:hover:before {
+            outline: 0;
+            background-color: gray;
+            -webkit-transition: all 1s ease 0s;
+            -moz-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            transition: all 0.7s ease 0s;
           }
         }
       }
     }
     .show-prods {
-      display: block;
+      display: flex;
     }
 
-    .falana-names {
+    .brand-names {
       display: none;
       justify-content: center;
       position: relative;
-      top: 115px;
+      top: 150px;
       li {
+        a {
+          text-transform: uppercase;
+          font-weight: 500;
+        }
         top: 32%;
         margin: 0px 60px;
         position: relative;
@@ -49,26 +149,92 @@
           text-align: center;
           display: table;
           position: absolute;
-          margin: 21px -98px;
+          margin: 12px -98px;
           width: min-content;
           li {
+            margin-bottom: -15px !important;
+            font-size: 16px !important;
+          }
+
+          li:after,
+          li:before {
+            position: absolute;
+            z-index: -1;
+          }
+
+          li:after {
+            content: "";
+            width: 3px;
+            height: 3px;
+            bottom: 8px;
+            left: 0;
+          }
+
+          li:focus:after,
+          li:hover:after {
+            width: 50%;
+            height: 3px;
+          }
+
+          li:before {
+            content: "";
+            width: 3px;
+            height: 3px;
+            bottom: 8px;
+            right: 0;
+          }
+
+          li:focus:before,
+          li:hover:before {
+            width: 50%;
+            height: 3px;
+          }
+
+          li {
+            font-family: cursive;
+            font-size: 13px !important;
+            line-height: 38px;
+            z-index: 2;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+
+          li:focus:after,
+          li:focus:before,
+          li:hover:after,
+          li:hover:before {
+            outline: 0;
+            background-color: gray;
+            -webkit-transition: all 1s ease 0s;
+            -moz-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            transition: all 0.7s ease 0s;
           }
         }
       }
     }
-    .show-falana {
-      display: block;
+
+    .show-brand {
+      display: flex !important;
     }
   }
 
   .show {
     display: block;
     color: gray !important;
-    .product-names {
-      display: flex;
-    }
   }
   .logo-section {
+    img {
+      width: 230px;
+      position: relative;
+      top: -15px;
+      left: 0px;
+      // box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    }
+
     top: 25px;
     position: absolute;
     float: left;
@@ -77,16 +243,18 @@
 
   .nav-items {
     position: absolute;
-    top: 40px;
+    top: 85px;
     left: 28%;
     .main {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       list-style: none;
       .sub {
+        cursor: pointer;
         color: white;
         width: max-content;
-        margin: 0px 28px;
+        padding: 0px 28px;
         font-family: "Times New Roman", Times, serif;
         font-size: 16px;
       }
@@ -96,7 +264,9 @@
   .admin-controls {
     position: relative;
     float: right;
-    top: 42px;
+    top: 80px;
+    float: right;
+    right: 10px;
     ul {
       display: flex;
     }
@@ -120,7 +290,7 @@
   }
 }
 
-@media (max-width: 1010px) {
+@media (max-width: 1155px) {
   .hamburger {
     display: block !important;
   }

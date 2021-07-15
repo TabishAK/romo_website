@@ -1,3 +1,10 @@
 li {
   list-style: none;
 }
+
+p {
+  font-size: 16px;
+  color: #828282;
+  font: Helvetica, sans-serif;
+  font-weight: 200;
+}
