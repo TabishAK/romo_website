@@ -1,0 +1,20 @@
+@media (min-width: 1200px) {
+  .hello {
+    display: none !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+  .hello {
+    display: none !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 992px) {
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+}

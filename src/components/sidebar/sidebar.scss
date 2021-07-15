@@ -1,0 +1,12 @@
+.heading-and-cross {
+  display: flex;
+  position: relative;
+  top: 25px;
+
+  svg {
+    z-index: 2;
+    font-size: 24px;
+    left: 80%;
+    position: absolute;
+  }
+}

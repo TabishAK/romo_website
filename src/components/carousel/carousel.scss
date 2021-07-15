@@ -1,0 +1,18 @@
+.carousel {
+  position: relative !important;
+}
+video {
+  object-fit: cover;
+}
+.carousel-inner {
+  position: relative !important;
+  height: 937px;
+  z-index: -1;
+}
+.carousel-item {
+  position: relative;
+  img {
+    height: fit-content;
+    width: fit-content !important;
+  }
+}
