@@ -1,9 +1,11 @@
+import InformationPanel from "../../components/information_panel/informationPanel";
+import NewsLetterSub from "../../components/newsLetterSub/newsLetterSub";
+import TopCarousel from "./../../components/carousel/carousel";
+import Sideba from "./../../components/sidebar/sidebar";
+import Navbar from "./../../components/navbar/navbar";
 import React, { useState } from "react";
 import "./home.scss";
-import TopCarousel from "./../../components/carousel/carousel";
-import Navbar from "./../../components/navbar/navbar";
-import Sideba from "./../../components/sidebar/sidebar";
-import InformationPanel from "../../components/information_panel/informationPanel";
+import MoreOptions from "../../components/moreOptions/moreOptions";
 
 const Home = () => {
   const [display, setDisplay] = useState(false);
@@ -21,15 +23,8 @@ const Home = () => {
       <TopCarousel />
       <Sideba display={display} closeRightMenu={closeRightMenu} />
       <InformationPanel />
-      <div className="container newsletter-subscription">
-        <h4>Subscribe to our Newsletter</h4>
-        <p>
-          Discover the latest news, from new product launches and events, to
-          inspiring updates.
-          <br /> All information will be used by The Romo Group only and will
-          not be passed on to third parties.
-        </p>
-      </div>
+      <NewsLetterSub />
+      <MoreOptions />
 
       <br />
       <br />

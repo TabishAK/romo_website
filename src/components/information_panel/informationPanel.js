@@ -18,11 +18,9 @@ const InformationPanel = () => {
         contemporary and classic designs and versatile plains, our talented
         design team create elegantly crafted fabric and wallcovering collections
         that are diverse in style and enriched with a sophisticated colour
-        palette.
-        <br />
-        <br />
-        Romo is the founding brand of The Romo Group, comprising six established
-        interior brands each with their own unique character and style.
+        palette. Romo is the founding brand of The Romo Group, comprising six
+        established interior brands each with their own unique character and
+        style.
       </p>
       <ShowBrandsButton />
       <div className="row info-panel-images">

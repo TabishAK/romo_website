@@ -1,0 +1,23 @@
+.newsletter-subscription {
+  box-shadow: 5px 5px 10px gainsboro;
+  position: relative;
+  padding: 1px 0px 20px;
+  top: 145px;
+  background: #f2f2f2;
+
+  h4 {
+    position: relative;
+    color: gray;
+    top: 20px;
+    text-align: center;
+  }
+
+  p {
+    margin-left: 15%;
+    text-align: center;
+    position: relative;
+    margin-top: 32px;
+    margin-right: 15%;
+    line-height: 30px;
+  }
+}

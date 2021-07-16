@@ -1,0 +1,67 @@
+$bg-color: #f1e9da;
+$link-text-color: #fff;
+$button-bg-1: #541388;
+$button-bg-2: #d90368;
+$button-bg-3: #104547;
+$button-bg-4: #4f000b;
+$button-bg-5: #f28123;
+$border-radius: 6px;
+$overlay-color: #fff;
+@import "../../../node_modules/font-awesome/scss/font-awesome.scss";
+
+.button-effect {
+  a {
+    cursor: pointer;
+    color: white !important;
+    margin-right: 17px;
+    background-color: #282936;
+  }
+}
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 12px 0px;
+  width: 150px;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.effect.effect-5 {
+  transition: all 0.2s linear 0s;
+  // @extend .fa-icon;
+  // @extend $fa-brands;
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f054";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 30px;
+    background-color: rgba($overlay-color, 0.3);
+    border-radius: 0 50% 50% 0;
+    transform: scale(0, 1);
+    transform-origin: left center;
+    transition: all 0.2s linear 0s;
+  }
+
+  &:hover {
+    text-indent: 10px;
+    color: white !important;
+
+    &:before {
+      transform: scale(1, 1);
+      text-indent: 0;
+    }
+  }
+}

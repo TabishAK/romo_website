@@ -2,6 +2,10 @@
   .hello {
     display: none !important;
   }
+
+  .container {
+    max-width: 1380px;
+  }
 }
 
 @media (min-width: 991px) and (max-width: 1199px) {
@@ -17,4 +21,42 @@
 }
 
 @media (max-width: 576px) {
+  .home {
+    p {
+      margin-left: 6%;
+      margin-top: 40px;
+      margin-right: 4%;
+      line-height: 25px;
+      margin-bottom: 28px;
+    }
+
+    .newsletter-subscription {
+      position: relative;
+      padding: 0px 0px 17px;
+      top: 151px;
+      background: gainsboro;
+      border-radius: unset;
+    }
+    .information-panel {
+      .info-panel-images {
+        .card-1 {
+          .view a.info {
+            font-size: 11px;
+            padding: 6px 12px;
+          }
+
+          .view-first {
+            p {
+              font-size: 10px;
+              top: -35px;
+            }
+            .mask a {
+              position: relative;
+              top: -55px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

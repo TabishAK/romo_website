@@ -64,11 +64,10 @@
 
       .view p {
         font-family: Merriweather, serif;
-        font-style: italic;
-        font-size: 14px;
+        font-size: 18px;
         position: relative;
         color: #fff;
-        padding: 0px 20px 0px;
+        padding: 11px 70px 0px;
         text-align: center;
       }
 
@@ -263,6 +262,14 @@
       .view-tenth:hover a.info {
         transform: scale(1);
         opacity: 1;
+      }
+    }
+
+    .card-2,
+    .card-3,
+    .card-4 {
+      img {
+        box-shadow: 10px 10px 12px gainsboro;
       }
     }
 
