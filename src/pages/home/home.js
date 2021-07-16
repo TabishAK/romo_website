@@ -61,10 +61,8 @@ const Home = () => {
           <div className="col">
             <ul>
               <label>INFORMATION</label>
-              <li>Meet EFF</li>
-              <li>Contact Us</li>
-              <li>Apply For Job</li>
-              <li>FAQ's</li>
+              <li>Terms and conditions</li>
+              <li>Legal</li>
             </ul>
           </div>
         </div>
