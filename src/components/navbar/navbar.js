@@ -1,8 +1,10 @@
 import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserAlt, FaHeart } from "react-icons/fa";
-import logo from "../../images/logo/eff_white.png";
-import logo2 from "../../images/logo/eff_black.png";
+// import logo from "../../images/logo/eff_updated.png";
+// import logo2 from "../../images/logo/eff_black.png";
+import logo2 from "../../images/logo_updated/eff_logos4.png";
+import logo from "../../images/logo_updated/eff_logos2.png";
 
 import NavHeaders from "./../navHeaders/navHeaders";
 import { useState } from "react";
@@ -142,7 +144,7 @@ const Navbar = (props) => {
         </div>
 
         <div className="logo-section">
-          <img src={display === "show" ? logo2 : logo}></img>
+          <img src={display === "show" ? logo : logo2}></img>
         </div>
         <div className="nav-items">
           <ul className="main">

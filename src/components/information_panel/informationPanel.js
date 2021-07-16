@@ -1,4 +1,4 @@
-import logo from "../../images/logo/eff_black.png";
+import logo from "../../images/logo_updated/eff_logos2.png";
 import ShowBrandsButton from "../../components/showBrandsButton/showBrandsButton";
 import fa from "../../images/brands/fa.jpg";
 import fm from "../../images/brands/fm.jpg";
