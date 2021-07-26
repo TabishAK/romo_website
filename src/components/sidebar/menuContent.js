@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import Divider from "@material-ui/core/Divider";
 import { withStyles } from "@material-ui/core/styles";
+
 const styles = (theme) => ({
   root: {
     overflow: "hidden",
@@ -23,6 +22,7 @@ const styles = (theme) => ({
     paddingLeft: theme.spacing.unit * 4,
   },
 });
+
 function getItems() {
   var json = {
     list: [
@@ -236,6 +236,7 @@ function getItems() {
   };
   return json;
 }
+
 class NestedList extends React.Component {
   state = {};
   handleClick = (e) => {

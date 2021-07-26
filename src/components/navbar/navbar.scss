@@ -1,9 +1,4 @@
-.nav-bar {
-  position: absolute;
-  height: 220px;
-  top: 0;
-  z-index: 100;
-
+.gradient {
   background: -webkit-gradient(
     linear,
     left top,
@@ -30,38 +25,46 @@
     rgba(0, 0, 0, 0.05) 75%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+.nav-bar {
   border-bottom: none;
+  position: absolute;
+  height: 220px;
+  z-index: 100;
+  top: 0;
+
   .menus {
+    box-shadow: 0px 6px 17px -7px #000;
+    background-color: white;
+    position: absolute;
+    height: 24rem;
     display: none;
     width: 100%;
     left: 0%;
-    position: absolute;
-    background-color: white;
-    height: 24rem;
-    box-shadow: 0px 6px 17px -7px #000;
 
     .product-names {
-      display: none;
       justify-content: center;
       position: relative;
+      display: none;
       top: 110px;
 
       li {
         a {
           font-weight: 500;
         }
-        cursor: pointer;
         width: max-content;
-        top: 32%;
-        margin: 0px 60px;
         position: relative;
+        margin: 0px 60px;
+        cursor: pointer;
+        top: 32%;
 
         ul {
           text-align: center;
-          display: table;
           position: absolute;
           margin: 12px -98px;
           width: min-content;
+          display: table;
           li {
             margin-bottom: -15px !important;
             font-size: 16px !important;
@@ -102,27 +105,27 @@
           }
 
           li {
-            font-family: cursive;
-            font-size: 13px !important;
-            line-height: 38px;
-            z-index: 2;
-            text-decoration: none;
             -webkit-tap-highlight-color: transparent;
+            font-size: 13px !important;
+            text-decoration: none;
+            font-family: cursive;
             white-space: nowrap;
+            line-height: 38px;
             overflow: hidden;
+            z-index: 2;
           }
 
           li:focus:after,
           li:focus:before,
           li:hover:after,
           li:hover:before {
-            outline: 0;
-            background-color: gray;
             -webkit-transition: all 1s ease 0s;
             -moz-transition: all 1s ease 0s;
             -ms-transition: all 1s ease 0s;
             -o-transition: all 1s ease 0s;
             transition: all 0.7s ease 0s;
+            background-color: gray;
+            outline: 0;
           }
         }
       }
@@ -132,26 +135,28 @@
     }
 
     .brand-names {
-      display: none;
       justify-content: center;
       position: relative;
-      top: 150px;
+      display: none;
+      top: 110px !important;
+
       li {
         a {
           text-transform: uppercase;
           font-weight: 500;
         }
-        top: 32%;
-        margin: 0px 60px;
         position: relative;
+        margin: 0px 60px;
+        top: 32%;
 
         ul {
-          text-align: center;
-          display: table;
           position: absolute;
           margin: 12px -98px;
           width: min-content;
+          display: table;
+
           li {
+            width: fit-content;
             margin-bottom: -15px !important;
             font-size: 16px !important;
           }
@@ -193,7 +198,6 @@
           li {
             font-family: cursive;
             font-size: 13px !important;
-
             line-height: 38px;
             z-index: 2;
             text-decoration: none;
@@ -229,7 +233,7 @@
   }
   .logo-section {
     img {
-      width: 220px;
+      width: 208px;
       position: relative;
       top: -25px;
       left: 10px;
@@ -244,7 +248,7 @@
 
   .nav-items {
     position: absolute;
-    top: 35px;
+    top: 50px;
     left: 28%;
     .main {
       display: flex;
@@ -265,7 +269,7 @@
   .admin-controls {
     position: relative;
     float: right;
-    top: 30px;
+    top: 45px;
     float: right;
     right: 10px;
     ul {

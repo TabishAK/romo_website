@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./sidebar.scss";
 import Sidebar from "react-sidebar";
 import { GiCrossedBones } from "react-icons/gi";
@@ -6,9 +5,6 @@ import { useMediaQuery } from "react-responsive";
 import MenuContent from "./menuContent";
 
 const Sideba = (props) => {
-  const [sidebarOpen, handleSidebarOpen] = useState(false);
-  // const [width] = useState();
-
   const isNotMobile = useMediaQuery({ maxWidth: 1155 });
   const isMobile = useMediaQuery({ maxWidth: 576 });
 

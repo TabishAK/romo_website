@@ -1,0 +1,36 @@
+.footer {
+  background: #f2f2f2;
+  position: relative;
+  margin-top: 10% !important;
+
+  hr {
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    height: 2px;
+  }
+  img {
+    top: 12px;
+    width: 195px;
+    height: 170px;
+    left: 45px;
+    position: relative;
+  }
+
+  .row {
+    .col {
+      max-width: fit-content;
+      ul {
+        label {
+          font-weight: 490;
+          font-size: 17px;
+          color: #6bc9ca;
+        }
+        li {
+          line-height: 28px;
+          color: gray;
+        }
+      }
+    }
+  }
+}

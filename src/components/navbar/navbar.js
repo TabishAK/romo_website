@@ -1,12 +1,8 @@
 import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserAlt, FaHeart } from "react-icons/fa";
-// import logo from "../../images/logo/eff_updated.png";
-// import logo2 from "../../images/logo/eff_black.png";
 import logo2 from "../../images/logo_updated/eff_logos4.png";
 import logo from "../../images/logo_updated/eff_logos2.png";
-
-import NavHeaders from "./../navHeaders/navHeaders";
 import { useState } from "react";
 
 const Navbar = (props) => {
@@ -42,7 +38,10 @@ const Navbar = (props) => {
 
   return (
     <>
-      <div className="nav-bar container-fluid">
+      <div
+        className={"nav-bar container-fluid " + props.st.gradient}
+        style={{ position: props.st.position }}
+      >
         <div
           className={"menus " + display}
           onMouseEnter={check}
@@ -144,11 +143,12 @@ const Navbar = (props) => {
         </div>
 
         <div className="logo-section">
-          <img src={display === "show" ? logo : logo2}></img>
+          <img src={display === "show" ? logo : props.st.logo}></img>
         </div>
         <div className="nav-items">
           <ul className="main">
             <li
+              style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"
               onMouseEnter={() => {
@@ -160,6 +160,7 @@ const Navbar = (props) => {
               PRODUCTS
             </li>
             <li
+              style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"
               onMouseEnter={() => {
@@ -170,13 +171,25 @@ const Navbar = (props) => {
             >
               BRAND
             </li>
-            <li className={"sub " + display} id="sub">
+            <li
+              style={{ color: props.st.color }}
+              className={"sub " + display}
+              id="sub"
+            >
               WHERE TO BUY
             </li>
-            <li className={"sub " + display} id="sub">
+            <li
+              style={{ color: props.st.color }}
+              className={"sub " + display}
+              id="sub"
+            >
               BE INSPIRED
             </li>
-            <li className={"sub " + display} id="sub">
+            <li
+              style={{ color: props.st.color }}
+              className={"sub " + display}
+              id="sub"
+            >
               COMPANY
             </li>
           </ul>
@@ -188,7 +201,7 @@ const Navbar = (props) => {
                 style={
                   display == "show"
                     ? { fontSize: "18px", color: "gray" }
-                    : { fontSize: "18px", color: "white" }
+                    : { fontSize: "18px", color: props.st.color }
                 }
               />
             </li>
@@ -197,7 +210,7 @@ const Navbar = (props) => {
                 style={
                   display == "show"
                     ? { fontSize: "18px", color: "gray" }
-                    : { fontSize: "18px", color: "white" }
+                    : { fontSize: "18px", color: props.st.color }
                 }
               />
             </li>

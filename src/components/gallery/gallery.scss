@@ -1,0 +1,45 @@
+.velvet-types {
+  .row {
+    div {
+      img {
+        width: 100% !important;
+        margin-top: 25px;
+      }
+      .info {
+        display: flex;
+        p {
+          top: 5px;
+          position: relative;
+        }
+        svg {
+          font-size: 22px;
+          color: #828282;
+          top: 6px;
+          position: relative;
+        }
+      }
+    }
+    .col-3:hover {
+      img {
+        transform: scale(1.07);
+        transition: 0.6s;
+        border: 1px solid;
+        cursor: pointer;
+      }
+      .info {
+        p {
+          transform: scale(1.05);
+          transition: 0.1s;
+        }
+        svg {
+          margin-right: 3px;
+          transform: scale(1.05);
+          transition: 0 1s;
+        }
+        top: 8px;
+        position: relative;
+        transition: 0.8s;
+      }
+    }
+  }
+}
