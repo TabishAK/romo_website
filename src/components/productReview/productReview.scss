@@ -1,0 +1,52 @@
+.product-review {
+  margin-top: 20px;
+  .row {
+    .col-xl-7 {
+      h2 {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+
+      div {
+        position: relative;
+        left: 0;
+        div {
+          div {
+            div {
+            }
+          }
+        }
+      }
+    }
+
+    .col-xl-5 {
+      p {
+        border-right: 2px solid gainsboro;
+        padding: 20px;
+        border-top: 2px solid gainsboro;
+        margin-top: 65px;
+        line-height: 30px;
+      }
+
+      .share-view-options {
+        border-left: 2px solid gainsboro;
+        padding: 10px;
+        border-bottom: 2px solid gainsboro;
+        margin-top: 40px;
+        span {
+          margin: 5px 20px;
+          display: flex;
+          h6 {
+            font-weight: 300;
+          }
+          svg {
+            margin-right: 8px;
+            top: 2px;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}

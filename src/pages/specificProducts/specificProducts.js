@@ -1,0 +1,57 @@
+import "./specificProducts.scss";
+import Navbar from "../../components/navbar/navbar";
+import Breadcrumbs from "../../components/breadcrumbs/breadcrumbs";
+import ProductReview from "../../components/productReview/productReview";
+import SimpleImageSlider from "react-simple-image-slider";
+import ReactImageZoom from "react-image-zoom";
+import Line from "../../components/line/line";
+import swatch_1 from "../../images/swatches/swatch-1.jpg";
+import swatch_2 from "../../images/swatches/swatch-2.jpg";
+import swatch_3 from "../../images/swatches/swatch-3.jpg";
+import swatch_4 from "../../images/swatches/swatch-4.jpg";
+import swatch_5 from "../../images/swatches/swatch-5.jpg";
+import swatch_6 from "../../images/swatches/swatch-6.jpg";
+import swatch_7 from "../../images/swatches/swatch-7.jpg";
+import swatch_8 from "../../images/swatches/swatch-8.jpg";
+import swatch_9 from "../../images/swatches/swatch-9.jpg";
+import swatch_10 from "../../images/swatches/swatch-10.jpg";
+import SwatchReview from "../../components/swatchReview/swatchReview";
+import { useState } from "react";
+import Footer from "./../../components/footer/footer";
+
+const SpecificProducts = (props) => {
+  let swatches = [
+    { image: swatch_1 },
+    { image: swatch_2 },
+    { image: swatch_3 },
+    { image: swatch_4 },
+    { image: swatch_5 },
+    { image: swatch_6 },
+    { image: swatch_7 },
+    { image: swatch_8 },
+    { image: swatch_9 },
+    { image: swatch_10 },
+  ];
+
+  const [isSwatch, setSwatch] = useState(false);
+  const showSwatches = () => {
+    setSwatch(true);
+  };
+
+  return (
+    <div className="specific-products">
+      <Navbar st={props.st} />
+      <Breadcrumbs />
+
+      {isSwatch ? (
+        <SwatchReview swatches={swatches} />
+      ) : (
+        <ProductReview swatches={swatches} showSwatches={showSwatches} />
+      )}
+
+      <Footer />
+    </div>
+  );
+};
+
+export default SpecificProducts;

@@ -4,6 +4,7 @@ import { FaUserAlt, FaHeart } from "react-icons/fa";
 import logo2 from "../../images/logo_updated/eff_logos4.png";
 import logo from "../../images/logo_updated/eff_logos2.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
@@ -51,7 +52,9 @@ const Navbar = (props) => {
             <li>
               <a>FABRICS</a>
               <ul>
-                <li>Velvet</li>
+                <Link to="/velvet">
+                  <li>Velvet</li>
+                </Link>
                 <li>Silk</li>
                 <li>Linen</li>
                 <li>Cotton</li>

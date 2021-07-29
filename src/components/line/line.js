@@ -1,14 +1,5 @@
-const Line = () => {
-  return (
-    <hr
-      style={{
-        background: "#dcdcdc00",
-        position: "absolute",
-        width: "100%",
-        top: "162px",
-      }}
-    />
-  );
+const Line = (props) => {
+  return <hr style={props.lineStyle} />;
 };
 
 export default Line;

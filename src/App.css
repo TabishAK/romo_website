@@ -8,3 +8,40 @@ p {
   font: Helvetica, sans-serif;
   font-weight: 200;
 }
+
+a {
+  color: rgb(130, 130, 130);
+}
+a:hover {
+  color: rgb(130, 130, 130);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(130, 130, 130);
+}
+
+.react-slider {
+  margin-bottom: 80% !important;
+  margin-top: 30px;
+}
+.react-slider__ul {
+  z-index: 1 !important;
+  width: 195% !important;
+  position: absolute !important;
+  margin-top: 70px !important;
+}
+
+.react-slider__picture {
+  height: 480px !important;
+}
+
+.react-slider__imgZoom {
+  width: 100% !important;
+  height: 480px !important;
+}
