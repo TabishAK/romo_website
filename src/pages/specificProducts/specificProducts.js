@@ -20,21 +20,27 @@ import { useState } from "react";
 import Footer from "./../../components/footer/footer";
 
 const SpecificProducts = (props) => {
-  let swatches = [
-    { image: swatch_1 },
-    { image: swatch_2 },
-    { image: swatch_3 },
-    { image: swatch_4 },
-    { image: swatch_5 },
-    { image: swatch_6 },
-    { image: swatch_7 },
-    { image: swatch_8 },
-    { image: swatch_9 },
-    { image: swatch_10 },
-  ];
+  let [swatches, setSwatches] = useState([
+    { id: 1, image: swatch_1 },
+    { id: 2, image: swatch_2 },
+    { id: 3, image: swatch_3 },
+    { id: 4, image: swatch_4 },
+    { id: 5, image: swatch_5 },
+    { id: 6, image: swatch_6 },
+    { id: 7, image: swatch_7 },
+    { id: 8, image: swatch_8 },
+    { id: 9, image: swatch_9 },
+    { id: 10, image: swatch_10 },
+  ]);
 
   const [isSwatch, setSwatch] = useState(false);
-  const showSwatches = () => {
+
+  const showSwatches = (i) => {
+    let s = [...swatches];
+    let temp = s[0];
+    s[0] = s[i];
+    s[i] = temp;
+    setSwatches(s);
     setSwatch(true);
   };
 

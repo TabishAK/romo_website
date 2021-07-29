@@ -9,7 +9,6 @@ const Products = (props) => {
   return (
     <div className="fabric">
       <Navbar st={props.st} />
-      <Line />
 
       <div className="container velvet-heading">
         <Breadcrumbs />

@@ -47,17 +47,21 @@ const ProductReview = (props) => {
 
       <Line />
 
-      <div className="container swatches" onClick={props.showSwatches}>
+      <div className="container swatches">
         <div className="row">
           {props.swatches.map((swatch, i) => (
             <div className="col-2">
-              <img src={swatch.image} alt="" />
+              <img
+                src={swatch.image}
+                alt=""
+                onClick={() => props.showSwatches(i)}
+              />
             </div>
           ))}
         </div>
-        <div className="on-hover">
+        {/* <div className="on-hover">
           <h1> Swatches</h1>
-        </div>
+        </div> */}
       </div>
     </div>
   );
