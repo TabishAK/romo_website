@@ -7,8 +7,12 @@ video {
 }
 .carousel-inner {
   position: relative !important;
-  height: 937px;
+  height: 1200px;
   z-index: -1;
+
+  video {
+    height: 130% !important;
+  }
 }
 .carousel-item {
   position: relative;
