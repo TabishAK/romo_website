@@ -145,8 +145,14 @@ const Navbar = (props) => {
         </div>
 
         <div className="logo-section">
-          <img alt="logo" src={display === "show" ? logo : props.st.logo}></img>
+          <Link to="/">
+            <img
+              alt="logo"
+              src={display === "show" ? logo : props.st.logo}
+            ></img>
+          </Link>
         </div>
+
         <div className="nav-items">
           <ul className="main">
             <li
