@@ -5,11 +5,11 @@ const SwatchReview = (props) => {
   return (
     <div className="container swatch-review">
       <div className="row">
-        <div className="col-xl-6" id="samples">
+        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6" id="samples">
           <h2>Valvet</h2>
-          <SliderImage data={props.swatches} width="100%" direction="right" />
+          <SliderImage data={props.swatches} width="100%" direction="bottom" />
         </div>
-        <div className="col-xl-6 prod-description">
+        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 prod-description">
           <h5>Asher Pesto</h5>
           <Line lineStyle={{ marginTop: "80px", background: "#dcdcdc00" }} />
           <span>

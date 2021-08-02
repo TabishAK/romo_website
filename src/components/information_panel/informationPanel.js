@@ -5,6 +5,7 @@ import fm from "../../images/brands/fm.jpg";
 import fo from "../../images/brands/fo.jpg";
 import hpd from "../../images/logo/hpd.png";
 import "./informationPanel.scss";
+import { Link } from "react-router-dom";
 const InformationPanel = () => {
   return (
     <div className="container information-panel">
@@ -36,9 +37,9 @@ const InformationPanel = () => {
                   spaces are being transformed into stylish havens. Combining
                   contemporary style with practicality and durability.
                 </p>
-                <a href="#" class="info">
+                <Link href="#" clLinkss="info">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

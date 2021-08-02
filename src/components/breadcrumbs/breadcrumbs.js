@@ -3,7 +3,6 @@ import { emphasize, withStyles } from "@material-ui/core/styles";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Chip from "@material-ui/core/Chip";
 import HomeIcon from "@material-ui/icons/Home";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./breadcrumbs.scss";
 
 const StyledBreadcrumb = withStyles((theme) => ({

@@ -1,7 +1,6 @@
 import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserAlt, FaHeart } from "react-icons/fa";
-import logo2 from "../../images/logo_updated/eff_logos4.png";
 import logo from "../../images/logo_updated/eff_logos2.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -50,7 +49,7 @@ const Navbar = (props) => {
         >
           <ul className={"product-names " + products} id="product-names">
             <li>
-              <a>FABRICS</a>
+              <Link>FABRICS</Link>
               <ul>
                 <Link to="/velvet">
                   <li>Velvet</li>
@@ -63,7 +62,7 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li className="bhola">
-              <a> CURTAINS & DRAPES</a>
+              <Link> CURTAINS & DRAPES</Link>
               <ul>
                 <li>Cellur Shades</li>
                 <li>Custom Curtains</li>
@@ -73,7 +72,7 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li>
-              <a> HOME DECORE</a>
+              <Link> HOME DECORE</Link>
               <ul>
                 <li>Cushion Covers</li>
                 <li>Dining Chair Covers</li>
@@ -81,7 +80,7 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li>
-              <a> BEDDING</a>
+              <Link> BEDDING</Link>
               <ul>
                 <li>Duve Covers</li>
                 <li>Sheets</li>
@@ -89,7 +88,7 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li>
-              <a> HARDWARE</a>
+              <Link> HARDWARE</Link>
               <ul>
                 <li>Metal Hardware</li>
                 <li>Clips</li>
@@ -103,25 +102,14 @@ const Navbar = (props) => {
 
           <ul className={"brand-names " + brand} id="product-names">
             <li>
-              <a> Half Price Drapes</a>
+              <Link> Half Price Drapes</Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
               </ul>
             </li>
             <li>
-              <a> Half Price Linens</a>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
-            <li>
-              <a>Sierra Textile</a>
+              <Link> Half Price Linens</Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
@@ -132,7 +120,18 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li>
-              <a>Take4Media</a>
+              <Link>Sierra Textile</Link>
+              <ul>
+                <li>Velvet</li>
+                <li>Silk</li>
+                <li>Linen</li>
+                <li>Cotton</li>
+                <li>Faux Silk</li>
+                <li>Sheers</li>
+              </ul>
+            </li>
+            <li>
+              <Link>Take4Media</Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
@@ -146,7 +145,7 @@ const Navbar = (props) => {
         </div>
 
         <div className="logo-section">
-          <img src={display === "show" ? logo : props.st.logo}></img>
+          <img alt="logo" src={display === "show" ? logo : props.st.logo}></img>
         </div>
         <div className="nav-items">
           <ul className="main">
@@ -202,7 +201,7 @@ const Navbar = (props) => {
             <li>
               <FaUserAlt
                 style={
-                  display == "show"
+                  display === "show"
                     ? { fontSize: "18px", color: "gray" }
                     : { fontSize: "18px", color: props.st.color }
                 }
@@ -211,7 +210,7 @@ const Navbar = (props) => {
             <li>
               <FaHeart
                 style={
-                  display == "show"
+                  display === "show"
                     ? { fontSize: "18px", color: "gray" }
                     : { fontSize: "18px", color: props.st.color }
                 }

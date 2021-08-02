@@ -2,7 +2,6 @@ import Breadcrumbs from "../../components/breadcrumbs/breadcrumbs";
 import Gallery from "../../components/gallery/gallery";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
-import Line from "../../components/line/line";
 import "./products.scss";
 
 const Products = (props) => {

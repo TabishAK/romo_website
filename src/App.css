@@ -32,16 +32,16 @@ h6 {
 }
 .react-slider__ul {
   z-index: 1 !important;
-  width: 195% !important;
-  position: absolute !important;
+  width: 195%;
+  position: absolute;
   margin-top: 70px !important;
 }
 
 .react-slider__picture {
-  height: 480px !important;
+  height: 480px;
 }
 
 .react-slider__imgZoom {
   width: 100% !important;
-  height: 480px !important;
+  height: 480px;
 }

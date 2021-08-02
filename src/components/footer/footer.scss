@@ -13,7 +13,8 @@
     top: 12px;
     width: 195px;
     height: 170px;
-    left: 45px;
+    left: 88px;
+
     position: relative;
   }
 
@@ -21,12 +22,14 @@
     .col {
       max-width: fit-content;
       ul {
+        margin: 18px 25px;
         label {
           font-weight: 490;
           font-size: 17px;
           color: #6bc9ca;
         }
         li {
+          cursor: pointer;
           line-height: 28px;
           color: gray;
         }

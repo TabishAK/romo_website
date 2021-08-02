@@ -8,7 +8,7 @@ import "../src/media_query.scss";
 import "./App.css";
 import Home from "./pages/home/home";
 import SpecificProducts from "./pages/specificProducts/specificProducts";
-import { Route, Router, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           component={() => (
             <Home
               st={{
-                gradient: "",
+                gradient: "gradient",
                 color: "white",
                 logo: logo2,
                 position: "absolute",
