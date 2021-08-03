@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Quickpen";
+  src: url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.eot");
+  src: url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/c37d00d99177ac0bcac7922853c6be0b.svg#Quickpen")
+      format("svg");
+}
+
+p {
+  line-height: 30px;
+}
+
+.section-1 {
+  .bg-1 {
+    background: url("../../images/backgrounds/about_bg.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-size: contain;
+    height: 40rem;
+  }
+  .para-without-image {
+    line-height: 30px;
+  }
+
+  .para-with-image {
+    display: flex;
+    p {
+      margin-right: 15px;
+    }
+    img {
+      padding: 12px 8px 10px 1px;
+      border: 2px solid gainsboro;
+      height: 155px;
+      width: 25%;
+    }
+  }
+  h1 {
+    font-family: Quickpen;
+  }
+}
+
+.section-2 {
+  .row {
+    div {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    font-family: Quickpen;
+  }
+}

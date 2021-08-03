@@ -17,7 +17,7 @@ video {
 .carousel-item {
   position: relative;
   img {
-    height: fit-content;
+    height: calc(80rem + 2px);
     width: fit-content !important;
   }
 }

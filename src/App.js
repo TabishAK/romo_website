@@ -9,6 +9,7 @@ import "./App.css";
 import Home from "./pages/home/home";
 import SpecificProducts from "./pages/specificProducts/specificProducts";
 import { Route, Switch } from "react-router-dom";
+import AboutEFF from "./pages/about_eff/about_eff";
 
 function App() {
   return (
@@ -27,9 +28,21 @@ function App() {
               }}
             />
           )}
+        />{" "}
+        <Route
+          path="/about_eff"
+          component={() => (
+            <AboutEFF
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+            />
+          )}
         />
         <Route
-          exact
           path="/:product_name"
           component={() => (
             <Products
@@ -42,9 +55,7 @@ function App() {
             />
           )}
         />
-
         <Route
-          exact
           path="/:product_name/:type"
           component={() => (
             <SpecificProducts

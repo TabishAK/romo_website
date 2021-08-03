@@ -52,6 +52,7 @@
       li {
         a {
           font-weight: 500;
+          color: #808080b5 !important;
         }
         width: max-content;
         position: relative;
@@ -60,6 +61,7 @@
         top: 32%;
 
         ul {
+          color: #808080d1;
           text-align: center;
           position: absolute;
           margin: 12px -60px;
@@ -107,7 +109,7 @@
           li {
             font-weight: lighter;
             -webkit-tap-highlight-color: transparent;
-            font-size: 13px !important;
+            font-size: 14px !important;
             text-decoration: none;
             font-family: serif;
             white-space: nowrap;
