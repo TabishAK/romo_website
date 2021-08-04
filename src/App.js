@@ -10,8 +10,19 @@ import Home from "./pages/home/home";
 import SpecificProducts from "./pages/specificProducts/specificProducts";
 import { Route, Switch } from "react-router-dom";
 import AboutEFF from "./pages/about_eff/about_eff";
+import { useState } from "react";
 
 function App() {
+  const [display, setDisplay] = useState(false);
+
+  const openRightMenu = () => {
+    setDisplay(true);
+  };
+
+  const closeRightMenu = () => {
+    setDisplay(false);
+  };
+
   return (
     <div className="App">
       <Switch>
@@ -26,6 +37,9 @@ function App() {
                 logo: logo2,
                 position: "absolute",
               }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
             />
           )}
         />{" "}
@@ -39,6 +53,9 @@ function App() {
                 logo: logo,
                 position: "relative",
               }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
             />
           )}
         />

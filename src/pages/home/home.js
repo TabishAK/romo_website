@@ -4,26 +4,16 @@ import MoreOptions from "../../components/moreOptions/moreOptions";
 import TopCarousel from "./../../components/carousel/carousel";
 import Sideba from "./../../components/sidebar/sidebar";
 import Navbar from "./../../components/navbar/navbar";
-import React, { useState } from "react";
+import React from "react";
 import "./home.scss";
 import Footer from "../../components/footer/footer";
 
 const Home = (props) => {
-  const [display, setDisplay] = useState(false);
-
-  const openRightMenu = () => {
-    setDisplay(true);
-  };
-
-  const closeRightMenu = () => {
-    setDisplay(false);
-  };
-
   return (
     <div className="home">
-      <Navbar st={props.st} openRightMenu={openRightMenu} />
+      <Navbar st={props.st} openRightMenu={props.openRightMenu} />
       <TopCarousel />
-      <Sideba display={display} closeRightMenu={closeRightMenu} />
+      <Sideba display={props.display} closeRightMenu={props.closeRightMenu} />
       <InformationPanel />
       <NewsLetterSub />
       <MoreOptions />

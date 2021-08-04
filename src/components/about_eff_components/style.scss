@@ -47,7 +47,24 @@ p {
 }
 
 .section-2 {
+  div {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    img {
+      width: 100%;
+    }
+  }
+
+  h1 {
+    font-family: Quickpen;
+  }
+}
+
+.section-3 {
+  position: relative;
   .row {
+    position: relative;
+    // top: 60px;
     div {
       padding-right: 0px !important;
       padding-left: 0px !important;
@@ -57,7 +74,49 @@ p {
     }
   }
 
+  h6 {
+    // top: 75px;
+    position: relative;
+  }
   h1 {
     font-family: Quickpen;
+    text-align: right;
+  }
+  p {
+    // top: 60px;
+    position: relative;
+  }
+}
+
+.section-4 {
+  position: relative;
+  .row {
+    position: relative;
+    // top: 60px;
+    div {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.section-5 {
+  position: relative;
+
+  h1 {
+    font-family: Quickpen;
+  }
+  .row {
+    position: relative;
+    // top: 60px;
+    div {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+      img {
+        width: 100%;
+      }
+    }
   }
 }

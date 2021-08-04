@@ -102,25 +102,14 @@ const Navbar = (props) => {
 
           <ul className={"brand-names " + brand} id="product-names">
             <li>
-              <Link> Half Price Drapes</Link>
+              <Link> HALF PRICE DRAPES </Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
               </ul>
             </li>
             <li>
-              <Link> Half Price Linens</Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
-            <li>
-              <Link>Sierra Textile</Link>
+              <Link> HALF PRICE LINENS </Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
@@ -131,7 +120,18 @@ const Navbar = (props) => {
               </ul>
             </li>
             <li>
-              <Link>Take4Media</Link>
+              <Link>SIERRA TEXTILES</Link>
+              <ul>
+                <li>Velvet</li>
+                <li>Silk</li>
+                <li>Linen</li>
+                <li>Cotton</li>
+                <li>Faux Silk</li>
+                <li>Sheers</li>
+              </ul>
+            </li>
+            <li>
+              <Link>TAKE4MEDIA</Link>
               <ul>
                 <li>Velvet</li>
                 <li>Silk</li>
@@ -225,7 +225,10 @@ const Navbar = (props) => {
           </ul>
         </div>
         <div className="hamburger">
-          <GiHamburgerMenu onClick={props.openRightMenu} />
+          <GiHamburgerMenu
+            onClick={props.openRightMenu}
+            style={{ fill: props.st.color }}
+          />
         </div>
       </div>
     </>

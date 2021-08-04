@@ -15,9 +15,15 @@
 }
 
 @media (min-width: 767px) and (max-width: 992px) {
+  .bg-1 {
+    display: none !important;
+  }
 }
-
 @media (min-width: 575px) and (max-width: 768px) {
+  .bg-1 {
+    display: none !important;
+  }
+
   .react-slider__ul {
     width: 200% !important;
     position: relative !important;
@@ -58,6 +64,34 @@
 }
 
 @media (max-width: 576px) {
+  p,
+  h5,
+  h6,
+  h1 {
+    text-align: center;
+  }
+  .row {
+    p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .about-eff {
+    .section-1 {
+      .para-with-image {
+        img {
+          padding: 9px 0px 6px 0px !important;
+          border: 2px solid gainsboro !important;
+          height: 106px !important;
+          top: 86px !important;
+          width: 28% !important;
+          position: relative !important;
+        }
+      }
+    }
+  }
+
   .react-slider__imgZoom {
     display: none !important;
   }
@@ -152,5 +186,9 @@
         }
       }
     }
+  }
+
+  .bg-1 {
+    display: none !important;
   }
 }

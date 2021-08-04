@@ -52,7 +52,7 @@
       li {
         a {
           font-weight: 500;
-          color: #808080b5 !important;
+          color: #808080d1 !important;
         }
         width: max-content;
         position: relative;
@@ -107,11 +107,10 @@
           }
 
           li {
-            font-weight: lighter;
-            -webkit-tap-highlight-color: transparent;
+            font-weight: 400;
             font-size: 14px !important;
             text-decoration: none;
-            font-family: serif;
+            font-family: "Noah Grotesque", sans-serif;
             white-space: nowrap;
             line-height: 38px;
             overflow: hidden;
@@ -141,24 +140,26 @@
       justify-content: center;
       position: relative;
       display: none;
-      top: 110px !important;
+      top: 110px;
 
       li {
         a {
-          text-transform: uppercase;
           font-weight: 500;
+          color: #808080d1 !important;
         }
         position: relative;
         margin: 0px 60px;
         top: 32%;
 
         ul {
+          color: #808080d1 !important;
           position: absolute;
           margin: 12px -60px;
           width: min-content;
           display: table;
 
           li {
+            cursor: pointer;
             width: fit-content;
             margin-bottom: -15px !important;
             font-size: 16px !important;
@@ -199,14 +200,14 @@
           }
 
           li {
-            font-family: cursive;
-            font-size: 13px !important;
-            line-height: 38px;
-            z-index: 2;
+            font-weight: 400;
+            font-size: 14px !important;
             text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
+            font-family: "Noah Grotesque", sans-serif;
             white-space: nowrap;
+            line-height: 38px;
             overflow: hidden;
+            z-index: 2;
           }
 
           li:focus:after,
