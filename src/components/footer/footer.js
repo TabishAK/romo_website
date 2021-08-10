@@ -1,5 +1,8 @@
 import "./footer.scss";
 import logo from "../../images/logo_updated/eff_logos2.png";
+import { FiInstagram } from "react-icons/fi";
+import { FaFacebookSquare, FaPinterestP, FaYoutube } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -42,6 +45,25 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
+      <div className="social-media mt-4 mb-2">
+        <span>
+          <FaFacebookSquare />
+        </span>
+        <span>
+          <FiInstagram />
+        </span>
+        <span>
+          <AiOutlineTwitter />
+        </span>
+        <span>
+          <FaPinterestP />
+        </span>
+        <span>
+          <FaYoutube />
+        </span>
+      </div>
+
       <hr />
       <br />
       <br />

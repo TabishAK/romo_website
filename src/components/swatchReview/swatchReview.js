@@ -7,7 +7,19 @@ const SwatchReview = (props) => {
       <div className="row">
         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6" id="samples">
           <h2>Valvet</h2>
-          <SliderImage data={props.swatches} width="100%" direction="bottom" />
+          <SliderImage
+            data={props.swatches}
+            width="100%"
+            direction="bottom"
+            showDescription
+          />
+          <ul>
+            {props.swatchesClone.map((s, i) => (
+              <li>
+                <img onClick={() => props.editSwatch(s, i)} src={s.image}></img>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 prod-description">
           <h5>Asher Pesto</h5>

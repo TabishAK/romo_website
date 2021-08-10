@@ -30,10 +30,11 @@ h6 {
 }
 
 .react-slider {
-  margin-bottom: 80% !important;
+  margin-bottom: 15% !important;
   margin-top: 30px;
 }
 .react-slider__ul {
+  display: none !important;
   z-index: 1 !important;
   width: 195%;
   position: absolute;

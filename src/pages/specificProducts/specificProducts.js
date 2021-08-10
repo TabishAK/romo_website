@@ -30,6 +30,8 @@ const SpecificProducts = (props) => {
     { id: 10, image: swatch_10 },
   ]);
 
+  let [swatchesClone] = useState([...swatches]);
+
   const [isSwatch, setSwatch] = useState(false);
 
   const showSwatches = (i) => {
@@ -41,13 +43,27 @@ const SpecificProducts = (props) => {
     setSwatch(true);
   };
 
+  const editSwatch = (s, i) => {
+    let swtch = [...swatches];
+    let temp = swtch[0];
+    swtch[0] = swtch[i];
+    swtch[i] = temp;
+    setSwatches(swtch);
+
+    console.log(s);
+  };
+
   return (
     <div className="specific-products">
       <Navbar st={props.st} />
       <Breadcrumbs />
 
       {isSwatch ? (
-        <SwatchReview swatches={swatches} />
+        <SwatchReview
+          swatches={swatches}
+          swatchesClone={swatchesClone}
+          editSwatch={editSwatch}
+        />
       ) : (
         <ProductReview swatches={swatches} showSwatches={showSwatches} />
       )}

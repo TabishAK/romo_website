@@ -22,7 +22,6 @@ const AboutEFF = (props) => {
         <Section4 />
         <Section5 />
       </div>
-
       <Footer />
     </div>
   );

@@ -42,8 +42,9 @@ function App() {
               display={display}
             />
           )}
-        />{" "}
+        />
         <Route
+          exact
           path="/about_eff"
           component={() => (
             <AboutEFF
@@ -60,6 +61,7 @@ function App() {
           )}
         />
         <Route
+          exact
           path="/:product_name"
           component={() => (
             <Products
@@ -73,6 +75,7 @@ function App() {
           )}
         />
         <Route
+          exact
           path="/:product_name/:type"
           component={() => (
             <SpecificProducts

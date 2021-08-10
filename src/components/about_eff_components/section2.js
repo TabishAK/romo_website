@@ -1,10 +1,10 @@
 import "./style.scss";
-import img1 from "../../images/backgrounds/about_bg.jpg";
-import img2 from "../../images/backgrounds/about_bg2.jpg";
+import img1 from "../../images/about_eff/backgrounds/about_bg.jpg";
+import img2 from "../../images/about_eff/backgrounds/about_bg2.jpg";
 
 const Section2 = () => {
   return (
-    <div className="row section-2">
+    <div className="section-2">
       <h1>The experts in fabrics and wallcoverings</h1>
       <p className="mt-5">
         Our reputation for offering excellent designs and outstanding products

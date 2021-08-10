@@ -36,4 +36,21 @@
       }
     }
   }
+
+  .social-media {
+    margin-left: 80px;
+    span {
+      margin: 10px;
+
+      svg {
+        color: #808080a6;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      svg:hover {
+        color: gray;
+        transition: 0.3s ease color;
+      }
+    }
+  }
 }

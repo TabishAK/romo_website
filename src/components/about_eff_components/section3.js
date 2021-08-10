@@ -1,10 +1,10 @@
 import "./style.scss";
-import eff_group1 from "../../images/eff_groups/1.jpg";
-import eff_group2 from "../../images/eff_groups/2.jpg";
-import eff_group3 from "../../images/eff_groups/3.jpg";
-import eff_group4 from "../../images/eff_groups/4.jpg";
-import eff_group5 from "../../images/eff_groups/5.jpg";
-import eff_group6 from "../../images/eff_groups/6.jpg";
+import eff_group1 from "../../images/about_eff/eff_groups/1.jpg";
+import eff_group2 from "../../images/about_eff/eff_groups/2.jpg";
+import eff_group3 from "../../images/about_eff/eff_groups/3.jpg";
+import eff_group4 from "../../images/about_eff/eff_groups/4.jpg";
+import eff_group5 from "../../images/about_eff/eff_groups/5.jpg";
+import eff_group6 from "../../images/about_eff/eff_groups/6.jpg";
 
 const Section3 = () => {
   return (

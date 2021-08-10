@@ -15,13 +15,13 @@ import { useLocation } from "react-router";
 
 const Gallery = () => {
   const location = useLocation();
-
+  console.log(location);
   return (
     <div className="container velvet-types">
       <div className="row">
         <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 hov">
           <Link to={`${location.pathname}/royal_lux_velvet`}>
-            <img src={type_1} alt="valvet-cat" />{" "}
+            <img src={type_1} alt="valvet-cat" />
           </Link>
           <div className="info">
             <TiLocationArrow />

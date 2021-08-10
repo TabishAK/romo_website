@@ -3,6 +3,21 @@
   max-width: 1180px !important;
 
   .row {
+    div {
+      ul {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        width: 195%;
+        li {
+          margin: 10px;
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+
     .prod-description {
       span {
         display: flex;
