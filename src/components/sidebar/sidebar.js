@@ -1,8 +1,8 @@
-import "./sidebar.scss";
-import Sidebar from "react-sidebar";
-import { GiCrossedBones } from "react-icons/gi";
 import { useMediaQuery } from "react-responsive";
+import { GiCrossedBones } from "react-icons/gi";
 import MenuContent from "./menuContent";
+import Sidebar from "react-sidebar";
+import "./sidebar.scss";
 
 const Sideba = (props) => {
   const isNotMobile = useMediaQuery({ maxWidth: 1155 });

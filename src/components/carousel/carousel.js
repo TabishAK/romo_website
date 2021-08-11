@@ -1,11 +1,11 @@
-import vid from "../../videos/sheers.mp4";
 import Carousel from "react-bootstrap/Carousel";
-import "./carousel.scss";
-import ReactPlayer from "react-player";
-import { useState } from "react";
 import img1 from "../../images/banner/1.jpg";
 import img2 from "../../images/banner/2.jpg";
 import img3 from "../../images/banner/3.jpg";
+import vid from "../../videos/sheers.mp4";
+import ReactPlayer from "react-player";
+import { useState } from "react";
+import "./carousel.scss";
 
 const TopCarousel = () => {
   const [index, setIndex] = useState(0);

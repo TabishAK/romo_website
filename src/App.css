@@ -1,4 +1,7 @@
-@import url("http://fonts.cdnfonts.com/css/noah-grotesque");
+@font-face {
+  font-family: "Noah Grotesque"; /*a name to be used later*/
+  src: url("./fonts/Noah\ Grotesque\ Light.otf"); /*URL to font*/
+}
 
 li {
   list-style: none;
@@ -6,7 +9,7 @@ li {
 
 p {
   color: #828282;
-  font-family: "Noah Grotesque", sans-serif;
+  font-family: "Noah Grotesque";
   font-size: 18px;
   font-weight: lighter;
 }

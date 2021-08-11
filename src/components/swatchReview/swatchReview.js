@@ -1,23 +1,31 @@
-import "./swatchReview.scss";
+import { useHistory } from "react-router-dom";
 import SliderImage from "react-zoom-slider";
+import { Link } from "react-router-dom";
 import Line from "../line/line";
+import "./swatchReview.scss";
+
 const SwatchReview = (props) => {
+  let history = useHistory();
+  let breaked = history.location.pathname.split("/");
+  console.log(history.location.pathname);
   return (
     <div className="container swatch-review">
       <div className="row">
         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6" id="samples">
           <h2>Valvet</h2>
-          <SliderImage
-            data={props.swatches}
-            width="100%"
-            direction="bottom"
-            showDescription
-          />
+          <SliderImage data={props.swatches} width="100%" direction="bottom" />
           <ul>
             {props.swatchesClone.map((s, i) => (
-              <li>
-                <img onClick={() => props.editSwatch(s, i)} src={s.image}></img>
-              </li>
+              <Link to={`/${breaked[1]}/${breaked[2]}/${s.id}`}>
+                <li>
+                  <img
+                    src={s.image}
+                    onClick={() => props.editSwatch(s, i)}
+                    alt={`swatch_${i}`}
+                  ></img>
+                </li>
+              </Link>
+              //
             ))}
           </ul>
         </div>

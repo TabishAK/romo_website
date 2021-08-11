@@ -1,8 +1,8 @@
-import "./footer.scss";
-import logo from "../../images/logo_updated/eff_logos2.png";
-import { FiInstagram } from "react-icons/fi";
 import { FaFacebookSquare, FaPinterestP, FaYoutube } from "react-icons/fa";
+import logo from "../../images/logo_updated/eff_logos2.png";
 import { AiOutlineTwitter } from "react-icons/ai";
+import { FiInstagram } from "react-icons/fi";
+import "./footer.scss";
 
 const Footer = () => {
   return (

@@ -1,4 +1,3 @@
-import "./gallery.scss";
 import type_10 from "../../images/valvet-types/type-10.jpg";
 import type_1 from "../../images/valvet-types/type-1.jpg";
 import type_2 from "../../images/valvet-types/type-2.jpg";
@@ -10,8 +9,9 @@ import type_7 from "../../images/valvet-types/type-7.jpg";
 import type_8 from "../../images/valvet-types/type-8.jpg";
 import type_9 from "../../images/valvet-types/type-9.jpg";
 import { TiLocationArrow } from "react-icons/ti";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import "./gallery.scss";
 
 const Gallery = () => {
   const location = useLocation();

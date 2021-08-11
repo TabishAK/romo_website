@@ -1,13 +1,17 @@
-import "./productReview.scss";
 import SimpleImageSlider from "react-simple-image-slider";
-import { FiShare2 } from "react-icons/fi";
-import { BsViewList } from "react-icons/bs";
 import img1 from "../../images/image-slider/1.JPG";
 import img2 from "../../images/image-slider/2.JPG";
 import img3 from "../../images/image-slider/3.JPG";
+import { useHistory } from "react-router-dom";
+import { BsViewList } from "react-icons/bs";
+import { FiShare2 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Line from "../line/line";
+import "./productReview.scss";
+
 const ProductReview = (props) => {
   const images = [{ url: img1 }, { url: img2 }, { url: img3 }];
+  let history = useHistory();
 
   return (
     <div className="container product-review">
@@ -51,17 +55,16 @@ const ProductReview = (props) => {
         <div className="row">
           {props.swatches.map((swatch, i) => (
             <div className="col-2">
-              <img
-                src={swatch.image}
-                alt=""
-                onClick={() => props.showSwatches(i)}
-              />
+              <Link to={`${history.location.pathname}/${i}`}>
+                <img
+                  src={swatch.image}
+                  alt=""
+                  onClick={() => props.showSwatches(i)}
+                />
+              </Link>
             </div>
           ))}
         </div>
-        {/* <div className="on-hover">
-          <h1> Swatches</h1>
-        </div> */}
       </div>
     </div>
   );

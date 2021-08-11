@@ -1,9 +1,10 @@
-import "./button1.scss";
 import { Link } from "react-router-dom";
+import "./button1.scss";
+
 const Button1 = () => {
   return (
-    <div class="button-effect">
-      <Link class="effect effect-5" title="Learn More">
+    <div className="button-effect">
+      <Link to="" className="effect effect-5" title="Learn More">
         Learn More
       </Link>
     </div>

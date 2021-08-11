@@ -7,7 +7,11 @@ import "./products.scss";
 const Products = (props) => {
   return (
     <div className="fabric">
-      <Navbar st={props.st} />
+      <Navbar
+        st={props.st}
+        makeBlur={props.makeBlur}
+        removeBlur={props.removeBlur}
+      />
 
       <div className="container velvet-heading">
         <Breadcrumbs />

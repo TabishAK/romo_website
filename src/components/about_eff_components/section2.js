@@ -1,6 +1,6 @@
-import "./style.scss";
-import img1 from "../../images/about_eff/backgrounds/about_bg.jpg";
 import img2 from "../../images/about_eff/backgrounds/about_bg2.jpg";
+import img1 from "../../images/about_eff/backgrounds/about_bg.jpg";
+import "./style.scss";
 
 const Section2 = () => {
   return (

@@ -1,7 +1,7 @@
-import "./moreOptions.scss";
-import meet from "../../images/div/meet.jpg";
 import cushions from "../../images/div/cushions.jpg";
+import meet from "../../images/div/meet.jpg";
 import map from "../../images/div/map.jpg";
+import "./moreOptions.scss";
 
 const MoreOptions = () => {
   return (

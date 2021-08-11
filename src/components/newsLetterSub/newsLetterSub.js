@@ -1,5 +1,6 @@
-import "./newsLetterSub.scss";
 import Button1 from "./../buttons/button1";
+import "./newsLetterSub.scss";
+
 const NewsLetterSub = () => {
   return (
     <div className="container newsletter-subscription">

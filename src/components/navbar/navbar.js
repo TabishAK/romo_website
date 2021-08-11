@@ -1,9 +1,9 @@
-import "./navbar.scss";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { FaUserAlt, FaHeart } from "react-icons/fa";
 import logo from "../../images/logo_updated/eff_logos2.png";
-import { useState } from "react";
+import { FaUserAlt, FaHeart } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import "./navbar.scss";
 
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
@@ -44,8 +44,14 @@ const Navbar = (props) => {
       >
         <div
           className={"menus " + display}
-          onMouseEnter={check}
-          onMouseLeave={check2}
+          onMouseEnter={() => {
+            check();
+            props.makeBlur();
+          }}
+          onMouseLeave={() => {
+            check2();
+            props.removeBlur();
+          }}
         >
           <ul className={"product-names " + products} id="product-names">
             <li>
@@ -162,8 +168,12 @@ const Navbar = (props) => {
               onMouseEnter={() => {
                 check();
                 showProds();
+                props.makeBlur();
               }}
-              onMouseLeave={dontShowProds}
+              onMouseLeave={() => {
+                dontShowProds();
+                props.removeBlur();
+              }}
             >
               PRODUCTS
             </li>
@@ -173,9 +183,13 @@ const Navbar = (props) => {
               id="sub"
               onMouseEnter={() => {
                 check();
+                props.makeBlur();
                 showBrand();
               }}
-              onMouseLeave={dontShowBrand}
+              onMouseLeave={() => {
+                dontShowBrand();
+                props.removeBlur();
+              }}
             >
               BRAND
             </li>
