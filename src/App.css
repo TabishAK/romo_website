@@ -3,6 +3,12 @@
   src: url("./fonts/Noah\ Grotesque\ Light.otf"); /*URL to font*/
 }
 
+.blur {
+  background: #7b7a7ac4;
+  transition: all 0.4s;
+  position: relative;
+}
+
 li {
   list-style: none;
 }

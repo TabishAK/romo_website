@@ -6,15 +6,37 @@
   .container {
     max-width: 1380px;
   }
+
+  .swatches {
+    .footer {
+      margin-top: 30% !important;
+    }
+  }
 }
 
 @media (min-width: 991px) and (max-width: 1199px) {
+  .swatches {
+    .footer {
+      margin-top: 50% !important;
+    }
+  }
+
   .hello {
     display: none !important;
   }
 }
 
 @media (min-width: 767px) and (max-width: 992px) {
+  .swatch-review .row div ul {
+    margin-top: 80px !important;
+  }
+
+  .swatches {
+    .footer {
+      margin-top: 110% !important;
+    }
+  }
+
   .bg-1 {
     display: none !important;
   }
@@ -64,6 +86,14 @@
 }
 
 @media (max-width: 576px) {
+  .swatch-review .row div ul {
+    margin-top: 165% !important;
+    justify-content: center !important;
+    width: 95% !important;
+  }
+  .swatches .footer {
+    margin-top: 260% !important;
+  }
   p,
   h5,
   h6,
@@ -95,10 +125,7 @@
   .react-slider__imgZoom {
     display: none !important;
   }
-  .prod-description {
-    position: relative;
-    margin-top: -284px;
-  }
+
   .react-slider__ul {
     width: 100% !important;
     position: relative !important;

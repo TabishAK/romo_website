@@ -3,15 +3,22 @@ import Gallery from "../../components/gallery/gallery";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import "./products.scss";
+import { useState } from "react";
 
 const Products = (props) => {
+  const [classNamay, setClassNamay] = useState("fabric");
+
+  const makeBlur = () => {
+    setClassNamay("fabric blur");
+  };
+
+  const removeBlur = () => {
+    setClassNamay("fabric");
+  };
+
   return (
-    <div className="fabric">
-      <Navbar
-        st={props.st}
-        makeBlur={props.makeBlur}
-        removeBlur={props.removeBlur}
-      />
+    <div className={classNamay}>
+      <Navbar st={props.st} makeBlur={makeBlur} removeBlur={removeBlur} />
 
       <div className="container velvet-heading">
         <Breadcrumbs />

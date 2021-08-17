@@ -43,7 +43,9 @@
     width: 100%;
     left: 0%;
 
-    .product-names {
+    .product-names,
+    .where-to-buy,
+    .brand-names {
       justify-content: center;
       position: relative;
       display: none;
@@ -132,99 +134,104 @@
         }
       }
     }
+
     .show-prods {
       display: flex;
     }
 
-    .brand-names {
-      justify-content: center;
-      position: relative;
-      display: none;
-      top: 110px;
-
-      li {
-        a {
-          font-weight: 500;
-          color: #808080d1 !important;
-        }
-        position: relative;
-        margin: 0px 60px;
-        top: 32%;
-
-        ul {
-          color: #808080d1 !important;
-          position: absolute;
-          margin: 12px -60px;
-          width: min-content;
-          display: table;
-
-          li {
-            cursor: pointer;
-            width: fit-content;
-            margin-bottom: -15px !important;
-            font-size: 16px !important;
-          }
-
-          li:after,
-          li:before {
-            position: absolute;
-            z-index: -1;
-          }
-
-          li:after {
-            content: "";
-            width: 3px;
-            height: 3px;
-            bottom: 8px;
-            left: 0;
-          }
-
-          li:focus:after,
-          li:hover:after {
-            width: 50%;
-            height: 3px;
-          }
-
-          li:before {
-            content: "";
-            width: 3px;
-            height: 3px;
-            bottom: 8px;
-            right: 0;
-          }
-
-          li:focus:before,
-          li:hover:before {
-            width: 50%;
-            height: 3px;
-          }
-
-          li {
-            font-weight: 400;
-            font-size: 14px !important;
-            text-decoration: none;
-            font-family: "Noah Grotesque", sans-serif;
-            white-space: nowrap;
-            line-height: 38px;
-            overflow: hidden;
-            z-index: 2;
-          }
-
-          li:focus:after,
-          li:focus:before,
-          li:hover:after,
-          li:hover:before {
-            outline: 0;
-            background-color: gray;
-            -webkit-transition: all 1s ease 0s;
-            -moz-transition: all 1s ease 0s;
-            -ms-transition: all 1s ease 0s;
-            -o-transition: all 1s ease 0s;
-            transition: all 0.7s ease 0s;
-          }
-        }
-      }
+    .show-where-to-buy {
+      display: flex;
     }
+
+    // .brand-names {
+    //   justify-content: center;
+    //   position: relative;
+    //   display: none;
+    //   top: 110px;
+
+    //   li {
+    //     a {
+    //       font-weight: 500;
+    //       color: #808080d1 !important;
+    //     }
+    //     position: relative;
+    //     margin: 0px 60px;
+    //     top: 32%;
+
+    //     ul {
+    //       color: #808080d1 !important;
+    //       position: absolute;
+    //       margin: 12px -60px;
+    //       width: min-content;
+    //       display: table;
+
+    //       li {
+    //         cursor: pointer;
+    //         width: fit-content;
+    //         margin-bottom: -15px !important;
+    //         font-size: 16px !important;
+    //       }
+
+    //       li:after,
+    //       li:before {
+    //         position: absolute;
+    //         z-index: -1;
+    //       }
+
+    //       li:after {
+    //         content: "";
+    //         width: 3px;
+    //         height: 3px;
+    //         bottom: 8px;
+    //         left: 0;
+    //       }
+
+    //       li:focus:after,
+    //       li:hover:after {
+    //         width: 50%;
+    //         height: 3px;
+    //       }
+
+    //       li:before {
+    //         content: "";
+    //         width: 3px;
+    //         height: 3px;
+    //         bottom: 8px;
+    //         right: 0;
+    //       }
+
+    //       li:focus:before,
+    //       li:hover:before {
+    //         width: 50%;
+    //         height: 3px;
+    //       }
+
+    //       li {
+    //         font-weight: 400;
+    //         font-size: 14px !important;
+    //         text-decoration: none;
+    //         font-family: "Noah Grotesque", sans-serif;
+    //         white-space: nowrap;
+    //         line-height: 38px;
+    //         overflow: hidden;
+    //         z-index: 2;
+    //       }
+
+    //       li:focus:after,
+    //       li:focus:before,
+    //       li:hover:after,
+    //       li:hover:before {
+    //         outline: 0;
+    //         background-color: gray;
+    //         -webkit-transition: all 1s ease 0s;
+    //         -moz-transition: all 1s ease 0s;
+    //         -ms-transition: all 1s ease 0s;
+    //         -o-transition: all 1s ease 0s;
+    //         transition: all 0.7s ease 0s;
+    //       }
+    //     }
+    //   }
+    // }
 
     .show-brand {
       display: flex !important;

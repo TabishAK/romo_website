@@ -9,6 +9,7 @@ const Navbar = (props) => {
   const [display, setDisplay] = useState();
   const [products, setProducts] = useState();
   const [brand, setBrand] = useState();
+  const [whereToBuy, setWhereToBuy] = useState();
 
   const check = () => {
     setDisplay("show");
@@ -21,6 +22,7 @@ const Navbar = (props) => {
   const showProds = () => {
     setProducts("show-prods");
     setBrand("");
+    setWhereToBuy("");
   };
 
   const dontShowProds = () => {
@@ -30,10 +32,21 @@ const Navbar = (props) => {
   const showBrand = () => {
     setBrand("show-brand");
     setProducts("");
+    setWhereToBuy("");
   };
 
   const dontShowBrand = () => {
     setProducts("");
+  };
+
+  const showWhereToBuy = () => {
+    setWhereToBuy("show-where-to-buy");
+    setProducts("");
+    setBrand("");
+  };
+
+  const dontShowWhereToBuy = () => {
+    // setWhereToBuy("");
   };
 
   return (
@@ -148,6 +161,37 @@ const Navbar = (props) => {
               </ul>
             </li>
           </ul>
+
+          <ul className={"where-to-buy " + whereToBuy} id="product-names">
+            <li>
+              <Link> UK SHOWROOMS </Link>
+              <ul>
+                <li>Velvet</li>
+                <li>Silk</li>
+              </ul>
+            </li>
+            <li>
+              <Link> USA SHOWROOMS </Link>
+              <ul>
+                <li>Velvet</li>
+                <li>Silk</li>
+                <li>Linen</li>
+                <li>Cotton</li>
+                <li>Faux Silk</li>
+                <li>Sheers</li>
+              </ul>
+            </li>
+            <li>
+              <Link>AMAZON SHOWROOMS</Link>
+              <ul>
+                <li>Address-1</li>
+                <li>Address-2</li>
+                <li>Address-3</li>
+                <li>Address-4</li>
+                <li>Address-5</li>
+              </ul>
+            </li>
+          </ul>
         </div>
 
         <div className="logo-section">
@@ -194,6 +238,16 @@ const Navbar = (props) => {
               BRAND
             </li>
             <li
+              onMouseEnter={() => {
+                check();
+                showWhereToBuy();
+                props.makeBlur();
+              }}
+              onMouseLeave={() => {
+                dontShowProds();
+                dontShowWhereToBuy();
+                props.removeBlur();
+              }}
               style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"

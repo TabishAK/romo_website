@@ -96,6 +96,7 @@ function App() {
             />
           )}
         />
+
         <Route
           exact
           path="/about_eff"
@@ -113,6 +114,7 @@ function App() {
             />
           )}
         />
+
         <Route
           exact
           path="/:product_name"
