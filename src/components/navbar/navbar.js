@@ -10,7 +10,8 @@ const Navbar = (props) => {
   const [products, setProducts] = useState();
   const [brand, setBrand] = useState();
   const [whereToBuy, setWhereToBuy] = useState();
-
+  const [beInspried, setBeInspried] = useState();
+  const [height, setHeight] = useState("24rem");
   const check = () => {
     setDisplay("show");
   };
@@ -22,27 +23,46 @@ const Navbar = (props) => {
   const showProds = () => {
     setProducts("show-prods");
     setBrand("");
+    setBeInspried("");
     setWhereToBuy("");
+    setHeight("22rem");
   };
 
   const dontShowProds = () => {
     setBrand("");
   };
 
-  const showBrand = () => {
-    setBrand("show-brand");
+  const showBeInspired = () => {
+    setBeInspried("show-be-inspried");
     setProducts("");
+    setBrand("");
+    setWhereToBuy("");
+    setHeight("12rem");
+  };
+
+  const dontShowBeInspired = () => {
+    //  setBeInspried("");
+    setProducts("");
+    setBrand("");
     setWhereToBuy("");
   };
 
-  const dontShowBrand = () => {
-    setProducts("");
-  };
+  // const showBrand = () => {
+  //   setBrand("show-brand");
+  //   setProducts("");
+  //   setWhereToBuy("");
+  // };
+
+  // const dontShowBrand = () => {
+  //   setProducts("");
+  // };
 
   const showWhereToBuy = () => {
     setWhereToBuy("show-where-to-buy");
     setProducts("");
     setBrand("");
+    setBeInspried("");
+    setHeight("22rem");
   };
 
   const dontShowWhereToBuy = () => {
@@ -57,6 +77,7 @@ const Navbar = (props) => {
       >
         <div
           className={"menus " + display}
+          style={{ height: height }}
           onMouseEnter={() => {
             check();
             props.makeBlur();
@@ -192,6 +213,12 @@ const Navbar = (props) => {
               </ul>
             </li>
           </ul>
+
+          <ul className={"be-inspried " + beInspried} id="product-names">
+            <li>Show Brouchers</li>
+            <li>Video Library</li>
+            <li>Blogs</li>
+          </ul>
         </div>
 
         <div className="logo-section">
@@ -221,7 +248,7 @@ const Navbar = (props) => {
             >
               PRODUCTS
             </li>
-            <li
+            {/* <li
               style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"
@@ -236,7 +263,7 @@ const Navbar = (props) => {
               }}
             >
               BRAND
-            </li>
+            </li> */}
             <li
               onMouseEnter={() => {
                 check();
@@ -244,7 +271,6 @@ const Navbar = (props) => {
                 props.makeBlur();
               }}
               onMouseLeave={() => {
-                dontShowProds();
                 dontShowWhereToBuy();
                 props.removeBlur();
               }}
@@ -258,6 +284,15 @@ const Navbar = (props) => {
               style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"
+              onMouseEnter={() => {
+                check();
+                showBeInspired();
+                props.makeBlur();
+              }}
+              onMouseLeave={() => {
+                dontShowBeInspired();
+                props.removeBlur();
+              }}
             >
               BE INSPIRED
             </li>
