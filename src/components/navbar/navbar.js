@@ -12,6 +12,7 @@ const Navbar = (props) => {
   const [whereToBuy, setWhereToBuy] = useState();
   const [beInspried, setBeInspried] = useState();
   const [height, setHeight] = useState("24rem");
+
   const check = () => {
     setDisplay("show");
   };
@@ -91,22 +92,19 @@ const Navbar = (props) => {
             <li className="bhola">
               <Link> CURTAINS AND DRAPES</Link>
               <ul className="first-row">
-                <li>Raw Silk</li>
-                <li>Cotton Silk</li>
-                <li>Thai Silk</li>
-                <li>Taffeta Silk</li>
-                <li>Dupioni Silk</li>
-                <li>Organza Silk</li>
-                <li>Faux Silk</li>
+                <Link to="/blackout">
+                  <li>Blackout</li>
+                </Link>
+                <li>Cotton Curtains</li>
+                <li>Designer Curtains</li>
+                <li>Faux Silk Curtains</li>
+                <li>Hotel Blackout Curtains</li>
+                <li>Linen Curtains</li>
               </ul>
               <ul className="second-row">
-                <li>Velvet</li>
-                <li>Linen</li>
-                <li>Faux Linen</li>
-                <li>Cotton</li>
-                <li>Blackout</li>
-                <li>Crewel</li>
-                <li>Sheers</li>
+                <li>Sheer Curtains</li>
+                <li>Signature Silk Curtains</li>
+                <li>Velvet Curtains</li>
               </ul>
             </li>
             <li>
