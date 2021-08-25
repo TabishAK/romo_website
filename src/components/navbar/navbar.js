@@ -25,7 +25,7 @@ const Navbar = (props) => {
     setBrand("");
     setBeInspried("");
     setWhereToBuy("");
-    setHeight("22rem");
+    setHeight("24rem");
   };
 
   const dontShowProds = () => {
@@ -88,27 +88,25 @@ const Navbar = (props) => {
           }}
         >
           <ul className={"product-names " + products} id="product-names">
-            <li>
-              <Link>FABRICS</Link>
-              <ul>
-                <Link to="/velvet">
-                  <li>Velvet</li>
-                </Link>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
             <li className="bhola">
-              <Link> CURTAINS & DRAPES</Link>
-              <ul>
-                <li>Cellur Shades</li>
-                <li>Custom Curtains</li>
-                <li>Custom Valances</li>
-                <li>Roller Shades</li>
-                <li>Roman Shades</li>
+              <Link> CURTAINS AND DRAPES</Link>
+              <ul className="first-row">
+                <li>Raw Silk</li>
+                <li>Cotton Silk</li>
+                <li>Thai Silk</li>
+                <li>Taffeta Silk</li>
+                <li>Dupioni Silk</li>
+                <li>Organza Silk</li>
+                <li>Faux Silk</li>
+              </ul>
+              <ul className="second-row">
+                <li>Velvet</li>
+                <li>Linen</li>
+                <li>Faux Linen</li>
+                <li>Cotton</li>
+                <li>Blackout</li>
+                <li>Crewel</li>
+                <li>Sheers</li>
               </ul>
             </li>
             <li>
@@ -122,8 +120,8 @@ const Navbar = (props) => {
             <li>
               <Link> BEDDING</Link>
               <ul>
-                <li>Duve Covers</li>
-                <li>Sheets</li>
+                <li>Duvet Covers</li>
+                <li>Bed Sheets</li>
                 <li>Shams and Pillows</li>
               </ul>
             </li>
@@ -131,11 +129,6 @@ const Navbar = (props) => {
               <Link> HARDWARE</Link>
               <ul>
                 <li>Metal Hardware</li>
-                <li>Clips</li>
-                <li>Hangers</li>
-                <li>Rods</li>
-                <li>Decorator</li>
-                <li>Wood</li>
               </ul>
             </li>
           </ul>
@@ -151,11 +144,21 @@ const Navbar = (props) => {
             <li>
               <Link> HALF PRICE LINENS </Link>
               <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
+                <li>Raw Silk</li>
+                <li>Cotton Silk</li>
+                <li>Thai Silk</li>
+                <li>Taffeta Silk</li>
+                <li>Dupioi Silk</li>
+                <li>Organza Silk</li>
                 <li>Faux Silk</li>
+              </ul>
+              <ul>
+                <li>Velvet</li>
+                <li>Linen</li>
+                <li>Faux Linen</li>
+                <li>Cotton</li>
+                <li>Blackout</li>
+                <li>Crewel</li>
                 <li>Sheers</li>
               </ul>
             </li>
@@ -184,33 +187,25 @@ const Navbar = (props) => {
           </ul>
 
           <ul className={"where-to-buy " + whereToBuy} id="product-names">
-            <li>
-              <Link> UK SHOWROOMS </Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-              </ul>
+            <li className="providers">
+              <Link>HALF PRICE DRAPES </Link>
+              <Link>All MODERN </Link>
+              <Link>BIRCHLANE </Link>
             </li>
-            <li>
-              <Link> USA SHOWROOMS </Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
+            <li className="providers">
+              <Link> AMAZON </Link>
+              <Link> KHOLS </Link>
+              <Link> AMAZON </Link>
             </li>
-            <li>
-              <Link>AMAZON SHOWROOMS</Link>
-              <ul>
-                <li>Address-1</li>
-                <li>Address-2</li>
-                <li>Address-3</li>
-                <li>Address-4</li>
-                <li>Address-5</li>
-              </ul>
+            <li className="providers">
+              <Link>JC PENNY</Link>
+              <Link>HOMEDEPOT</Link>
+              <Link>BELLACOR</Link>
+            </li>
+            <li className="providers">
+              <Link>HOUZZ</Link>
+              <Link>EBAY</Link>
+              <Link>WAYFARE</Link>
             </li>
           </ul>
 

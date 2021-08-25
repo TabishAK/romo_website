@@ -12,7 +12,6 @@ const Footer = () => {
         <div className="col">
           <ul>
             <label>PRODUCTS</label>
-            <li>Fabrics</li>
             <li>Curtain and drapes</li>
             <li>Home Decore</li>
             <li>Bedding</li>
@@ -24,7 +23,7 @@ const Footer = () => {
             <label>PROVIDERS</label>
             <li>Half Price Drapes</li>
             <li>Sierra Textiles</li>
-            <li>Half Price Linun</li>
+            <li>Half Price Linen</li>
             <li>Loom</li>
           </ul>
         </div>

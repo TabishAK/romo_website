@@ -52,6 +52,13 @@
       display: none;
       top: 110px;
 
+      .providers {
+        display: grid;
+        a {
+          margin: 10px;
+        }
+      }
+
       li {
         a {
           font-family: "Noah Grotesque";
@@ -60,15 +67,19 @@
         }
         width: max-content;
         position: relative;
-        margin: 0px 55px;
+        margin: 0px 68px;
         cursor: pointer;
         top: 32%;
+
+        .second-row {
+          right: -5px;
+        }
 
         ul {
           color: #808080d1;
           text-align: center;
           position: absolute;
-          margin: 10px -52px;
+          margin: 8px -68px;
           width: min-content;
           display: table;
           li {
@@ -253,6 +264,7 @@
       position: relative;
       top: -25px;
       left: 10px;
+      z-index: 1;
       height: 175px;
     }
 
