@@ -10,8 +10,10 @@ const Navbar = (props) => {
   const [products, setProducts] = useState();
   const [brand, setBrand] = useState();
   const [whereToBuy, setWhereToBuy] = useState();
+  const [company, setCompany] = useState();
+
   const [beInspried, setBeInspried] = useState();
-  const [height, setHeight] = useState("24rem");
+  const [height, setHeight] = useState("22rem");
 
   const check = () => {
     setDisplay("show");
@@ -25,8 +27,21 @@ const Navbar = (props) => {
     setProducts("show-prods");
     setBrand("");
     setBeInspried("");
+    setCompany("");
     setWhereToBuy("");
-    setHeight("24rem");
+    setHeight("22rem");
+  };
+
+  const showCompany = () => {
+    setCompany("show-company");
+    setProducts("");
+    setBeInspried("");
+    setWhereToBuy("");
+    setHeight("19rem");
+  };
+
+  const dontShowCompany = () => {
+    setProducts("");
   };
 
   const dontShowProds = () => {
@@ -37,33 +52,24 @@ const Navbar = (props) => {
     setBeInspried("show-be-inspried");
     setProducts("");
     setBrand("");
+    setCompany("");
     setWhereToBuy("");
     setHeight("12rem");
   };
 
   const dontShowBeInspired = () => {
-    //  setBeInspried("");
     setProducts("");
     setBrand("");
     setWhereToBuy("");
   };
 
-  // const showBrand = () => {
-  //   setBrand("show-brand");
-  //   setProducts("");
-  //   setWhereToBuy("");
-  // };
-
-  // const dontShowBrand = () => {
-  //   setProducts("");
-  // };
-
   const showWhereToBuy = () => {
     setWhereToBuy("show-where-to-buy");
     setProducts("");
     setBrand("");
+    setCompany("");
     setBeInspried("");
-    setHeight("22rem");
+    setHeight("19rem");
   };
 
   const dontShowWhereToBuy = () => {
@@ -113,6 +119,7 @@ const Navbar = (props) => {
                 <li>Cushion Covers</li>
                 <li>Dining Chair Covers</li>
                 <li>Table Runners</li>
+                <li>Aprons</li>
               </ul>
             </li>
             <li>
@@ -212,6 +219,41 @@ const Navbar = (props) => {
             <li>Video Library</li>
             <li>Blogs</li>
           </ul>
+
+          <ul className={"company " + company} id="product-names">
+            <li className="about-us">
+              <Link> ABOUT US</Link>
+              <ul>
+                <Link to="/about">
+                  <li>About Exclusive Fabrics</li>
+                </Link>
+              </ul>
+            </li>
+            <li>
+              <Link> BRANDS </Link>
+              <ul>
+                <li>Loom</li>
+                <li>Half Price Drapes</li>
+                <li>Half Price Linens</li>
+                <li>Sierra Textiles</li>
+              </ul>
+            </li>
+            <li>
+              <Link> CAREER</Link>
+              <ul>
+                <li>Careers</li>
+                <li>Leadership</li>
+                <li>Facilities</li>
+              </ul>
+            </li>
+            <li>
+              <Link>CONTACT US</Link>
+              <ul>
+                <li>Contact Us</li>
+                <li>FAQs</li>
+              </ul>
+            </li>
+          </ul>
         </div>
 
         <div className="logo-section">
@@ -290,6 +332,15 @@ const Navbar = (props) => {
               BE INSPIRED
             </li>
             <li
+              onMouseEnter={() => {
+                check();
+                showCompany();
+                props.makeBlur();
+              }}
+              onMouseLeave={() => {
+                dontShowCompany();
+                props.removeBlur();
+              }}
               style={{ color: props.st.color }}
               className={"sub " + display}
               id="sub"

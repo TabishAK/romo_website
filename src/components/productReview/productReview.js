@@ -3,7 +3,7 @@ import img1 from "../../images/image-slider/1.JPG";
 import img2 from "../../images/image-slider/2.JPG";
 import img3 from "../../images/image-slider/3.JPG";
 import { useHistory } from "react-router-dom";
-import { BsViewList } from "react-icons/bs";
+import { GoDesktopDownload } from "react-icons/go";
 import { FiShare2 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Line from "../line/line";
@@ -17,7 +17,7 @@ const ProductReview = (props) => {
     <div className="container product-review">
       <div className="row">
         <div className="col-xl-7">
-          <h2>Valvet</h2>
+          <h2>Velvet</h2>
           <SimpleImageSlider
             startIndex={1}
             showBullets={true}
@@ -39,11 +39,8 @@ const ProductReview = (props) => {
 
           <div className="share-view-options">
             <span>
-              <FiShare2 /> <h6>Share with Friends</h6>
-            </span>
-            <span>
-              <BsViewList />
-              <h6>View Brochure</h6>
+              <GoDesktopDownload />
+              <h6>Download Brochure</h6>
             </span>
           </div>
         </div>
@@ -55,13 +52,13 @@ const ProductReview = (props) => {
         <div className="row">
           {props.swatches.map((swatch, i) => (
             <div className="col-2">
-              <Link to={`${history.location.pathname}/${i}`}>
-                <img
-                  src={swatch.image}
-                  alt=""
-                  onClick={() => props.showSwatches(i)}
-                />
-              </Link>
+              {/* <Link to={`${history.location.pathname}/${i}`}> */}
+              <img
+                src={swatch.image}
+                alt=""
+                onClick={() => props.showSwatches(i)}
+              />
+              {/* </Link> */}
             </div>
           ))}
         </div>

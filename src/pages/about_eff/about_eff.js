@@ -8,15 +8,26 @@ import Sidebar from "../../components/sidebar/sidebar";
 import Footer from "./../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import "./about_eff.scss";
+import { useState } from "react";
 
 const AboutEFF = (props) => {
+  const [classNamay, setClassNamay] = useState("home");
+
+  const makeBlur = () => {
+    setClassNamay("about-eff blur");
+  };
+
+  const removeBlur = () => {
+    setClassNamay("about-eff");
+  };
+
   return (
-    <div className="about-eff">
+    <div className={classNamay}>
       <Navbar
         st={props.st}
         openRightMenu={props.openRightMenu}
-        makeBlur={props.makeBlur}
-        removeBlur={props.removeBlur}
+        makeBlur={makeBlur}
+        removeBlur={removeBlur}
       />
       <Sidebar display={props.display} closeRightMenu={props.closeRightMenu} />
 

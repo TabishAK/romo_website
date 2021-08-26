@@ -46,7 +46,8 @@
     .product-names,
     .where-to-buy,
     .brand-names,
-    .be-inspried {
+    .be-inspried,
+    .company {
       justify-content: center;
       position: relative;
       display: none;
@@ -57,6 +58,11 @@
         a {
           margin: 10px;
         }
+
+        a:hover {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
       }
 
       li {
@@ -65,6 +71,7 @@
           font-weight: 600;
           color: #808080d1 !important;
         }
+        font-family: "Noah Grotesque";
         width: max-content;
         position: relative;
         margin: 0px 68px;
@@ -152,6 +159,10 @@
     }
 
     .show-prods {
+      display: flex;
+    }
+
+    .show-company {
       display: flex;
     }
 

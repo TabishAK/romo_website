@@ -99,7 +99,7 @@ function App() {
 
         <Route
           exact
-          path="/about_eff"
+          path="/about"
           component={() => (
             <AboutEFF
               st={{
@@ -145,7 +145,7 @@ function App() {
             />
           )}
         />
-        <Route
+        {/* <Route
           exact
           path="/:product_name/:type/:id"
           component={() => (
@@ -161,7 +161,7 @@ function App() {
               editSwatch={editSwatch}
             />
           )}
-        />
+        /> */}
       </Switch>
     </div>
   );

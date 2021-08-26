@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <div className="footer container-fluid">
       <img src={logo} alt="logo" />
-      <div className="row mt-4 ml-5">
-        <div className="col">
+      <div className="row mt-4  ml-5">
+        <div className="col mt-2">
           <ul>
             <label>PRODUCTS</label>
             <li>Curtain and drapes</li>
@@ -18,7 +18,7 @@ const Footer = () => {
             <li>Hardware</li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col mt-2">
           <ul>
             <label>PROVIDERS</label>
             <li>Half Price Drapes</li>
@@ -27,20 +27,29 @@ const Footer = () => {
             <li>Loom</li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col mt-2">
           <ul>
-            <label>COMPANY</label>
-            <li>Meet EFF</li>
-            <li>Contact Us</li>
-            <li>Apply For Job</li>
-            <li>FAQ's</li>
+            <label>Be Inspired</label>
+            <li>Video Library</li>
+            <li>Broucher</li>
+            <li>Blogs</li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col mt-2">
           <ul>
-            <label>INFORMATION</label>
+            <label>Company</label>
+            <li>About Exclusive Fabrics</li>
             <li>Terms and conditions</li>
+            <li>Facilities</li>
+            <li>Careers</li>
             <li>Legal</li>
+          </ul>
+        </div>
+        <div className="col mt-2">
+          <ul>
+            <label>CONTACT US</label>
+            <li>Contact us</li>
+            <li>FAQs</li>
           </ul>
         </div>
       </div>
