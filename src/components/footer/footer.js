@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="col mt-2">
           <ul>
-            <label>PROVIDERS</label>
+            <label>BRANDS</label>
             <li>Half Price Drapes</li>
             <li>Sierra Textiles</li>
             <li>Half Price Linen</li>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="col mt-2">
           <ul>
-            <label>Be Inspired</label>
+            <label>BE INSPIRED</label>
             <li>Video Library</li>
             <li>Broucher</li>
             <li>Blogs</li>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         <div className="col mt-2">
           <ul>
-            <label>Company</label>
+            <label>COMPANY</label>
             <li>About Exclusive Fabrics</li>
             <li>Terms and conditions</li>
             <li>Facilities</li>

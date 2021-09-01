@@ -1,4 +1,8 @@
 @media (min-width: 1200px) {
+  .editContainer {
+    max-width: 1600px !important;
+  }
+
   .hello {
     display: none !important;
   }
