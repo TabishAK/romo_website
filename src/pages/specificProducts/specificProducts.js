@@ -4,7 +4,7 @@ import Footer from "./../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import "./specificProducts.scss";
 import { useState } from "react";
-import b1 from "../../images/brouchers/3.jpg";
+import b1 from "../../images/brouchers/1.jpg";
 import Products from "./../products/products";
 
 const SpecificProducts = (props) => {
