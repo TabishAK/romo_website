@@ -31,6 +31,13 @@
 }
 
 @media (min-width: 767px) and (max-width: 992px) {
+  .editContainer {
+    max-width: 900px !important;
+    p {
+      margin-right: -3rem !important;
+    }
+  }
+
   .swatch-review .row div ul {
     margin-top: 80px !important;
   }
@@ -46,6 +53,30 @@
   }
 }
 @media (min-width: 575px) and (max-width: 768px) {
+  .editContainer {
+    p {
+      margin-right: -2rem !important;
+      margin-left: 0px !important;
+      line-height: 25px !important;
+    }
+    h2 {
+      font-size: 24px !important;
+    }
+    .swatches {
+      font-size: 30px;
+      margin-top: 25px !important;
+    }
+    .product img {
+      width: 100% !important;
+      margin-top: 55px !important;
+      height: 55% !important;
+    }
+    .swatch-images div img {
+      border-radius: 5px !important;
+      width: 130% !important;
+    }
+  }
+
   .bg-1 {
     display: none !important;
   }
@@ -86,6 +117,14 @@
 
   .prod-description {
     line-height: 18px !important;
+  }
+
+  .social-media {
+    text-align: center;
+  }
+
+  .footer img {
+    left: 185px !important;
   }
 }
 

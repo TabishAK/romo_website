@@ -21,7 +21,8 @@ import "bootstrap/dist/js/bootstrap.js";
 import Home from "./pages/home/home";
 import { useState } from "react";
 import "../src/media_query.scss";
-import "./App.css";
+import "./App.scss";
+import Blog from "./pages/blog/blog";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -99,6 +100,24 @@ function App() {
 
         <Route
           exact
+          path="/blogs"
+          component={() => (
+            <Blog
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
+            />
+          )}
+        />
+
+        <Route
+          exact
           path="/about"
           component={() => (
             <AboutEFF
@@ -126,6 +145,8 @@ function App() {
                 logo: logo,
                 position: "relative",
               }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
             />
           )}
         />
@@ -140,6 +161,8 @@ function App() {
                 logo: logo,
                 position: "relative",
               }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
               swatches={swatches}
               showSwatches={showSwatches}
             />

@@ -5,7 +5,12 @@ import Navbar from "../../components/navbar/navbar";
 import "./specificProducts.scss";
 import { useState } from "react";
 import b1 from "../../images/brouchers/1.jpg";
-import Products from "./../products/products";
+import s1 from "../../images/brouchers/Velvet/Urban Lush/Swatches/1.jpg";
+import s2 from "../../images/brouchers/Velvet/Urban Lush/Swatches/2.jpg";
+import s3 from "../../images/brouchers/Velvet/Urban Lush/Swatches/3.jpg";
+import s4 from "../../images/brouchers/Velvet/Urban Lush/Swatches/4.jpg";
+import s5 from "../../images/brouchers/Velvet/Urban Lush/Swatches/5.jpg";
+import s6 from "../../images/brouchers/Velvet/Urban Lush/Swatches/6.jpg";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
@@ -25,10 +30,10 @@ const SpecificProducts = (props) => {
 
       <div className="container editContainer">
         <div className="row">
-          <div className="col-6 mt-5 product">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5 product">
             <img src={b1} alt="" />
           </div>
-          <div className="col-5 mt-5">
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
             <h2 className="ml-3">URBAN LUSH</h2>
             <hr />
             <p className="mt-4 mr-5">
@@ -40,28 +45,27 @@ const SpecificProducts = (props) => {
               exceptionally soft supple handle that offers high performance and
               practicality.
             </p>
-            <div>
-              <h1 className="swatches">SWATCHES</h1>
-              <ul className="swatch-images">
-                <li>
-                  <img src="" alt="" />
-                </li>
-                <li>
-                  <img src="" alt="" />
-                </li>
-                <li>
-                  <img src="" alt="" />
-                </li>
-                <li>
-                  <img src="" alt="" />
-                </li>
-                <li>
-                  <img src="" alt="" />
-                </li>
-                <li>
-                  <img src="" alt="" />
-                </li>
-              </ul>
+
+            <h1 className="swatches">SWATCHES</h1>
+            <div className="row swatch-images">
+              <div className="col-3 mt-5">
+                <img src={s1} alt="" />
+              </div>
+              <div className="col-3 mt-5">
+                <img src={s2} alt="" />
+              </div>
+              <div className="col-3 mt-5">
+                <img src={s3} alt="" />
+              </div>
+              <div className="col-3 mt-5">
+                <img src={s4} alt="" />
+              </div>
+              <div className="col-3 mt-5">
+                <img src={s5} alt="" />
+              </div>
+              <div className="col-3 mt-5">
+                <img src={s6} alt="" />
+              </div>
             </div>
           </div>
         </div>

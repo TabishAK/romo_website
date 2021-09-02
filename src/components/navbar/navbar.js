@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./navbar.scss";
-
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
   const [products, setProducts] = useState();
@@ -217,7 +216,9 @@ const Navbar = (props) => {
           <ul className={"be-inspried " + beInspried} id="product-names">
             <li>Show Brouchers</li>
             <li>Video Library</li>
-            <li>Blogs</li>
+            <Link to="/blogs">
+              <li>Blogs</li>
+            </Link>
           </ul>
 
           <ul className={"company " + company} id="product-names">
