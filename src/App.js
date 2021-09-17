@@ -26,6 +26,8 @@ import Blog from "./pages/blog/blog";
 
 function App() {
   const [display, setDisplay] = useState(false);
+  const [selectedProd, setSelectedProd] = useState();
+  const [selectedSubCategory, setSelectedSubCategory] = useState();
 
   const openRightMenu = () => {
     setDisplay(true);
@@ -48,19 +50,6 @@ function App() {
     { id: 10, image: swatch_10 },
   ]);
 
-  let [swatchesClone] = useState([
-    { id: 1, image: swatch_1 },
-    { id: 2, image: swatch_2 },
-    { id: 3, image: swatch_3 },
-    { id: 4, image: swatch_4 },
-    { id: 5, image: swatch_5 },
-    { id: 6, image: swatch_6 },
-    { id: 7, image: swatch_7 },
-    { id: 8, image: swatch_8 },
-    { id: 9, image: swatch_9 },
-    { id: 10, image: swatch_10 },
-  ]);
-
   const showSwatches = (i) => {
     let s = [...swatches];
     let temp = s[0];
@@ -69,12 +58,8 @@ function App() {
     setSwatches(s);
   };
 
-  const editSwatch = (s, i) => {
-    let swtch = [...swatches];
-    let temp = swtch[0];
-    swtch[0] = swtch[i];
-    swtch[i] = temp;
-    setSwatches(swtch);
+  const selectProduct = (p) => {
+    setSelectedProd(p);
   };
 
   return (
@@ -147,6 +132,7 @@ function App() {
               }}
               openRightMenu={openRightMenu}
               closeRightMenu={closeRightMenu}
+              selectProduct={selectProduct}
             />
           )}
         />
@@ -164,7 +150,9 @@ function App() {
               openRightMenu={openRightMenu}
               closeRightMenu={closeRightMenu}
               swatches={swatches}
+              selectedSubCategory={selectedSubCategory}
               showSwatches={showSwatches}
+              selectedProd={selectedProd}
             />
           )}
         />

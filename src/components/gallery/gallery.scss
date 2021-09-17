@@ -1,12 +1,17 @@
 .velvet-types {
   .row {
+    a {
+      width: fit-content;
+    }
     div {
+      width: fit-content;
+
       img {
-        width: 100% !important;
         margin-top: 25px;
       }
       .info {
         display: flex;
+        width: max-content;
         p {
           top: 5px;
           position: relative;

@@ -2,7 +2,7 @@ import logo from "../../images/logo_updated/eff_logos2.png";
 import { FaUserAlt, FaHeart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./navbar.scss";
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
@@ -10,9 +10,24 @@ const Navbar = (props) => {
   const [brand, setBrand] = useState();
   const [whereToBuy, setWhereToBuy] = useState();
   const [company, setCompany] = useState();
-
   const [beInspried, setBeInspried] = useState();
+  const axios = require("axios");
   const [height, setHeight] = useState("22rem");
+  const [mainCategories, setMainCategories] = useState();
+  const [subCategories, setSubCategories] = useState();
+  const link = "http://54.183.217.110/";
+  useEffect(() => {
+    axios
+      .post(link + "subCategories/")
+      .then((response) => {
+        setSubCategories(response.data);
+        return axios.post(link + "mainCategory/");
+      })
+      .then((response) => {
+        setMainCategories(response.data);
+      })
+      .catch((error) => console.log(error.response));
+  }, []);
 
   const check = () => {
     setDisplay("show");
@@ -75,6 +90,10 @@ const Navbar = (props) => {
     // setWhereToBuy("");
   };
 
+  // const downloadPdf = () => {
+
+  // };
+
   return (
     <>
       <div
@@ -94,47 +113,59 @@ const Navbar = (props) => {
           }}
         >
           <ul className={"product-names " + products} id="product-names">
-            <li className="bhola">
-              <Link> CURTAINS AND DRAPES</Link>
-              <ul className="first-row">
-                <Link to="/blackout">
-                  <li>Blackout</li>
-                </Link>
-                <li>Cotton Curtains</li>
-                <li>Designer Curtains</li>
-                <li>Faux Silk Curtains</li>
-                <li>Hotel Blackout Curtains</li>
-                <li>Linen Curtains</li>
-              </ul>
-              <ul className="second-row">
-                <li>Sheer Curtains</li>
-                <li>Signature Silk Curtains</li>
-                <li>Velvet Curtains</li>
-              </ul>
-            </li>
-            <li>
-              <Link> HOME DECORE</Link>
-              <ul>
-                <li>Cushion Covers</li>
-                <li>Dining Chair Covers</li>
-                <li>Table Runners</li>
-                <li>Aprons</li>
-              </ul>
-            </li>
-            <li>
-              <Link> BEDDING</Link>
-              <ul>
-                <li>Duvet Covers</li>
-                <li>Bed Sheets</li>
-                <li>Shams and Pillows</li>
-              </ul>
-            </li>
-            <li>
-              <Link> HARDWARE</Link>
-              <ul>
-                <li>Metal Hardware</li>
-              </ul>
-            </li>
+            {mainCategories &&
+              mainCategories.map((m, i) =>
+                i === 0 ? (
+                  <li>
+                    <Link style={{ textTransform: "uppercase" }}>
+                      {m.category_name}
+                    </Link>
+                    <ul className="first-row">
+                      {subCategories.map((s, i) =>
+                        i <= 5 && s.mainCategory._id === m._id ? (
+                          <>
+                            <Link to={s.subCategory_slug}>
+                              <li>{s.subCategory_name}</li>
+                            </Link>
+                          </>
+                        ) : (
+                          ""
+                        )
+                      )}
+                    </ul>
+                    <ul className="second-row">
+                      {subCategories.map((s, i) =>
+                        i > 5 && s.mainCategory._id === m._id ? (
+                          <Link to={s.subCategory_slug}>
+                            <li>{s.subCategory_name}</li>
+                          </Link>
+                        ) : (
+                          <></>
+                        )
+                      )}
+                    </ul>
+                  </li>
+                ) : (
+                  <li>
+                    <Link style={{ textTransform: "uppercase" }}>
+                      {m.category_name}
+                    </Link>
+                    <ul>
+                      {subCategories.map((s, i) =>
+                        s.mainCategory._id === m._id ? (
+                          <>
+                            <Link to={s.subCategory_slug}>
+                              <li>{s.subCategory_name}</li>
+                            </Link>
+                          </>
+                        ) : (
+                          ""
+                        )
+                      )}
+                    </ul>
+                  </li>
+                )
+              )}
           </ul>
 
           <ul className={"brand-names " + brand} id="product-names">

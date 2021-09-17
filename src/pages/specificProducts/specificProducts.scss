@@ -23,7 +23,16 @@
       background: black;
       height: 1px;
     }
-
+    .brouchers {
+      display: flex;
+      cursor: pointer;
+      p {
+        color: black;
+        top: -6px;
+        position: relative;
+        left: 6px;
+      }
+    }
     .swatch-images {
       div {
         img {

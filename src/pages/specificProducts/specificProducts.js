@@ -1,19 +1,58 @@
-import ProductReview from "../../components/productReview/productReview";
 import Breadcrumbs from "../../components/breadcrumbs/breadcrumbs";
 import Footer from "./../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import "./specificProducts.scss";
-import { useState } from "react";
-import b1 from "../../images/brouchers/1.jpg";
-import s1 from "../../images/brouchers/Velvet/Urban Lush/Swatches/1.jpg";
-import s2 from "../../images/brouchers/Velvet/Urban Lush/Swatches/2.jpg";
-import s3 from "../../images/brouchers/Velvet/Urban Lush/Swatches/3.jpg";
-import s4 from "../../images/brouchers/Velvet/Urban Lush/Swatches/4.jpg";
-import s5 from "../../images/brouchers/Velvet/Urban Lush/Swatches/5.jpg";
-import s6 from "../../images/brouchers/Velvet/Urban Lush/Swatches/6.jpg";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+import { FaFileDownload } from "react-icons/fa";
+import axios from "axios";
+const link = "http://54.183.217.110/";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
+  const [swatches, setSwatches] = useState();
+  const [products, setProducts] = useState();
+
+  const location = useLocation();
+  const slug = location.pathname.split("/");
+
+  useEffect(() => {
+    axios
+      .post(
+        link + "swatches/getFromSlug",
+        {
+          slug: "/" + slug[2],
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(function (response) {
+        setSwatches(response.data[0]);
+        axios
+          .post(
+            link + "products/",
+            {
+              product_slug: "/" + slug[2],
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then(function (response) {
+            console.log(response);
+            setProducts(response.data[0]);
+          });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [location]);
 
   const makeBlur = () => {
     setClassNamay("specific-products blur");
@@ -21,6 +60,25 @@ const SpecificProducts = (props) => {
 
   const removeBlur = () => {
     setClassNamay("specific-products");
+  };
+
+  const downloadBroucher = () => {
+    fetch(products.subCategory.pdf, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/pdf",
+      },
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `FileName.pdf`);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
   };
 
   return (
@@ -31,10 +89,10 @@ const SpecificProducts = (props) => {
       <div className="container editContainer">
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5 product">
-            <img src={b1} alt="" />
+            <img src={products && products.product_broucher_image} alt="" />
           </div>
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
-            <h2 className="ml-3">URBAN LUSH</h2>
+            <h2 className="ml-3">{products && products.product_name}</h2>
             <hr />
             <p className="mt-4 mr-5">
               The perfect combination of sophistication and modernity. Urban
@@ -46,26 +104,22 @@ const SpecificProducts = (props) => {
               practicality.
             </p>
 
+            <div className="brouchers">
+              <FaFileDownload />
+              <p style={{ color: "black" }} onClick={downloadBroucher}>
+                Download Brouchers
+              </p>
+            </div>
+
             <h1 className="swatches">SWATCHES</h1>
+
             <div className="row swatch-images">
-              <div className="col-3 mt-5">
-                <img src={s1} alt="" />
-              </div>
-              <div className="col-3 mt-5">
-                <img src={s2} alt="" />
-              </div>
-              <div className="col-3 mt-5">
-                <img src={s3} alt="" />
-              </div>
-              <div className="col-3 mt-5">
-                <img src={s4} alt="" />
-              </div>
-              <div className="col-3 mt-5">
-                <img src={s5} alt="" />
-              </div>
-              <div className="col-3 mt-5">
-                <img src={s6} alt="" />
-              </div>
+              {swatches &&
+                swatches.swatches.map((s) => (
+                  <div className="col-3 mt-5">
+                    <img src={s.swatch_image && s.swatch_image} alt="" />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
