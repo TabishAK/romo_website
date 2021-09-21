@@ -7,12 +7,15 @@ import { useLocation } from "react-router-dom";
 
 import { FaFileDownload } from "react-icons/fa";
 import axios from "axios";
+import Circles from "../../components/Loader/circles";
 const link = "http://54.183.217.110/";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
   const [swatches, setSwatches] = useState();
   const [products, setProducts] = useState();
+
+  const [loader, setLoader] = useState();
 
   const location = useLocation();
   const slug = location.pathname.split("/");
@@ -63,6 +66,7 @@ const SpecificProducts = (props) => {
   };
 
   const downloadBroucher = () => {
+    setLoader(true);
     fetch(products.subCategory.pdf, {
       method: "GET",
       headers: {
@@ -71,6 +75,7 @@ const SpecificProducts = (props) => {
     })
       .then((response) => response.blob())
       .then((blob) => {
+        setTimeout(() => setLoader(false), 1500);
         const url = window.URL.createObjectURL(new Blob([blob]));
         const link = document.createElement("a");
         link.href = url;
@@ -109,6 +114,7 @@ const SpecificProducts = (props) => {
               <p style={{ color: "black" }} onClick={downloadBroucher}>
                 Download Brouchers
               </p>
+              {loader ? <Circles /> : ""}
             </div>
 
             <h1 className="swatches">SWATCHES</h1>
