@@ -23,7 +23,6 @@ const TopCarousel = (props) => {
         <ReactPlayer
           url={props.banner && props.banner.video}
           muted
-          autoPlay
           playing
           loop
           width="100%"
