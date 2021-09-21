@@ -13,10 +13,15 @@ const TopCarousel = (props) => {
     setIndex(selectedIndex);
   };
   return (
-    <Carousel fade interval={90000} activeIndex={index} onSelect={handleSelect}>
+    <Carousel
+      fade
+      interval={900000}
+      activeIndex={index}
+      onSelect={handleSelect}
+    >
       <Carousel.Item>
         <ReactPlayer
-          url={vid}
+          url={props.banner && props.banner.video}
           muted
           autoPlay
           playing
