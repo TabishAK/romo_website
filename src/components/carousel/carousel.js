@@ -18,7 +18,7 @@ const TopCarousel = () => {
         <ReactPlayer
           url={vid}
           muted
-          autoplay
+          autoPlay
           playing
           loop
           width="100%"
