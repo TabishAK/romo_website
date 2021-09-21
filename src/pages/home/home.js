@@ -8,10 +8,12 @@ import Footer from "../../components/footer/footer";
 import React from "react";
 import "./home.scss";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = (props) => {
   const [classNamay, setClassNamay] = useState("home");
+  const [banner, setBanner] = useState();
 
   const makeBlur = () => {
     setClassNamay("home blur");
@@ -21,6 +23,17 @@ const Home = (props) => {
     setClassNamay("home");
   };
 
+  const link = "http://54.183.217.110/";
+
+  useEffect(() => {
+    axios
+      .get(link + "banner/")
+      .then((response) => {
+        setBanner(response.data[0]);
+      })
+      .catch((error) => console.log(error.response));
+  }, []);
+
   return (
     <div className={classNamay}>
       <Navbar
@@ -29,7 +42,7 @@ const Home = (props) => {
         makeBlur={makeBlur}
         removeBlur={removeBlur}
       />
-      <TopCarousel />
+      <TopCarousel banner={banner} />
       <Sideba display={props.display} closeRightMenu={props.closeRightMenu} />
       <InformationPanel />
       <NewsLetterSub />
