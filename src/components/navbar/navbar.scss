@@ -51,7 +51,7 @@
       justify-content: center;
       position: relative;
       display: none;
-      top: 110px;
+      top: 125px;
 
       .providers {
         display: grid;
@@ -79,17 +79,19 @@
         top: 32%;
 
         .first-row {
-          right: 55px;
+          right: 95px;
         }
         .second-row {
-          right: -60px;
+          right: -15px;
         }
 
         ul {
           color: #808080d1;
           text-align: center;
+
+          margin: 8px -105px;
           position: absolute;
-          margin: 8px -68px;
+
           width: min-content;
           display: table;
           li {
@@ -291,7 +293,7 @@
   .nav-items {
     height: 0px;
     position: relative;
-    top: 50px;
+    top: 60px;
     display: flex;
     justify-content: center;
     .main {
@@ -313,7 +315,7 @@
   .admin-controls {
     position: relative;
     float: right;
-    top: 5px;
+    top: 55px;
     float: right;
     right: 10px;
     ul {

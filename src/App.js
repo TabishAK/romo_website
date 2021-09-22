@@ -15,7 +15,6 @@ import logo from "./images/logo_updated/eff_logos2.png";
 import AboutEFF from "./pages/about_eff/about_eff";
 import Products from "./pages/products/products";
 import { Route, Switch } from "react-router-dom";
-import Swatches from "./pages/swatches/swatches";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import Home from "./pages/home/home";
@@ -23,6 +22,7 @@ import { useState } from "react";
 import "../src/media_query.scss";
 import "./App.scss";
 import Blog from "./pages/blog/blog";
+import Sideba from "./components/sidebar/sidebar";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -64,6 +64,8 @@ function App() {
 
   return (
     <div className="App">
+      <Sideba display={display} closeRightMenu={closeRightMenu} />
+
       <Switch>
         <Route
           exact

@@ -4,6 +4,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import Chip from "@material-ui/core/Chip";
 import "./breadcrumbs.scss";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
@@ -27,6 +28,9 @@ function handleClick(event) {
 }
 
 export default function CustomizedBreadcrumbs() {
+  const location = useLocation();
+  const slug = location.pathname.split("/");
+  console.log(slug);
   return (
     <div className="breadcrumbs">
       <Breadcrumbs aria-label="breadcrumb">
@@ -35,8 +39,9 @@ export default function CustomizedBreadcrumbs() {
           icon={<HomeIcon fontSize="small" />}
           onClick={handleClick}
         />
-        <StyledBreadcrumb label="Fabrics" onClick={handleClick} />
-        <StyledBreadcrumb label="Valvet" onClick={handleClick} />
+        {slug.map((s, i) =>
+          i === 0 ? "" : <StyledBreadcrumb label={s} onClick={handleClick} />
+        )}
       </Breadcrumbs>
     </div>
   );

@@ -43,7 +43,6 @@ const Home = (props) => {
         removeBlur={removeBlur}
       />
       <TopCarousel banner={banner} />
-      <Sideba display={props.display} closeRightMenu={props.closeRightMenu} />
       <InformationPanel />
       <NewsLetterSub />
       <MoreOptions />

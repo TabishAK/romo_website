@@ -16,6 +16,7 @@ const Navbar = (props) => {
   const [mainCategories, setMainCategories] = useState();
   const [subCategories, setSubCategories] = useState();
   const link = "http://54.183.217.110/";
+
   useEffect(() => {
     axios
       .post(link + "subCategories/")
@@ -43,7 +44,7 @@ const Navbar = (props) => {
     setBeInspried("");
     setCompany("");
     setWhereToBuy("");
-    setHeight("22rem");
+    setHeight("22.5rem");
   };
 
   const showCompany = () => {
@@ -68,7 +69,7 @@ const Navbar = (props) => {
     setBrand("");
     setCompany("");
     setWhereToBuy("");
-    setHeight("12rem");
+    setHeight("12.5rem");
   };
 
   const dontShowBeInspired = () => {
@@ -245,10 +246,16 @@ const Navbar = (props) => {
           </ul>
 
           <ul className={"be-inspried " + beInspried} id="product-names">
-            <li>Show Brouchers</li>
-            <li>Video Library</li>
+            <Link to="#">
+              <li style={{ textTransform: "uppercase" }}>Show Brouchers</li>
+            </Link>
+
+            <Link to="#">
+              <li style={{ textTransform: "uppercase" }}>Video Library</li>
+            </Link>
+
             <Link to="/blogs">
-              <li>Blogs</li>
+              <li style={{ textTransform: "uppercase" }}>Blogs</li>
             </Link>
           </ul>
 

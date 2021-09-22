@@ -8,12 +8,16 @@ import { useLocation } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";
 import axios from "axios";
 import Circles from "../../components/Loader/circles";
+import Loader2 from "./../../components/Loader/loader2";
+import Loader3 from "./../../components/Loader/loader3";
 const link = "http://54.183.217.110/";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
   const [swatches, setSwatches] = useState();
   const [products, setProducts] = useState();
+  const [spinner, setSpinner] = useState(true);
+  const [spinner2, setSpinner2] = useState(true);
 
   const [loader, setLoader] = useState();
 
@@ -35,6 +39,8 @@ const SpecificProducts = (props) => {
       )
       .then(function (response) {
         setSwatches(response.data[0]);
+        setTimeout(() => setSpinner(false), 1000);
+
         axios
           .post(
             link + "products/",
@@ -50,6 +56,7 @@ const SpecificProducts = (props) => {
           .then(function (response) {
             console.log(response);
             setProducts(response.data[0]);
+            setTimeout(() => setSpinner2(false), 1000);
           });
       })
       .catch(function (error) {
@@ -79,7 +86,10 @@ const SpecificProducts = (props) => {
         const url = window.URL.createObjectURL(new Blob([blob]));
         const link = document.createElement("a");
         link.href = url;
-        link.setAttribute("download", `FileName.pdf`);
+        link.setAttribute(
+          "download",
+          `${products.subCategory.subCategory_name}.pdf`
+        );
         document.body.appendChild(link);
         link.click();
         link.parentNode.removeChild(link);
@@ -94,19 +104,20 @@ const SpecificProducts = (props) => {
       <div className="container editContainer">
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5 product">
-            <img src={products && products.product_broucher_image} alt="" />
+            {spinner ? (
+              <center>
+                {" "}
+                <Loader2 />
+              </center>
+            ) : (
+              <img src={products && products.product_broucher_image} alt="" />
+            )}
           </div>
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
             <h2 className="ml-3">{products && products.product_name}</h2>
             <hr />
             <p className="mt-4 mr-5">
-              The perfect combination of sophistication and modernity. Urban
-              velvet is densely woven using the finest yarns to create a
-              luxuriously soft velvet with a silky appearance and the most
-              exquisite rich jewel-like tones and classic neutrals. A
-              specialized finishing technique gives a natural look and
-              exceptionally soft supple handle that offers high performance and
-              practicality.
+              {products && products.product_description}
             </p>
 
             <div className="brouchers">
@@ -119,14 +130,18 @@ const SpecificProducts = (props) => {
 
             <h1 className="swatches">SWATCHES</h1>
 
-            <div className="row swatch-images">
-              {swatches &&
-                swatches.swatches.map((s) => (
-                  <div className="col-3 mt-5">
-                    <img src={s.swatch_image && s.swatch_image} alt="" />
-                  </div>
-                ))}
-            </div>
+            {spinner2 ? (
+              <Loader3 />
+            ) : (
+              <div className="row swatch-images">
+                {swatches &&
+                  swatches.swatches.map((s) => (
+                    <div className="col-3 mt-5">
+                      <img src={s.swatch_image && s.swatch_image} alt="" />
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

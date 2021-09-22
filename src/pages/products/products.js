@@ -6,12 +6,13 @@ import "./products.scss";
 import { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
+import Loader1 from "./../../components/Loader/loader1";
 const link = "http://54.183.217.110/";
 
 const Products = (props) => {
   const [classNamay, setClassNamay] = useState("fabric");
   const [products, setProducts] = useState();
-  const [check, setCheck] = useState();
+  const [spinner, setSpinner] = useState(true);
 
   const location = useLocation();
 
@@ -38,6 +39,7 @@ const Products = (props) => {
       )
       .then(function (response) {
         setProducts(response.data);
+        setTimeout(() => setSpinner(false), 1000);
       })
       .catch(function (error) {
         console.log(error);
@@ -48,16 +50,25 @@ const Products = (props) => {
     <div className={classNamay}>
       <Navbar st={props.st} makeBlur={makeBlur} removeBlur={removeBlur} />
 
-      <div className="container velvet-heading">
-        <Breadcrumbs />
+      {spinner ? (
+        <center>
+          <Loader1 />
+        </center>
+      ) : (
+        <>
+          <div className="container velvet-heading">
+            <Breadcrumbs />
 
-        {products && products.length !== 0 ? (
-          <h1> {products[0].subCategory.subCategory_name}</h1>
-        ) : (
-          ""
-        )}
-      </div>
-      <Gallery selectProduct={props.selectProduct} products={products} />
+            {products && products.length !== 0 ? (
+              <h1> {products[0].subCategory.subCategory_name}</h1>
+            ) : (
+              ""
+            )}
+          </div>
+          <Gallery selectProduct={props.selectProduct} products={products} />
+        </>
+      )}
+
       <Footer />
     </div>
   );
