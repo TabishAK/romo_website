@@ -1,5 +1,6 @@
 .velvet-types {
   .row {
+    justify-content: center;
     a {
       width: fit-content;
     }
@@ -7,6 +8,7 @@
       width: fit-content;
 
       img {
+        box-shadow: 0px 5px 10px #929292;
         width: 300px !important;
         margin-top: 25px;
       }

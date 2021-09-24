@@ -1,15 +1,22 @@
-import { FaFacebookSquare, FaPinterestP, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaPinterestP,
+  FaYoutube,
+  FaLinkedin,
+} from "react-icons/fa";
 import logo from "../../images/logo_updated/eff_logos2.png";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FiInstagram } from "react-icons/fi";
 import "./footer.scss";
+import "antd/dist/antd.css";
+import { Input } from "antd";
 
+const { Search } = Input;
 const Footer = () => {
   return (
     <div className="footer container-fluid">
-      <img src={logo} alt="logo" />
       <div className="row mt-4  ml-5">
-        <div className="col mt-2">
+        <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-12 mt-4 column-1">
           <ul>
             <label>PRODUCTS</label>
             <li>Curtain and drapes</li>
@@ -17,26 +24,7 @@ const Footer = () => {
             <li>Bedding</li>
             <li>Hardware</li>
           </ul>
-        </div>
-        <div className="col mt-2">
-          <ul>
-            <label>BRANDS</label>
-            <li>Half Price Drapes</li>
-            <li>Sierra Textiles</li>
-            <li>Half Price Linen</li>
-            <li>Loom</li>
-          </ul>
-        </div>
-        <div className="col mt-2">
-          <ul>
-            <label>BE INSPIRED</label>
-            <li>Video Library</li>
-            <li>Broucher</li>
-            <li>Blogs</li>
-          </ul>
-        </div>
-        <div className="col mt-2">
-          <ul>
+          <ul className="mt-5">
             <label>COMPANY</label>
             <li>About Exclusive Fabrics</li>
             <li>Terms and conditions</li>
@@ -45,38 +33,68 @@ const Footer = () => {
             <li>Legal</li>
           </ul>
         </div>
-        <div className="col mt-2">
-          <ul>
-            <label>CONTACT US</label>
-            <li>Contact us</li>
-            <li>FAQs</li>
+
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-4 column-2">
+          <ul className="connect-with-us">
+            <label>CONNECT WITH US</label>
+            <p>Join Our Community!</p>
+            <p className="mb-1">
+              Stay on the top of latest window treatment trends and events
+            </p>
           </ul>
+
+          <ul className="social-share">
+            <label>SOCIAL SHARE</label>
+            <div className="social-media mt-2 mb-2">
+              <span>
+                <FaFacebookSquare />
+              </span>
+              <span>
+                <FiInstagram />
+              </span>
+              <span>
+                <AiOutlineTwitter />
+              </span>
+              <span>
+                <FaPinterestP />
+              </span>
+              <span>
+                <FaYoutube />
+              </span>
+              <span>
+                <FaLinkedin />
+              </span>
+            </div>
+          </ul>
+        </div>
+
+        <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-4">
+          <Search
+            className="mt-5"
+            placeholder="Subscribe to our newsletter"
+            enterButton="Subcribe"
+            size="large"
+          />
+          <img src={logo} alt="" style={{ display: "grid" }} />
         </div>
       </div>
 
-      <div className="social-media mt-4 mb-2">
-        <span>
-          <FaFacebookSquare />
-        </span>
-        <span>
-          <FiInstagram />
-        </span>
-        <span>
-          <AiOutlineTwitter />
-        </span>
-        <span>
-          <FaPinterestP />
-        </span>
-        <span>
-          <FaYoutube />
-        </span>
-      </div>
+      <div className="footer-bottom">
+        <p>
+          © 2021 Exclusive Fabrics | 440 Boulder Court, Suite 100, Pleasanton,
+          CA 94566
+        </p>
+        <ul>
+          <li>Home</li>
+          <li>Where to buy</li>
+          <li>Brouchers</li>
+          <li>Video Library</li>
+          <li>Blogs</li>
+          <li>Brands</li>
+        </ul>
 
-      <hr />
-      <br />
-      <br />
-      <br />
-      <br />
+        <p>Custom ecommerce designed and developed by Redefine Solutions</p>
+      </div>
     </div>
   );
 };

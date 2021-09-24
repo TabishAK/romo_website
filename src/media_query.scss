@@ -19,6 +19,28 @@
 }
 
 @media (min-width: 991px) and (max-width: 1199px) {
+  .footer {
+    .column-2 {
+      left: 30px;
+    }
+
+    .ant-input-group-wrapper {
+      margin-left: 90px;
+      width: 75% !important;
+      position: relative;
+    }
+
+    img {
+      left: 35%;
+      top: 20px;
+      position: relative;
+      width: 50%;
+    }
+    .row ul {
+      margin: 30px -55px !important;
+    }
+  }
+
   .swatches {
     .footer {
       margin-top: 50% !important;
@@ -30,7 +52,22 @@
   }
 }
 
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 767px) and (max-width: 990px) {
+  .footer {
+    img {
+      margin-bottom: 65px;
+    }
+    .social-media span {
+      margin: 0px 12px 0 2px;
+    }
+    img {
+      left: 34% !important;
+    }
+    .ant-input-group-wrapper {
+      margin-left: 175px !important;
+    }
+  }
+
   .editContainer {
     max-width: 900px !important;
     p {
@@ -52,7 +89,7 @@
     display: none !important;
   }
 }
-@media (min-width: 575px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 766px) {
   .editContainer {
     p {
       margin-right: -2rem !important;
@@ -119,16 +156,28 @@
     line-height: 18px !important;
   }
 
-  .social-media {
-    text-align: center;
-  }
-
-  .footer img {
-    left: 185px !important;
+  .footer {
+    .ant-input-group-wrapper {
+      margin-left: 85px !important;
+      width: 65% !important;
+    }
+    .footer-bottom ul li {
+      margin: 8px 12px;
+    }
+    img {
+      width: 38% !important;
+      margin-bottom: 35px !important;
+      left: 32% !important;
+      top: 10px !important;
+      position: relative;
+    }
+    .row ul {
+      margin: 18px -0px 0px -65px;
+    }
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .swatch-review .row div ul {
     margin-top: 165% !important;
     justify-content: center !important;
@@ -202,19 +251,47 @@
   }
 
   .footer {
+    .ant-input-group-wrapper {
+      margin-left: -15px !important;
+      width: 100% !important;
+    }
+
+    .footer-bottom {
+      ul {
+        margin-bottom: 18px !important;
+        li {
+          margin: 0px 25px 0px 0px !important;
+          font-family: "Noah Grotesque Regular" !important;
+          color: gray !important;
+        }
+      }
+      p {
+        line-height: 20px !important;
+        text-align: center !important;
+        font-size: 14px !important;
+        margin-bottom: 28px !important;
+      }
+    }
+    .connect-with-us {
+      .mb-1 {
+        line-height: 20px;
+        top: 9px;
+        position: relative;
+      }
+    }
+
     img {
-      top: 20px;
+      top: 0px;
       width: 190px;
       height: 170px;
-      left: 65px;
+      left: 35px;
     }
     .row {
       margin-left: 20px !important;
 
-      .col {
-        ul {
-          margin: 18px 0px;
-        }
+      ul {
+        margin: 20px 0px 0px -70px;
+        text-align: center;
       }
     }
   }

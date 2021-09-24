@@ -1,11 +1,42 @@
 .footer {
   background: #f2f2f2;
-  // background-image: url("../../images/logo_updated/eff_logos2.png");
-  // background-repeat: no-repeat;
-
   position: relative;
-  margin-top: 10% !important;
+  bottom: -12rem;
   box-shadow: 0 4px 13px grey;
+
+  .ant-btn-primary {
+    color: #f2f2f2;
+    border-color: #6bc9ca;
+    background: #6bc9ca;
+  }
+
+  .footer-bottom {
+    padding-bottom: 5px;
+    p {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: -20px;
+      font-size: 15px;
+      margin-bottom: -6px;
+
+      li {
+        margin: 8px 25px;
+        font-family: "Noah Grotesque Regular";
+        color: gray;
+      }
+    }
+  }
+  .ant-input-group-wrapper {
+    margin-left: 262px;
+    width: 50% !important;
+    position: relative;
+  }
   hr {
     left: 0px;
     width: 100%;
@@ -13,38 +44,41 @@
     height: 2px;
   }
   img {
-    top: 12px;
-    width: 195px;
-    height: 170px;
-    left: 88px;
-
+    width: 30%;
+    left: 38%;
+    top: 20px;
     position: relative;
   }
 
   .row {
-    .col {
-      max-width: fit-content;
-      ul {
-        margin: 18px 25px;
-        label {
-          font-weight: 490;
-          font-size: 17px;
-          color: #6bc9ca;
-        }
-        li {
-          cursor: pointer;
-          line-height: 28px;
-          color: gray;
-        }
+    .connect-with-us {
+      p {
+        margin: -8px 0px;
+        font-size: 16px;
+      }
+    }
+    .social-share {
+      margin-top: 105px;
+    }
+
+    ul {
+      margin: 18px 25px;
+      label {
+        font-weight: 490;
+        font-size: 17px;
+        color: #6bc9ca;
+      }
+      li {
+        cursor: pointer;
+        line-height: 28px;
+        color: gray;
       }
     }
   }
 
   .social-media {
-    margin-left: 80px;
     span {
-      margin: 10px;
-
+      margin: 0 16px 0 2px;
       svg {
         color: #808080a6;
         font-size: 24px;
