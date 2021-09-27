@@ -2,7 +2,6 @@ import InformationPanel from "../../components/information_panel/informationPane
 import NewsLetterSub from "../../components/newsLetterSub/newsLetterSub";
 import MoreOptions from "../../components/moreOptions/moreOptions";
 import TopCarousel from "./../../components/carousel/carousel";
-import Sideba from "./../../components/sidebar/sidebar";
 import Navbar from "./../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import React from "react";

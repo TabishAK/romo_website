@@ -93,7 +93,7 @@ const Footer = () => {
           <li>Brands</li>
         </ul>
 
-        <p>Custom ecommerce designed and developed by Redefine Solutions</p>
+        <p>Custom ecommerce designed and developed by Take4media</p>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 import Navbar from "../../components/navbar/navbar";
+import Footer from "../../components/footer/footer";
+import Card from "../../components/card/card";
 import { useState } from "react";
 import "./blogs.scss";
-import Card from "../../components/card/card";
-import Breadcrumbs from "../../components/breadcrumbs/breadcrumbs";
-import Footer from "../../components/footer/footer";
 
 const Blog = (props) => {
   const [classNamay, setClassNamay] = useState("blogs");

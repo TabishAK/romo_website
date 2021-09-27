@@ -169,59 +169,6 @@ const Navbar = (props) => {
               )}
           </ul>
 
-          <ul className={"brand-names " + brand} id="product-names">
-            <li>
-              <Link> HALF PRICE DRAPES </Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-              </ul>
-            </li>
-            <li>
-              <Link> HALF PRICE LINENS </Link>
-              <ul>
-                <li>Raw Silk</li>
-                <li>Cotton Silk</li>
-                <li>Thai Silk</li>
-                <li>Taffeta Silk</li>
-                <li>Dupioi Silk</li>
-                <li>Organza Silk</li>
-                <li>Faux Silk</li>
-              </ul>
-              <ul>
-                <li>Velvet</li>
-                <li>Linen</li>
-                <li>Faux Linen</li>
-                <li>Cotton</li>
-                <li>Blackout</li>
-                <li>Crewel</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
-            <li>
-              <Link>SIERRA TEXTILES</Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
-            <li>
-              <Link>TAKE4MEDIA</Link>
-              <ul>
-                <li>Velvet</li>
-                <li>Silk</li>
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Faux Silk</li>
-                <li>Sheers</li>
-              </ul>
-            </li>
-          </ul>
-
           <ul className={"where-to-buy " + whereToBuy} id="product-names">
             <li className="providers">
               <Link>HALF PRICE DRAPES </Link>
@@ -247,15 +194,36 @@ const Navbar = (props) => {
 
           <ul className={"be-inspried " + beInspried} id="product-names">
             <Link to="#">
-              <li style={{ textTransform: "uppercase" }}>Show Brouchers</li>
+              <li
+                style={{
+                  textTransform: "uppercase",
+                  fontFamily: "Noah Grotesque Regular",
+                }}
+              >
+                Show Brouchers
+              </li>
             </Link>
 
             <Link to="#">
-              <li style={{ textTransform: "uppercase" }}>Video Library</li>
+              <li
+                style={{
+                  textTransform: "uppercase",
+                  fontFamily: "Noah Grotesque Regular",
+                }}
+              >
+                Video Library
+              </li>
             </Link>
 
             <Link to="/blogs">
-              <li style={{ textTransform: "uppercase" }}>Blogs</li>
+              <li
+                style={{
+                  textTransform: "uppercase",
+                  fontFamily: "Noah Grotesque Regular",
+                }}
+              >
+                Blogs
+              </li>
             </Link>
           </ul>
 
@@ -299,6 +267,7 @@ const Navbar = (props) => {
           <Link to="/">
             <img
               alt="logo"
+              style={{ opacity: 1 }}
               src={display === "show" ? logo : props.st.logo}
             ></img>
           </Link>
@@ -322,22 +291,7 @@ const Navbar = (props) => {
             >
               PRODUCTS
             </li>
-            {/* <li
-              style={{ color: props.st.color }}
-              className={"sub " + display}
-              id="sub"
-              onMouseEnter={() => {
-                check();
-                props.makeBlur();
-                showBrand();
-              }}
-              onMouseLeave={() => {
-                dontShowBrand();
-                props.removeBlur();
-              }}
-            >
-              BRAND
-            </li> */}
+
             <li
               onMouseEnter={() => {
                 check();

@@ -39,7 +39,7 @@ const SpecificProducts = (props) => {
       )
       .then(function (response) {
         setSwatches(response.data[0]);
-        setTimeout(() => setSpinner(false), 1000);
+        setSpinner(false);
 
         axios
           .post(
@@ -56,7 +56,7 @@ const SpecificProducts = (props) => {
           .then(function (response) {
             console.log(response);
             setProducts(response.data[0]);
-            setTimeout(() => setSpinner2(false), 1000);
+            setSpinner2(false);
           });
       })
       .catch(function (error) {
@@ -98,7 +98,12 @@ const SpecificProducts = (props) => {
 
   return (
     <div className={classNamay}>
-      <Navbar st={props.st} makeBlur={makeBlur} removeBlur={removeBlur} />
+      <Navbar
+        st={props.st}
+        openRightMenu={props.openRightMenu}
+        makeBlur={makeBlur}
+        removeBlur={removeBlur}
+      />
       <Breadcrumbs />
 
       <div className="container editContainer">

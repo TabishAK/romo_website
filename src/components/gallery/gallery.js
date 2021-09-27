@@ -1,13 +1,3 @@
-import type_10 from "../../images/valvet-types/type-10.jpg";
-import type_1 from "../../images/valvet-types/type-1.jpg";
-import type_2 from "../../images/valvet-types/type-2.jpg";
-import type_3 from "../../images/valvet-types/type-3.jpg";
-import type_4 from "../../images/valvet-types/type-4.jpg";
-import type_5 from "../../images/valvet-types/type-5.jpg";
-import type_6 from "../../images/valvet-types/type-6.jpg";
-import type_7 from "../../images/valvet-types/type-7.jpg";
-import type_8 from "../../images/valvet-types/type-8.jpg";
-import type_9 from "../../images/valvet-types/type-9.jpg";
 import { TiLocationArrow } from "react-icons/ti";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";

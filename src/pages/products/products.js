@@ -4,7 +4,7 @@ import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
 import "./products.scss";
 import { useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Loader1 from "./../../components/Loader/loader1";
 const link = "http://54.183.217.110/";
@@ -25,6 +25,7 @@ const Products = (props) => {
   };
 
   useEffect(() => {
+    setSpinner(true);
     axios
       .post(
         link + "products/getFromSlug",
@@ -39,7 +40,7 @@ const Products = (props) => {
       )
       .then(function (response) {
         setProducts(response.data);
-        setTimeout(() => setSpinner(false), 1000);
+        setSpinner(false);
       })
       .catch(function (error) {
         console.log(error);
@@ -48,7 +49,12 @@ const Products = (props) => {
 
   return (
     <div className={classNamay}>
-      <Navbar st={props.st} makeBlur={makeBlur} removeBlur={removeBlur} />
+      <Navbar
+        st={props.st}
+        openRightMenu={props.openRightMenu}
+        makeBlur={makeBlur}
+        removeBlur={removeBlur}
+      />
 
       {spinner ? (
         <center>

@@ -3,8 +3,27 @@ import { GiCrossedBones } from "react-icons/gi";
 import MenuContent from "./menuContent";
 import Sidebar from "react-sidebar";
 import "./sidebar.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
+const link = "http://54.183.217.110/";
 
 const Sideba = (props) => {
+  const [subCategories, setSubCategories] = useState();
+  const [mainCategories, setMainCategories] = useState();
+
+  useEffect(() => {
+    axios
+      .post(link + "subCategories/")
+      .then((response) => {
+        setSubCategories(response.data);
+        return axios.post(link + "mainCategory/");
+      })
+      .then((response) => {
+        setMainCategories(response.data);
+      })
+      .catch((error) => console.log(error.response));
+  }, []);
+
   const isNotMobile = useMediaQuery({ maxWidth: 1155 });
   const isMobile = useMediaQuery({ maxWidth: 576 });
 
@@ -22,7 +41,7 @@ const Sideba = (props) => {
       display: isNotMobile ? "block" : "none",
       width: isMobile ? "50%" : "40%",
       background: "#e6e6e6",
-      zIndex: 100,
+      zIndex: 101,
       position: "absolute",
       top: 0,
       bottom: 0,
@@ -67,7 +86,10 @@ const Sideba = (props) => {
         <div className="heading-and-cross container">
           <GiCrossedBones onClick={props.closeRightMenu} />
         </div>
-        <MenuContent />
+        <MenuContent
+          subCategories={subCategories}
+          mainCategories={mainCategories}
+        />
       </div>
     );
   }
