@@ -125,7 +125,7 @@ const SpecificProducts = (props) => {
               {products && products.product_description}
             </p>
 
-            <div className="brouchers">
+            <div className="brouchers-download">
               <FaFileDownload />
               <p style={{ color: "black" }} onClick={downloadBroucher}>
                 Download Brouchers
