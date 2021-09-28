@@ -1,10 +1,12 @@
 import "./brouchers.scss";
 import Navbar from "./../../components/navbar/navbar";
-import broucherImage from "../../images/brouchers/b1.jpg";
-import { useState } from "react";
+import broucherImage from "../../images/brouchers/b2.jpg";
+import { useEffect, useState } from "react";
 import { ImDownload } from "react-icons/im";
+import axios from "axios";
 const Brouchers = (props) => {
   const [classNamay, setClassNamay] = useState("brouchers");
+  const [categories, setCategories] = useState();
 
   const makeBlur = () => {
     setClassNamay("brouchers blur");
@@ -12,6 +14,37 @@ const Brouchers = (props) => {
 
   const removeBlur = () => {
     setClassNamay("brouchers");
+  };
+
+  const link = "http://54.183.217.110/";
+
+  useEffect(() => {
+    axios
+      .post(link + "subCategories/")
+      .then((response) => {
+        setCategories(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => console.log(error.response));
+  }, []);
+
+  const downlaodBroucher = (c) => {
+    fetch(c.pdf, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/pdf",
+      },
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `${c.subCategory_name}.pdf`);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
   };
 
   return (
@@ -28,68 +61,36 @@ const Brouchers = (props) => {
 
       <div className="container broucher-card">
         <div className="row">
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
+          {categories &&
+            categories.map((c) =>
+              c.subCategory_image ? (
+                <div className="col-4 mb-5">
+                  <p>{c.subCategory_name}</p>
 
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
+                  <div class="image">
+                    <img
+                      class="image__img"
+                      src={c.subCategory_image}
+                      alt="Bricks"
+                    />
+                    <div class="image__overlay">
+                      <div class="image__title">{c.subCategory_name}</div>
+                      <p class="image__description">
+                        Enjoy the blue color of ocean.
+                      </p>
+                    </div>
+                  </div>
 
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
-
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
-
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
-
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
-          <div className="col-4 mb-5">
-            <p>Itami, Katori, Kensey, Nicoya, and Jacuba</p>
-            <img src={broucherImage} alt="" />
-
-            <span className="mt-3">
-              <ImDownload />
-              Download
-            </span>
-          </div>
+                  {/* <img src={c.subCategory_image} alt="" /> */}
+                  <span onClick={() => downlaodBroucher(c)} className="mt-3">
+                    <ImDownload />
+                    Download
+                  </span>
+                </div>
+              ) : (
+                ""
+              )
+            )}
         </div>
       </div>
     </div>
