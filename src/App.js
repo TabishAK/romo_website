@@ -13,6 +13,7 @@ import "../src/media_query.scss";
 import "./App.scss";
 import Blog from "./pages/blog/blog";
 import Sideba from "./components/sidebar/sidebar";
+import Brouchers from "./pages/brouchers/brouchers";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -59,6 +60,23 @@ function App() {
           path="/blogs"
           component={() => (
             <Blog
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/brouchers"
+          component={() => (
+            <Brouchers
               st={{
                 gradient: "",
                 color: "#828282",

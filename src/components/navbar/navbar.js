@@ -193,7 +193,7 @@ const Navbar = (props) => {
           </ul>
 
           <ul className={"be-inspried " + beInspried} id="product-names">
-            <Link to="#">
+            <Link to="/brouchers">
               <li
                 style={{
                   textTransform: "uppercase",

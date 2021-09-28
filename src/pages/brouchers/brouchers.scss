@@ -1,0 +1,42 @@
+.brouchers {
+  height: 22rem;
+  position: relative;
+  background-image: url("../../images/backgrounds/gray_background.jpg");
+  background-size: cover;
+
+  .broucher-card {
+    margin-top: 5%;
+    .row {
+      justify-content: center;
+      text-align: center;
+      p {
+        font-size: 14px !important;
+      }
+      img {
+        border: solid 3px white;
+        box-shadow: 3px 3px 4px #888;
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        svg {
+          margin: 4px;
+        }
+      }
+    }
+  }
+
+  .broucher-heading {
+    h1 {
+      color: black;
+      margin-top: 25px;
+      font-family: "Quickpen";
+      font-weight: bolder;
+    }
+
+    h5 {
+      color: black;
+    }
+  }
+}

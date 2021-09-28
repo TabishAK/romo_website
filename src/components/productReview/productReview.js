@@ -4,8 +4,6 @@ import img2 from "../../images/image-slider/2.JPG";
 import img3 from "../../images/image-slider/3.JPG";
 import { useHistory } from "react-router-dom";
 import { GoDesktopDownload } from "react-icons/go";
-import { FiShare2 } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import Line from "../line/line";
 import "./productReview.scss";
 
