@@ -263,15 +263,17 @@ const Navbar = (props) => {
           </ul>
         </div>
 
-        <div className="logo-section">
-          <Link to="/">
-            <img
-              alt="logo"
-              style={{ opacity: 1 }}
-              src={display === "show" ? logo : props.st.logo}
-            ></img>
-          </Link>
-        </div>
+        <center>
+          <div className="logo-section">
+            <Link to="/">
+              <img
+                alt="logo"
+                style={{ opacity: 1 }}
+                src={display === "show" ? logo : props.st.logo}
+              ></img>
+            </Link>
+          </div>
+        </center>
 
         <div className="nav-items">
           <ul className="main">

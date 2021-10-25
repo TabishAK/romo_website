@@ -11,6 +11,7 @@ import Circles from "../../components/Loader/circles";
 import Loader2 from "./../../components/Loader/loader2";
 import Loader3 from "./../../components/Loader/loader3";
 const link = "http://54.183.217.110/";
+const link2 = "http://localhost:8000/";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
@@ -40,24 +41,7 @@ const SpecificProducts = (props) => {
       .then(function (response) {
         setSwatches(response.data[0]);
         setSpinner(false);
-
-        axios
-          .post(
-            link + "products/",
-            {
-              product_slug: "/" + slug[2],
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then(function (response) {
-            console.log(response);
-            setProducts(response.data[0]);
-            setSpinner2(false);
-          });
+        setSpinner2(false);
       })
       .catch(function (error) {
         console.log(error);
@@ -74,7 +58,7 @@ const SpecificProducts = (props) => {
 
   const downloadBroucher = () => {
     setLoader(true);
-    fetch(products.subCategory.pdf, {
+    fetch(swatches.products.subCategory.pdf, {
       method: "GET",
       headers: {
         "Content-Type": "application/pdf",
@@ -88,7 +72,7 @@ const SpecificProducts = (props) => {
         link.href = url;
         link.setAttribute(
           "download",
-          `${products.subCategory.subCategory_name}.pdf`
+          `${swatches.products.subCategory.subCategory_name}.pdf`
         );
         document.body.appendChild(link);
         link.click();
@@ -115,14 +99,19 @@ const SpecificProducts = (props) => {
                 <Loader2 />
               </center>
             ) : (
-              <img src={products && products.product_broucher_image} alt="" />
+              <img
+                src={swatches && swatches.products.product_broucher_image}
+                alt=""
+              />
             )}
           </div>
           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
-            <h2 className="ml-3">{products && products.product_name}</h2>
+            <h2 className="ml-3">
+              {swatches && swatches.products.product_name}
+            </h2>
             <hr />
             <p className="mt-4 mr-5">
-              {products && products.product_description}
+              {swatches && swatches.products.product_description}
             </p>
 
             <div className="brouchers-download">
