@@ -11,7 +11,7 @@ import "./about_eff.scss";
 import { useState } from "react";
 
 const AboutEFF = (props) => {
-  const [classNamay, setClassNamay] = useState("home");
+  const [classNamay, setClassNamay] = useState("about-eff");
 
   const makeBlur = () => {
     setClassNamay("about-eff blur");

@@ -6,6 +6,7 @@ import Navbar from "./../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import React from "react";
 import "./home.scss";
+import horseGIF from "../../images/horse.gif";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -13,6 +14,7 @@ import axios from "axios";
 const Home = (props) => {
   const [classNamay, setClassNamay] = useState("home");
   const [banner, setBanner] = useState();
+  const [spinner, setSpinner] = useState(true);
 
   const makeBlur = () => {
     setClassNamay("home blur");
@@ -25,15 +27,22 @@ const Home = (props) => {
   const link = "http://54.183.217.110/";
 
   useEffect(() => {
+    setSpinner(true);
     axios
       .get(link + "banner/")
       .then((response) => {
         setBanner(response.data[0]);
+        setSpinner(false);
       })
       .catch((error) => console.log(error.response));
   }, []);
 
-  return (
+  return spinner ? (
+    <div className="loader">
+      <img src={horseGIF} style={{ width: "15%" }} alt="loading" />
+      <h1>Loading ...</h1>
+    </div>
+  ) : (
     <div className={classNamay}>
       <Navbar
         st={props.st}

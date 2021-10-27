@@ -38,7 +38,6 @@ class NestedList extends React.Component {
   render() {
     const { classes } = this.props;
     const { mainCategories, subCategories } = this.props;
-    console.log(subCategories);
     return (
       <div style={{ margin: "90px 18px", background: "rgb(241, 241, 241)" }}>
         {this.state.mainField.map((item) => {

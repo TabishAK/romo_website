@@ -1,9 +1,9 @@
 import logo from "../../images/logo_updated/eff_logos2.png";
-import { FaUserAlt, FaHeart } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./navbar.scss";
+import { useSelector } from "react-redux";
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
   const [products, setProducts] = useState();
@@ -11,24 +11,14 @@ const Navbar = (props) => {
   const [whereToBuy, setWhereToBuy] = useState();
   const [company, setCompany] = useState();
   const [beInspried, setBeInspried] = useState();
-  const axios = require("axios");
   const [height, setHeight] = useState("22rem");
-  const [mainCategories, setMainCategories] = useState();
-  const [subCategories, setSubCategories] = useState();
-  const link = "http://54.183.217.110/";
 
-  useEffect(() => {
-    axios
-      .post(link + "subCategories/")
-      .then((response) => {
-        setSubCategories(response.data);
-        return axios.post(link + "mainCategory/");
-      })
-      .then((response) => {
-        setMainCategories(response.data);
-      })
-      .catch((error) => console.log(error.response));
-  }, []);
+  const subCategories = useSelector(
+    (state) => state.subCategories.subCategories
+  );
+  const mainCategories = useSelector(
+    (state) => state.mainCategories.mainCategories
+  );
 
   const check = () => {
     setDisplay("show");
@@ -44,7 +34,7 @@ const Navbar = (props) => {
     setBeInspried("");
     setCompany("");
     setWhereToBuy("");
-    setHeight("22.5rem");
+    setHeight("30rem");
   };
 
   const showCompany = () => {
@@ -52,7 +42,7 @@ const Navbar = (props) => {
     setProducts("");
     setBeInspried("");
     setWhereToBuy("");
-    setHeight("19rem");
+    setHeight("27rem");
   };
 
   const dontShowCompany = () => {
@@ -69,7 +59,7 @@ const Navbar = (props) => {
     setBrand("");
     setCompany("");
     setWhereToBuy("");
-    setHeight("12.5rem");
+    setHeight("20.5rem");
   };
 
   const dontShowBeInspired = () => {
@@ -84,7 +74,7 @@ const Navbar = (props) => {
     setBrand("");
     setCompany("");
     setBeInspried("");
-    setHeight("19rem");
+    setHeight("27rem");
   };
 
   const dontShowWhereToBuy = () => {
@@ -178,7 +168,7 @@ const Navbar = (props) => {
             <li className="providers">
               <Link> AMAZON </Link>
               <Link> KHOLS </Link>
-              <Link> AMAZON </Link>
+              <Link>HOUZZ</Link>
             </li>
             <li className="providers">
               <Link>JC PENNY</Link>
@@ -186,9 +176,15 @@ const Navbar = (props) => {
               <Link>BELLACOR</Link>
             </li>
             <li className="providers">
-              <Link>HOUZZ</Link>
               <Link>EBAY</Link>
-              <Link>WAYFARE</Link>
+              <Link
+                style={{
+                  position: "relative",
+                  bottom: "22px",
+                }}
+              >
+                WAYFARE
+              </Link>
             </li>
           </ul>
 
@@ -196,7 +192,7 @@ const Navbar = (props) => {
             <Link to="/brouchers">
               <li
                 style={{
-                  textTransform: "uppercase",
+                  fontSize: 17,
                   fontFamily: "Noah Grotesque Regular",
                 }}
               >
@@ -207,7 +203,7 @@ const Navbar = (props) => {
             <Link to="#">
               <li
                 style={{
-                  textTransform: "uppercase",
+                  fontSize: 17,
                   fontFamily: "Noah Grotesque Regular",
                 }}
               >
@@ -218,7 +214,7 @@ const Navbar = (props) => {
             <Link to="/blogs">
               <li
                 style={{
-                  textTransform: "uppercase",
+                  fontSize: 17,
                   fontFamily: "Noah Grotesque Regular",
                 }}
               >
@@ -233,31 +229,27 @@ const Navbar = (props) => {
               <ul>
                 <Link to="/about">
                   <li>About Exclusive Fabrics</li>
+                  <li>Leadership</li>
+                  <li>Facilities</li>
                 </Link>
               </ul>
             </li>
             <li>
               <Link> BRANDS </Link>
               <ul>
-                <li>Loom</li>
                 <li>Half Price Drapes</li>
-                <li>Half Price Linens</li>
-                <li>Sierra Textiles</li>
               </ul>
             </li>
             <li>
               <Link> CAREER</Link>
               <ul>
                 <li>Careers</li>
-                <li>Leadership</li>
-                <li>Facilities</li>
               </ul>
             </li>
             <li>
               <Link>CONTACT US</Link>
               <ul>
                 <li>Contact Us</li>
-                <li>FAQs</li>
               </ul>
             </li>
           </ul>
@@ -344,7 +336,7 @@ const Navbar = (props) => {
             </li>
           </ul>
         </div>
-        <div className="admin-controls">
+        {/* <div className="admin-controls">
           <ul>
             <li>
               <FaUserAlt
@@ -365,7 +357,7 @@ const Navbar = (props) => {
               />
             </li>
           </ul>
-        </div>
+        </div> */}
         <div className="hamburger">
           <GiHamburgerMenu
             onClick={props.openRightMenu}

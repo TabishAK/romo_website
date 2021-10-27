@@ -26,6 +26,18 @@
     opacity: 0.5;
   }
 }
+.loader {
+  text-align: -webkit-center;
+  margin-top: 20rem;
+  h1 {
+    position: relative;
+    left: 30px;
+    font-size: 30px;
+    font-family: Quickpen;
+    color: #6bc9cade;
+    text-align: center;
+  }
+}
 
 li {
   list-style: none;

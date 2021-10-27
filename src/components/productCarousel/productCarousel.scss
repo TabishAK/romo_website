@@ -38,6 +38,17 @@
   max-width: 100%;
   backface-visibility: hidden;
 }
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px !important;
+  opacity: 0.75 !important;
+  color: #9d9c9c !important;
+}
+
+.slick-prev {
+  left: -45px !important;
+}
+
 .snip1584 figcaption {
   position: absolute;
   top: 0;
@@ -107,14 +118,9 @@
   transition-delay: 0.2s;
 }
 /* Demo purposes only */
-body {
-  background-color: #212121;
-  text-align: center;
-  color: white;
-}
 
 .snip1584 h3 {
-  font-size: 18px;
+  font-size: 16px;
   color: #f2f2f2;
 }
 

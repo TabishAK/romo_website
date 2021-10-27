@@ -8,17 +8,28 @@ import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import Home from "./pages/home/home";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../src/media_query.scss";
 import "./App.scss";
 import Blog from "./pages/blog/blog";
 import Sideba from "./components/sidebar/sidebar";
 import Brouchers from "./pages/brouchers/brouchers";
+import { axios } from "axios";
+import { useDispatch } from "react-redux";
+import { fetchSubcategories } from "../src/services/slices/subCategorySlice";
+import { fetchMaincategories } from "./services/slices/mainCategorySlice";
 
 function App() {
   const [display, setDisplay] = useState(false);
   const [selectedProd, setSelectedProd] = useState();
   const [selectedSubCategory, setSelectedSubCategory] = useState();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSubcategories());
+    dispatch(fetchMaincategories());
+  }, [dispatch]);
 
   const openRightMenu = () => {
     setDisplay(true);
@@ -122,6 +133,7 @@ function App() {
               openRightMenu={openRightMenu}
               closeRightMenu={closeRightMenu}
               selectProduct={selectProduct}
+              display={display}
             />
           )}
         />

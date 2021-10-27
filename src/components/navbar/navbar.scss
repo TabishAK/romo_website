@@ -30,7 +30,7 @@
 .nav-bar {
   border-bottom: none;
   position: absolute;
-  height: 220px;
+  height: 315px;
   z-index: 100;
   top: 0;
 
@@ -51,7 +51,7 @@
       justify-content: center;
       position: relative;
       display: none;
-      top: 125px;
+      top: 240px;
 
       .providers {
         display: grid;
@@ -79,7 +79,7 @@
         top: 32%;
 
         .first-row {
-          right: 60px;
+          right: 62px;
         }
         .second-row {
           right: -55px;
@@ -89,7 +89,7 @@
           color: #808080d1;
           text-align: center;
 
-          margin: 8px -105px;
+          margin: 8px -108px;
           position: absolute;
 
           width: min-content;
@@ -279,21 +279,19 @@
       width: 208px;
       position: relative;
       top: -25px;
-      left: 10px;
+
       z-index: 1;
       height: 175px;
     }
 
-    top: 25px;
-    position: absolute;
-    float: left;
-    left: 18px;
+    top: 20px;
+    position: relative;
   }
 
   .nav-items {
     height: 0px;
     position: relative;
-    top: 60px;
+    top: 5px;
     display: flex;
     justify-content: center;
     .main {
@@ -315,7 +313,7 @@
   .admin-controls {
     position: relative;
     float: right;
-    top: 55px;
+    top: 2px;
     float: right;
     right: 10px;
     ul {

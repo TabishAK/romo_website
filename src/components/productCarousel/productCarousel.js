@@ -14,7 +14,9 @@ var Article = createClass({
     return (
       <figure className="snip1584">
         <img src={image} />
-        <figcaption>
+        <figcaption
+          onClick={() => this.props.openImageViewer(this.props.index)}
+        >
           <h3>{title}</h3>
         </figcaption>
       </figure>
@@ -24,26 +26,31 @@ var Article = createClass({
 var News = createClass({
   render: function () {
     var data = this.props.data;
+    var openImageViewer = this.props.openImageViewer;
+
     var newsTemplate;
     var settings = {
-      dots: true,
-      infinite: true,
+      infinite: false,
       slidesToShow: 4,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
     };
     if (data && data.length > 0) {
       newsTemplate = data.map(function (item, index) {
         return (
           <div key={index}>
-            <Article data={item} />
+            <Article
+              data={item}
+              index={index}
+              openImageViewer={openImageViewer}
+            />
           </div>
         );
       });
     } else {
       return (
         <center>
-          <Loader />{" "}
+          <Loader />
         </center>
       );
     }

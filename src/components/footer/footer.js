@@ -84,15 +84,22 @@ const Footer = () => {
           © 2021 Exclusive Fabrics | 440 Boulder Court, Suite 100, Pleasanton,
           CA 94566
         </p>
-        <ul>
-          <li>Home</li>
-          <li>Where to buy</li>
-          <li>Brouchers</li>
-          <li>Video Library</li>
-          <li>Blogs</li>
-          <li>Brands</li>
-        </ul>
 
+        <ul>
+          <li>Privacy & Security</li>
+          <li>Accessibility Statement</li>
+          <li>Do Not Sell My Information</li>
+          <li> Terms of Use</li>
+          <li>Sitemap </li>
+        </ul>
+        <center>
+          <hr
+            style={{
+              position: "relative",
+              width: "43rem",
+            }}
+          />
+        </center>
         <p>Custom ecommerce designed and developed by Take4media</p>
       </div>
     </div>
