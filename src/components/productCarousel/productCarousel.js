@@ -1,9 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import React from "react";
+import React, { useEffect } from "react";
 import "./productCarousel.scss";
 import Loader from "../Loader/loader1";
+import { useMediaQuery } from "react-responsive";
 var createClass = require("create-react-class");
 
 var Article = createClass({
@@ -27,14 +28,19 @@ var News = createClass({
   render: function () {
     var data = this.props.data;
     var openImageViewer = this.props.openImageViewer;
+    var md = this.props.md;
+    var lg = this.props.lg;
+    var sm = this.props.sm;
+    var xs = this.props.xs;
 
     var newsTemplate;
     var settings = {
       infinite: false,
-      slidesToShow: 4,
+      slidesToShow: lg ? 3 : md ? 2 : sm || xs ? 1 : 4,
       slidesToScroll: 1,
       arrows: true,
     };
+
     if (data && data.length > 0) {
       newsTemplate = data.map(function (item, index) {
         return (
@@ -54,6 +60,7 @@ var News = createClass({
         </center>
       );
     }
+
     return (
       <div className="news">
         <Slider {...settings}>{newsTemplate}</Slider>

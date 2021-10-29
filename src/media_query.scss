@@ -19,9 +19,36 @@
 }
 
 @media (min-width: 991px) and (max-width: 1199px) {
+  .modal {
+    top: 65px !important;
+    right: 16px !important;
+    bottom: 0 !important;
+    left: -76px !important;
+  }
+
+  .fabric {
+    .sub-category-name {
+      margin-left: 10% !important;
+      font-size: 270% !important;
+    }
+    .description .description-text {
+      line-height: 39px !important;
+      font-size: 128% !important;
+      margin-left: 8% !important;
+      margin-right: 10% !important;
+      margin-top: 6% !important;
+      position: RELATIVE !important;
+    }
+  }
+
+  .download-broucher {
+    margin-left: 8%;
+    margin-top: 10%;
+  }
+
   .footer {
     .column-2 {
-      left: 30px;
+      margin-left: -40px;
     }
 
     .ant-input-group-wrapper {
@@ -53,6 +80,14 @@
 }
 
 @media (min-width: 767px) and (max-width: 990px) {
+  .modal-content {
+    position: relative;
+    width: 40rem !important;
+  }
+  .modal {
+    left: -50px !important;
+  }
+
   .footer {
     img {
       margin-bottom: 65px;
@@ -90,6 +125,43 @@
   }
 }
 @media (min-width: 576px) and (max-width: 766px) {
+  .modal-content {
+    width: 30rem !important;
+  }
+  .modal {
+    left: 25px !important;
+  }
+
+  .sign-in-container {
+    input {
+      background-color: #eee;
+      border: none;
+      padding: 10px 16px;
+      margin: 8px 0 !important;
+      width: 11rem;
+      border-radius: 8px;
+      font-size: 12px !important;
+    }
+    .login-btn {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  }
+
+  .sign-up-container {
+    .login-btn {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+    input {
+      padding: 10px 16px;
+      margin: 8px 0 !important;
+      width: 11rem;
+      border-radius: 8px;
+      font-size: 12px !important;
+    }
+  }
+
   .editContainer {
     p {
       margin-right: -2rem !important;
@@ -178,6 +250,72 @@
 }
 
 @media (max-width: 575px) {
+  form {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 0px;
+    height: 75%;
+    text-align: center;
+  }
+  .login-form-heading {
+    font-size: 20px !important;
+  }
+
+  .form-container {
+    input {
+      font-size: 11px !important;
+      padding: 10px 16px;
+      margin: 8px 0 !important;
+      width: 10rem;
+    }
+  }
+
+  .login-btn {
+    font-size: 11px;
+    padding: 11px 22px;
+  }
+  .overlay-panel {
+    padding: 0 15px !important;
+    height: 58% !important;
+    width: 50% !important;
+  }
+  .modal-content {
+    height: 36rem !important;
+    width: 23rem !important;
+  }
+  .modal {
+    top: 30px !important;
+  }
+  .modal-body {
+    padding: 6px 8px !important;
+  }
+  .fabric .description {
+    height: 50rem;
+  }
+
+  .fabric .sub-category-name {
+    margin-left: 7%;
+    font-size: 235%;
+  }
+  .download-broucher {
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+  .fabric .description .description-text {
+    line-height: 33px;
+    font-size: 125%;
+    margin-left: 12%;
+  }
+  .fabric .categories {
+    margin-top: 8 rem !important;
+    font-size: 45px;
+  }
+  .fabric .image img {
+    height: 20rem;
+  }
   .swatch-review .row div ul {
     margin-top: 165% !important;
     justify-content: center !important;
@@ -258,7 +396,13 @@
 
     .footer-bottom {
       ul {
+        line-height: 2rem;
+        text-align: center;
+        display: grid;
         margin-bottom: 18px !important;
+        position: relative;
+        left: -20px;
+
         li {
           margin: 0px 25px 0px 0px !important;
           font-family: "Noah Grotesque Regular" !important;

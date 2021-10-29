@@ -20,7 +20,7 @@ $black: #282936;
   }
 }
 
-button {
+.learn-more {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -104,7 +104,7 @@ button {
 }
 
 @supports (display: grid) {
-  #container {
+  #container-brands-button {
     position: relative;
     display: flex;
     justify-content: center;

@@ -96,7 +96,7 @@ const Footer = () => {
           <hr
             style={{
               position: "relative",
-              width: "43rem",
+              width: "40%",
             }}
           />
         </center>

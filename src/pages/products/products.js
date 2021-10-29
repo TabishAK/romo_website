@@ -5,21 +5,26 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import News from "./../../components/productCarousel/productCarousel";
-import img from "../../images/backgrounds/lifestyle.jpg";
 import horseGIF from "../../images/horse.gif";
 import ImageViewer from "react-simple-image-viewer";
+import Signin_Signup from "../../components/signin_signup/signin_signup";
+import { useMediaQuery } from "react-responsive";
+
 const link = "http://54.183.217.110/";
 
 const Products = (props) => {
   const [classNamay, setClassNamay] = useState("fabric");
   const [products, setProducts] = useState();
   const [spinner, setSpinner] = useState(true);
-
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-
   const location = useLocation();
 
+  const lg = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+  const md = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  const sm = useMediaQuery({ minWidth: 576, maxWidth: 767 });
+  const xs = useMediaQuery({ maxWidth: 575 });
+  // const xs = useMediaQuery({ query: '(min-width: 1824px)' })
   const makeBlur = () => {
     setClassNamay("fabric blur");
   };
@@ -88,12 +93,12 @@ const Products = (props) => {
       />
       <div className="container-fluid">
         <div className="row">
-          <div className="col-xl-5 col-lg-5 col-md-5 description">
+          <div className="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 description">
             <h1 className="sub-category-name">
               {products && products[0].subCategory.subCategory_name}..
             </h1>
 
-            <p>
+            <p className="description-text">
               The countdown is on! Grab your shoes, plot your route, and let’s
               get a move on! Lorem ipsum dolor sit amet, consectetur adipiscing
               elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -102,9 +107,9 @@ const Products = (props) => {
               quisque egestas.
             </p>
 
-            <button className="btn-md btn">Download Broucher</button>
+            <Signin_Signup />
           </div>
-          <div className="col-xl-7 col-lg-7 col-md-7 image">
+          <div className="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12 image">
             <img
               src={products && products[0].subCategory.subCategory_image}
               alt="life-style"
@@ -114,7 +119,16 @@ const Products = (props) => {
       </div>
       <div className="container product-carousel">
         <h1 className="categories">Categories..</h1>
-        <News openImageViewer={openImageViewer} data={products} />
+        <center>
+          <News
+            openImageViewer={openImageViewer}
+            data={products}
+            md={md}
+            lg={lg}
+            sm={sm}
+            xs={xs}
+          />
+        </center>
       </div>
       {isViewerOpen && (
         <ImageViewer

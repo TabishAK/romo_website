@@ -26,17 +26,24 @@
     opacity: 0.5;
   }
 }
+// .modal-backdrop.show {
+//   opacity: 0;
+// }
 .loader {
   text-align: -webkit-center;
-  margin-top: 20rem;
+  margin-top: 24rem;
   h1 {
     position: relative;
     left: 30px;
     font-size: 30px;
     font-family: Quickpen;
-    color: #6bc9cade;
+    color: black;
     text-align: center;
   }
+}
+
+.modal-open {
+  overflow: unset !important;
 }
 
 li {

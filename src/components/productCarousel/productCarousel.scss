@@ -6,7 +6,7 @@
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
-  max-width: 315px;
+  max-width: 280px;
   width: 100%;
   color: #ffffff;
   font-size: 16px;
@@ -33,6 +33,17 @@
   -webkit-transition-delay: 0.25s;
   transition-delay: 0.25s;
 }
+
+.modal-open .modal {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+.slick-next {
+  right: 0px !important;
+}
+.slick-prev {
+  left: -10px !important;
+}
 .snip1584 img {
   vertical-align: top;
   max-width: 100%;
@@ -43,10 +54,6 @@
   font-size: 30px !important;
   opacity: 0.75 !important;
   color: #9d9c9c !important;
-}
-
-.slick-prev {
-  left: -45px !important;
 }
 
 .snip1584 figcaption {
