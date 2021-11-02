@@ -2,17 +2,19 @@ import "./signin_signup.scss";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
-
+import { useLocation } from "react-router-dom";
 const cookies = new Cookies();
 
-const Signin_Signup = () => {
-  const [cookie, setCookie] = useState();
+const Signin_Signup = (props) => {
   const [modalClass, setModalClass] = useState("modal fade");
+  const [toggle, setToggle] = useState("");
+  const location = useLocation();
 
   let [signupFormData, setSignupFormData] = useState({
     name: "",
     email: "",
     password: "",
+    slugForBroucher: location.pathname,
   });
 
   let [signinFormData, setSigninFormData] = useState({
@@ -24,6 +26,7 @@ const Signin_Signup = () => {
 
   const signup = (e) => {
     e.preventDefault();
+
     axios
       .post("http://localhost:8000/customerAuth/signup", signupFormData)
       .then((response) => {
@@ -55,9 +58,6 @@ const Signin_Signup = () => {
   };
 
   useEffect(() => {
-    // cookies.set("eff-token", "Pacman", { path: "/" });
-    setCookie(cookies.get("eff-token"));
-
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
     const container = document.getElementById("container");
@@ -73,14 +73,40 @@ const Signin_Signup = () => {
         container.classList.remove("right-panel-active");
       });
     }
-  });
+  }, []);
 
   const downloadBroucher = (e) => {
     e.preventDefault();
-    if (cookie !== undefined) {
-    } else {
-      setModalClass("modal fade show");
-    }
+    const t = cookies.get("eff_customer");
+    console.log(t);
+
+    // if (t) {
+    //   fetch(props.products ? props.products.subCategory.pdf : "", {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/pdf",
+    //     },
+    //   })
+    //     .then((response) => response.blob())
+    //     .then((blob) => {
+    //       const url = window.URL.createObjectURL(new Blob([blob]));
+    //       const link = document.createElement("a");
+    //       link.href = url;
+    //       link.setAttribute(
+    //         "download",
+    //         `${
+    //           props.products ? props.products.subCategory.subCategory_name : ""
+    //         }.pdf`
+    //       );
+    //       document.body.appendChild(link);
+    //       link.click();
+    //       link.parentNode.removeChild(link);
+    //     });
+    //   setToggle("");
+    // } else {
+    //   setModalClass("modal fade show");
+    //   setToggle("modal");
+    // }
   };
 
   return (
@@ -88,7 +114,8 @@ const Signin_Signup = () => {
       <button
         className="download-broucher login-trigger"
         data-target="#login"
-        data-toggle="modal"
+        data-toggle={toggle}
+        style={props.style}
         onClick={downloadBroucher}
       >
         Download Broucher

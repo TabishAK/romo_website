@@ -18,6 +18,7 @@ import { axios } from "axios";
 import { useDispatch } from "react-redux";
 import { fetchSubcategories } from "../src/services/slices/subCategorySlice";
 import { fetchMaincategories } from "./services/slices/mainCategorySlice";
+import VerificationPage from "./pages/VerificationPage/verificationPage";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -118,6 +119,8 @@ function App() {
             />
           )}
         />
+
+        <Route exact path="/verified" component={() => <VerificationPage />} />
 
         <Route
           exact
