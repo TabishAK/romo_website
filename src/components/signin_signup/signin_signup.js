@@ -194,6 +194,14 @@ const Signin_Signup = (props) => {
   }, []);
 
   const downloadBroucher = (e) => {
+    setSignupFormData({
+      first_name: "",
+      last_name: "",
+      email: "",
+      contact_no: "",
+      password: "",
+      confirm_password: "",
+    });
     e.preventDefault();
     const t = cookies.get("eff_customer");
 
