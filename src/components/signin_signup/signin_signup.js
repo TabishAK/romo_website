@@ -1,44 +1,126 @@
 import "./signin_signup.scss";
 import { useEffect, useState } from "react";
-import Cookies from "universal-cookie";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-const cookies = new Cookies();
+import Cookie from "cookie-universal";
+import Joi from "joi-browser";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../services/slices/tokenSlice";
+import { useAlert } from "react-alert";
 
 const Signin_Signup = (props) => {
   const [modalClass, setModalClass] = useState("modal fade");
   const [toggle, setToggle] = useState("");
+  const [error, setError] = useState();
+  const [signinFormError, setSigninFormError] = useState();
+  const cookies = Cookie();
+  const dispatch = useDispatch();
+  const alert = useAlert();
   const location = useLocation();
 
   let [signupFormData, setSignupFormData] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
+    contact_no: "",
     password: "",
+    confirm_password: "",
     slugForBroucher: location.pathname,
   });
 
   let [signinFormData, setSigninFormData] = useState({
-    name: "",
     email: "",
+    password: "",
   });
 
-  //signup
+  var SignUpFormSchema = {
+    first_name: Joi.string().min(3).max(10).required().label("First Name"),
+    last_name: Joi.string().min(3).max(10).required().label("Last Name"),
+    email: Joi.string()
+      .email({ tlds: { allow: false } })
+      .required()
+      .label("Email"),
+    contact_no: Joi.string().required().label("Contact Number"),
+    password: Joi.string().min(3).max(15).required().label("Password"),
+    confirm_password: Joi.any()
+      .valid(Joi.ref("password"))
+      .required()
+      .label("Confirm Password")
+      .error((errors) => {
+        errors.forEach((err) => {
+          switch (err.type) {
+            case "any.allowOnly":
+              err.message = "Password Not Matched!";
+              break;
+            default:
+              break;
+          }
+        });
+        return errors;
+      }),
+
+    slugForBroucher: Joi.string(),
+  };
+
+  var SignInFormSchema = {
+    email: Joi.string()
+      .email({ tlds: { allow: false } })
+      .required()
+      .label("Email"),
+    password: Joi.string().min(3).max(15).required().label("Password"),
+  };
+
+  function validateSigninFrom() {
+    const result = Joi.validate(signinFormData, SignInFormSchema);
+    return result;
+  }
+
+  function validate() {
+    const result = Joi.validate(signupFormData, SignUpFormSchema);
+    return result;
+  }
 
   const signup = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:8000/customerAuth/signup", signupFormData)
-      .then((response) => {
-        console.log(response);
-        setModalClass("modal fade");
-        setSignupFormData({ name: "", email: "", password: "" });
-        document.getElementsByClassName("modal-backdrop")[0].style.opacity =
-          "0";
-        document.getElementsByClassName("modal-backdrop")[1].style.opacity =
-          "0";
-      })
-      .catch((error) => console.log(error.response));
+    console.log();
+    const result = validate();
+    if (result.error) {
+      setError(result.error.details[0].message);
+    } else {
+      axios
+        .post("http://localhost:8000/customerAuth/signup", signupFormData)
+        .then((response) => {
+          dispatch(addToken(true));
+
+          document.getElementsByClassName("modal-backdrop")[0].style.opacity =
+            "0";
+          document.getElementsByClassName("modal-backdrop")[1].style.opacity =
+            "0";
+
+          document.getElementsByClassName("modal-backdrop")[0].style.display =
+            "none";
+          document.getElementsByClassName("modal-backdrop")[1].style.display =
+            "none";
+
+          document.getElementsByClassName("modal fade")[0].style.display =
+            "none";
+
+          setToggle("");
+          setModalClass("modal fade");
+          alert.success("Registerd! Please verify your email.");
+          setSignupFormData({
+            email: "",
+            password: "",
+            first_name: "",
+            last_name: "",
+            contact_no: "",
+            password: "",
+            confirm_password: "",
+          });
+        })
+        .catch((error) => console.log(error.response));
+    }
   };
 
   const handleForm = (e) => {
@@ -49,8 +131,39 @@ const Signin_Signup = (props) => {
 
   const signin = (e) => {
     e.preventDefault();
-    console.log(signinFormData);
-    setSigninFormData({ email: "", password: "" });
+
+    const result = validateSigninFrom();
+
+    if (result.error) {
+      setSigninFormError(result.error.details[0].message);
+    } else {
+      axios
+        .post("http://localhost:8000/customerAuth/signin", signinFormData)
+        .then((response) => {
+          console.log(response);
+          cookies.set("eff_customer", response.data);
+          dispatch(addToken(true));
+          setSignupFormData({ name: "", email: "", password: "" });
+
+          document.getElementsByClassName("modal-backdrop")[0].style.opacity =
+            "0";
+          document.getElementsByClassName("modal-backdrop")[1].style.opacity =
+            "0";
+
+          document.getElementsByClassName("modal-backdrop")[0].style.display =
+            "none";
+          document.getElementsByClassName("modal-backdrop")[1].style.display =
+            "none";
+
+          setToggle("");
+          setModalClass("modal fade");
+
+          document.getElementsByClassName("modal")[0].style.display = "none";
+        })
+        .catch((error) => console.log(error.response));
+
+      setSigninFormData({ email: "", password: "" });
+    }
   };
 
   const handleFormSignin = (e) => {
@@ -78,35 +191,41 @@ const Signin_Signup = (props) => {
   const downloadBroucher = (e) => {
     e.preventDefault();
     const t = cookies.get("eff_customer");
-    console.log(t);
 
-    // if (t) {
-    //   fetch(props.products ? props.products.subCategory.pdf : "", {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/pdf",
-    //     },
-    //   })
-    //     .then((response) => response.blob())
-    //     .then((blob) => {
-    //       const url = window.URL.createObjectURL(new Blob([blob]));
-    //       const link = document.createElement("a");
-    //       link.href = url;
-    //       link.setAttribute(
-    //         "download",
-    //         `${
-    //           props.products ? props.products.subCategory.subCategory_name : ""
-    //         }.pdf`
-    //       );
-    //       document.body.appendChild(link);
-    //       link.click();
-    //       link.parentNode.removeChild(link);
-    //     });
-    //   setToggle("");
-    // } else {
-    //   setModalClass("modal fade show");
-    //   setToggle("modal");
-    // }
+    if (t) {
+      fetch(
+        props.products.subCategory
+          ? props.products.subCategory.pdf
+          : props.products.pdf,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/pdf",
+          },
+        }
+      )
+        .then((response) => response.blob())
+        .then((blob) => {
+          const url = window.URL.createObjectURL(new Blob([blob]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute(
+            "download",
+            `${
+              props.products.subCategory
+                ? props.products.subCategory.subCategory_name
+                : props.products.subCategory_name
+            }.pdf`
+          );
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        });
+      setToggle("");
+    } else {
+      setModalClass("modal fade show");
+      setToggle("modal");
+    }
   };
 
   return (
@@ -133,14 +252,24 @@ const Signin_Signup = (props) => {
                     <form>
                       <h1 className="login-form-heading">Create Account</h1>
 
-                      <span>or use your email for registration</span>
-                      <input
-                        type="text"
-                        onChange={handleForm}
-                        name="name"
-                        value={signupFormData.name}
-                        placeholder="Name"
-                      />
+                      <span>Please verify your email after signup!</span>
+
+                      <div className="name-section">
+                        <input
+                          type="text"
+                          onChange={handleForm}
+                          name="first_name"
+                          value={signupFormData.firstname}
+                          placeholder="First Name"
+                        />
+                        <input
+                          type="text"
+                          onChange={handleForm}
+                          name="last_name"
+                          value={signupFormData.lastname}
+                          placeholder="Last Name"
+                        />
+                      </div>
                       <input
                         type="email"
                         name="email"
@@ -149,12 +278,41 @@ const Signin_Signup = (props) => {
                         placeholder="Email"
                       />
                       <input
+                        type="email"
+                        name="contact_no"
+                        onChange={handleForm}
+                        value={signupFormData.contact_no}
+                        placeholder="Contact Number"
+                      />
+                      <input
                         onChange={handleForm}
                         value={signupFormData.password}
                         type="password"
                         name="password"
                         placeholder="Password"
                       />
+                      <input
+                        onChange={handleForm}
+                        value={signupFormData.confirm_password}
+                        type="password"
+                        name="confirm_password"
+                        placeholder="Confirm Password"
+                      />
+                      {error ? (
+                        <p
+                          style={{
+                            fontSize: "14px",
+                            lineHeight: "18px",
+                            color: "#fd1b1b",
+                            position: "relative",
+                            top: "10px",
+                          }}
+                        >
+                          {error}
+                        </p>
+                      ) : (
+                        ""
+                      )}
                       <button onClick={signup} className="login-btn mt-4">
                         Sign Up
                       </button>
@@ -178,14 +336,31 @@ const Signin_Signup = (props) => {
                         type="password"
                         placeholder="Password"
                       />
-                      <a
+                      {/* <a
                         style={{
                           marginBottom: "2rem",
                         }}
                       >
                         Forgot your password?
-                      </a>
-                      <button onClick={signin} className="login-btn">
+                      </a> */}
+
+                      {signinFormError ? (
+                        <p
+                          style={{
+                            fontSize: "14px",
+                            lineHeight: "18px",
+                            color: "#fd1b1b",
+                            position: "relative",
+                            top: "-6px",
+                          }}
+                        >
+                          {signinFormError}
+                        </p>
+                      ) : (
+                        ""
+                      )}
+
+                      <button onClick={signin} className="login-btn mt-4">
                         Sign In
                       </button>
                     </form>

@@ -24,10 +24,10 @@ function App() {
   const [display, setDisplay] = useState(false);
   const [selectedProd, setSelectedProd] = useState();
   const [selectedSubCategory, setSelectedSubCategory] = useState();
-
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("Called BC");
     dispatch(fetchSubcategories());
     dispatch(fetchMaincategories());
   }, [dispatch]);

@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import "./productCarousel.scss";
 import Loader from "../Loader/loader1";
 import { useMediaQuery } from "react-responsive";
+import { VscZoomIn } from "react-icons/vsc";
 var createClass = require("create-react-class");
 
 var Article = createClass({
@@ -18,7 +19,9 @@ var Article = createClass({
         <figcaption
           onClick={() => this.props.openImageViewer(this.props.index)}
         >
-          <h3>{title}</h3>
+          <h3>
+            {title} <VscZoomIn />
+          </h3>
         </figcaption>
       </figure>
     );

@@ -10,8 +10,8 @@ import ImageViewer from "react-simple-image-viewer";
 import Signin_Signup from "../../components/signin_signup/signin_signup";
 import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
-import { fetchActiveSubcategories } from "../../services/slices/activeSubCategorySlice";
-import { useSelector } from "react-redux";
+import Cookie from "cookie-universal";
+import { addToken } from "../../services/slices/tokenSlice";
 const link = "http://54.183.217.110/";
 
 const Products = (props) => {
@@ -19,16 +19,16 @@ const Products = (props) => {
   const [products, setProducts] = useState();
   const [spinner, setSpinner] = useState();
   const [currentImage, setCurrentImage] = useState(0);
+  const [token, setToken] = useState();
+
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const location = useLocation();
-  const dispatch = useDispatch();
+  const cookies = Cookie();
   const lg = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
   const md = useMediaQuery({ minWidth: 768, maxWidth: 991 });
   const sm = useMediaQuery({ minWidth: 576, maxWidth: 767 });
   const xs = useMediaQuery({ maxWidth: 575 });
-
-  // const reduxData = useSelector((state) => state);
-  // console.log(reduxData);
+  const dispatch = useDispatch();
 
   const makeBlur = () => {
     setClassNamay("fabric blur");
@@ -66,13 +66,25 @@ const Products = (props) => {
         setClassNamay("fabric");
         setProducts(response.data);
         setSpinner(false);
+        return axios
+          .get("http://localhost:8000/customerAuth/getToken")
+          .then(function (response) {
+            if (response.data.token) {
+              cookies.set("eff_customer", response.data.token);
+              dispatch(addToken(true));
+              setToken(response.data.token);
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       })
       .catch(function (error) {
         console.log(error);
       });
   }, [location]);
 
-  console.log(products && products);
+  console.log("token: ", token);
 
   const getImages = () => {
     var images = [];
@@ -91,6 +103,7 @@ const Products = (props) => {
   ) : (
     <div className={classNamay}>
       <Navbar
+        token={token}
         st={props.st}
         openRightMenu={props.openRightMenu}
         makeBlur={makeBlur}
@@ -113,6 +126,7 @@ const Products = (props) => {
             </p>
 
             <Signin_Signup
+              label="Download Broucher"
               products={products && products[0]}
               style={{
                 background: "#6bc9cade",

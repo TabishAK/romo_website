@@ -6,14 +6,28 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "./services/store";
+import { positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+
+const options = {
+  position: positions.TOP_LEFT,
+  timeout: 6000,
+};
+
+let persistor = persistStore(store);
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <App />
+        <AlertProvider template={AlertTemplate} {...options}>
+          <App />
+        </AlertProvider>
       </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+    </PersistGate>
+  </Provider>,
   document.getElementById("root")
 );
 

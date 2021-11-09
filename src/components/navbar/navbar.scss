@@ -43,6 +43,10 @@
     width: 100%;
     left: 0%;
 
+    .be-inspried {
+      top: 220px !important;
+    }
+
     .product-names,
     .where-to-buy,
     .brand-names,
@@ -311,24 +315,74 @@
   }
 
   .admin-controls {
-    position: relative;
+    position: absolute;
+    top: 65px;
+    right: 50px;
     float: right;
-    top: 2px;
-    float: right;
-    right: 10px;
-    ul {
-      display: flex;
+    .user-icon {
+      padding-bottom: 15px;
+      padding-left: 15px;
+      .drop-down {
+        line-height: 22px;
+        display: none;
+        background: #f2f2f2d1;
+        padding: 12px;
+        position: absolute;
+        width: -moz-fit-content;
+        width: 110px;
+        border-radius: 5px;
+        font-size: 13px;
+        left: -10px;
+        top: 35px;
+        li {
+          margin-bottom: 3px;
+          font-weight: 300;
+          text-align: center;
+          position: relative;
+          cursor: pointer;
+        }
+
+        li:hover {
+          font-weight: 400;
+        }
+
+        li:nth-child(1) {
+          font-weight: 400;
+          width: 45px;
+          border-bottom: 2px solid gray !important;
+          margin-bottom: 8px;
+          font-size: 14px;
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+      }
     }
-    li {
-      cursor: pointer;
-      margin: 0px 8px;
+
+    .user-icon:hover {
+      .drop-down {
+        display: block;
+      }
+      .drop-down:hover {
+        .drop-down {
+          display: block;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      li {
+        cursor: pointer;
+        margin: 0px 8px;
+      }
     }
     float: right;
   }
 
   .hamburger {
     display: none;
-    position: relative;
+    position: absolute;
     float: right;
     top: 34px;
     right: 20px;

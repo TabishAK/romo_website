@@ -8,6 +8,15 @@
   position: relative;
 }
 
+.name-section {
+  display: flex;
+  input {
+    margin: 5px !important;
+    width: 130px;
+    font-size: 15px;
+    height: 40px;
+  }
+}
 // .fade {
 //   background-color: red;
 // }
@@ -36,6 +45,10 @@
 .login-form-heading {
   font-size: 30px;
   font-weight: bold;
+  position: relative;
+
+  position: relative;
+  top: -30px;
   margin: 0;
 }
 
@@ -98,6 +111,10 @@ input {
   margin: 8px 0 !important;
   width: 16rem;
   border-radius: 8px;
+
+  font-size: 15px;
+  width: 16rem;
+  height: 40px;
 }
 
 .container-changed {
@@ -111,8 +128,9 @@ input {
   max-width: 100%;
   min-height: 480px;
   span {
-    margin-bottom: 2rem;
     font-size: 12px;
+    top: -32px;
+    position: relative;
   }
 }
 

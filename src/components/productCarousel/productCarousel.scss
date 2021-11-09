@@ -12,6 +12,7 @@
   font-size: 16px;
   text-align: left;
   box-shadow: 0 5px 10px grey;
+  cursor: pointer;
 }
 .snip1584 * {
   -webkit-box-sizing: border-box;
@@ -129,6 +130,13 @@
 .snip1584 h3 {
   font-size: 16px;
   color: #f2f2f2;
+  display: grid;
+  svg {
+    font-size: 22px;
+
+    justify-self: center;
+    margin-top: 10px;
+  }
 }
 
 .app {

@@ -132,6 +132,27 @@
     left: 25px !important;
   }
 
+  .for-signup .signup-form2 {
+    width: 0%;
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+  }
+  .for-signup .form-box2 {
+    margin-top: -110vh;
+    opacity: 100%;
+    background: white;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 6px;
+  }
+  .for-signup form .flex-inputs input {
+    width: 10rem;
+  }
+  .for-signup form .flex-inputs span {
+    margin: 0 10px;
+    width: 10rem;
+  }
   .sign-in-container {
     input {
       background-color: #eee;

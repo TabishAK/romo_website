@@ -13,7 +13,7 @@ const Sideba = (props) => {
 
   useEffect(() => {
     axios
-      .post(link + "subCategories/")
+      .post(process.env.AMAZON_SERVER_LINK + "subCategories/")
       .then((response) => {
         setSubCategories(response.data);
         return axios.post(link + "mainCategory/");
@@ -22,14 +22,14 @@ const Sideba = (props) => {
         setMainCategories(response.data);
       })
       .catch((error) => console.log(error.response));
-  }, []);
+  }, [null]);
 
   const isNotMobile = useMediaQuery({ maxWidth: 1155 });
   const isMobile = useMediaQuery({ maxWidth: 576 });
 
   const styles = {
     root: {
-      position: "absolute",
+      position: "inherit",
       top: 0,
       left: 0,
       height: "176%",

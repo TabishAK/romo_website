@@ -7,7 +7,6 @@ import Footer from "../../components/footer/footer";
 import React from "react";
 import "./home.scss";
 import horseGIF from "../../images/horse.gif";
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -27,7 +26,7 @@ const Home = (props) => {
   const link = "http://54.183.217.110/";
 
   useEffect(() => {
-    setSpinner(true);
+    setSpinner(false);
     axios
       .get(link + "banner/")
       .then((response) => {

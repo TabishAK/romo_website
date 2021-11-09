@@ -26,9 +26,23 @@
     opacity: 0.5;
   }
 }
-// .modal-backdrop.show {
-//   opacity: 0;
-// }
+
+#__react-alert__ {
+  div {
+    div {
+      div {
+        background: #6bc9cac9 !important;
+        color: white;
+        top: 50px !important;
+        position: relative !important;
+        svg {
+          fill: black !important;
+          stroke: white !important;
+        }
+      }
+    }
+  }
+}
 .loader {
   text-align: -webkit-center;
   margin-top: 24rem;

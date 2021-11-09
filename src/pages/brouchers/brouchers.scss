@@ -1,16 +1,24 @@
 .brouchers {
-  height: 22rem;
+  height: 28rem;
   position: relative;
   background-image: url("../../images/backgrounds/gray_background.jpg");
   background-size: cover;
 
   .broucher-card {
-    margin-top: 5%;
+    margin-top: 6%;
     .row {
       justify-content: center;
       text-align: center;
-      p {
-        font-size: 14px !important;
+
+      .col-4 {
+        margin-bottom: 6rem !important;
+      }
+      .sub-cat-name {
+        font-size: 22px !important;
+        color: black;
+        font-family: "Quickpen";
+        border-bottom: 1px solid;
+        width: fit-content;
       }
       img {
         border: solid 3px white;

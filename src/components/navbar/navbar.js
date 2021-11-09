@@ -1,9 +1,13 @@
 import logo from "../../images/logo_updated/eff_logos2.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./navbar.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Cookie from "cookie-universal";
+import AdminControls from "./adminControl";
+import { addToken } from "../../services/slices/tokenSlice";
+
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
   const [products, setProducts] = useState();
@@ -16,9 +20,12 @@ const Navbar = (props) => {
   const subCategories = useSelector(
     (state) => state.subCategories.subCategories
   );
+
   const mainCategories = useSelector(
     (state) => state.mainCategories.mainCategories
   );
+
+  const isToken = useSelector((state) => state.token.token);
 
   const check = () => {
     setDisplay("show");
@@ -42,7 +49,7 @@ const Navbar = (props) => {
     setProducts("");
     setBeInspried("");
     setWhereToBuy("");
-    setHeight("27rem");
+    setHeight("25rem");
   };
 
   const dontShowCompany = () => {
@@ -80,10 +87,6 @@ const Navbar = (props) => {
   const dontShowWhereToBuy = () => {
     // setWhereToBuy("");
   };
-
-  // const downloadPdf = () => {
-
-  // };
 
   return (
     <>
@@ -336,28 +339,12 @@ const Navbar = (props) => {
             </li>
           </ul>
         </div>
-        {/* <div className="admin-controls">
-          <ul>
-            <li>
-              <FaUserAlt
-                style={
-                  display === "show"
-                    ? { fontSize: "18px", color: "gray" }
-                    : { fontSize: "18px", color: props.st.color }
-                }
-              />
-            </li>
-            <li>
-              <FaHeart
-                style={
-                  display === "show"
-                    ? { fontSize: "18px", color: "gray" }
-                    : { fontSize: "18px", color: props.st.color }
-                }
-              />
-            </li>
-          </ul>
-        </div> */}
+        <AdminControls
+          st={props.st}
+          token={isToken}
+          display={display}
+          handleLoginClick={props.handleLoginClick}
+        />
         <div className="hamburger">
           <GiHamburgerMenu
             onClick={props.openRightMenu}
