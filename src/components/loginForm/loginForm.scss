@@ -22,22 +22,20 @@
   .loginicon:hover {
     color: white;
   }
-
-  .login-form2 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .form-box {
     margin-top: 16vh;
-    opacity: 100%;
+    opacity: 1 !important;
     background: white;
     padding-right: 80px;
     padding-left: 80px;
     border-radius: 20px;
     box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+  .login-form2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .login-text2 {
