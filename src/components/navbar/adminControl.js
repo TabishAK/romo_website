@@ -12,8 +12,6 @@ const AdminControls = (props) => {
   const ref = useRef();
   const ref2 = useRef();
   const dispatch = useDispatch(addToken());
-  const cond = isloggedin();
-  console.log(cond);
 
   const [isShowLogin, setIsShowLogin] = useState(false);
   const [isShowSignup, setIsShowSignup] = useState(false);
