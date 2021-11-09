@@ -17,7 +17,7 @@ const AdminControls = (props) => {
   const [isShowSignup, setIsShowSignup] = useState(false);
 
   const handleLoginClick = () => {
-    console.log("Clicked2");
+    console.log("Clicked3");
     setIsShowSignup(false);
     setIsShowLogin(true);
   };

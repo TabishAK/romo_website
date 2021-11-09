@@ -119,6 +119,7 @@ const Signin_Signup = (props) => {
             contact_no: "",
             password: "",
             confirm_password: "",
+            slugForBroucher: location.pathname,
           });
         })
         .catch((error) => console.log(error.response));
@@ -148,7 +149,7 @@ const Signin_Signup = (props) => {
           console.log(response);
           cookies.set("eff_customer", response.data);
           dispatch(addToken(true));
-          setSignupFormData({ name: "", email: "", password: "" });
+          setSigninFormData({ email: "", password: "" });
 
           document.getElementsByClassName("modal-backdrop")[0].style.opacity =
             "0";
@@ -194,6 +195,10 @@ const Signin_Signup = (props) => {
   }, []);
 
   const downloadBroucher = (e) => {
+    e.preventDefault();
+    const t = cookies.get("eff_customer");
+    console.log(location.pathname);
+
     setSignupFormData({
       first_name: "",
       last_name: "",
@@ -201,10 +206,8 @@ const Signin_Signup = (props) => {
       contact_no: "",
       password: "",
       confirm_password: "",
+      slugForBroucher: location.pathname,
     });
-    e.preventDefault();
-    const t = cookies.get("eff_customer");
-
     if (t) {
       fetch(
         props.products.subCategory
@@ -272,14 +275,14 @@ const Signin_Signup = (props) => {
                           type="text"
                           onChange={handleForm}
                           name="first_name"
-                          value={signupFormData.firstname}
+                          value={signupFormData.first_name}
                           placeholder="First Name"
                         />
                         <input
                           type="text"
                           onChange={handleForm}
                           name="last_name"
-                          value={signupFormData.lastname}
+                          value={signupFormData.last_name}
                           placeholder="Last Name"
                         />
                       </div>
