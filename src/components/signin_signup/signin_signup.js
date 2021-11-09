@@ -113,10 +113,9 @@ const Signin_Signup = (props) => {
           setModalClass("modal fade");
           alert.success("Registerd! Please verify your email.");
           setSignupFormData({
-            email: "",
-            password: "",
             first_name: "",
             last_name: "",
+            email: "",
             contact_no: "",
             password: "",
             confirm_password: "",
