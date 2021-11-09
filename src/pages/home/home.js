@@ -23,12 +23,10 @@ const Home = (props) => {
     setClassNamay("home");
   };
 
-  const link = "http://54.183.217.110/";
-
   useEffect(() => {
     setSpinner(false);
     axios
-      .get(link + "banner/")
+      .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "banner/")
       .then((response) => {
         setBanner(response.data[0]);
         setSpinner(false);

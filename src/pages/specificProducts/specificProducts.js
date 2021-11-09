@@ -10,8 +10,6 @@ import axios from "axios";
 import Circles from "../../components/Loader/circles";
 import Loader2 from "./../../components/Loader/loader2";
 import Loader3 from "./../../components/Loader/loader3";
-const link = "http://54.183.217.110/";
-const link2 = "http://localhost:8000/";
 
 const SpecificProducts = (props) => {
   const [classNamay, setClassNamay] = useState("specific-products");
@@ -28,7 +26,7 @@ const SpecificProducts = (props) => {
   useEffect(() => {
     axios
       .post(
-        link + "swatches/getFromSlug",
+        process.env.REACT_APP_AMAZON_SERVER_LINK + "swatches/getFromSlug",
         {
           slug: "/" + slug[2],
         },

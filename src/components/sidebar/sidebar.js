@@ -5,7 +5,6 @@ import Sidebar from "react-sidebar";
 import "./sidebar.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-const link = "http://54.183.217.110/";
 
 const Sideba = (props) => {
   const [subCategories, setSubCategories] = useState();
@@ -13,10 +12,12 @@ const Sideba = (props) => {
 
   useEffect(() => {
     axios
-      .post(process.env.AMAZON_SERVER_LINK + "subCategories/")
+      .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "subCategories/")
       .then((response) => {
         setSubCategories(response.data);
-        return axios.post(link + "mainCategory/");
+        return axios.get(
+          process.env.REACT_APP_AMAZON_SERVER_LINK + "mainCategory/"
+        );
       })
       .then((response) => {
         setMainCategories(response.data);

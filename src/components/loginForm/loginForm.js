@@ -34,7 +34,10 @@ const LoginForm = (props) => {
       setSigninFormError(result.error.details[0].message);
     } else {
       axios
-        .post("http://localhost:8000/customerAuth/signin", signinFormData)
+        .post(
+          process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signin",
+          signinFormData
+        )
         .then((response) => {
           cookies.set("eff_customer", response.data);
           dispatch(addToken(true));

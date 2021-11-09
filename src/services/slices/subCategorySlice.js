@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const link = "http://54.183.217.110/";
 
 export const fetchSubcategories = createAsyncThunk(
   "subcategories/fetchSubcategories",
   async () => {
-    const response = await axios.post(link + "subCategories/");
+    const response = await axios.get(
+      process.env.REACT_APP_AMAZON_SERVER_LINK + "subCategories/"
+    );
     return response.data;
   }
 );

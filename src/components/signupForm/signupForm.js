@@ -63,7 +63,10 @@ const SignupForm = (props) => {
       setError(result.error.details[0].message);
     } else {
       axios
-        .post("http://localhost:8000/customerAuth/signup", signupFormData)
+        .post(
+          process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",
+          signupFormData
+        )
         .then((response) => {
           props.closeSignupModal();
           alert.success("Registerd! Please verify your email.");

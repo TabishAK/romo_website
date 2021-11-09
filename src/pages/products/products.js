@@ -12,7 +12,6 @@ import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
 import Cookie from "cookie-universal";
 import { addToken } from "../../services/slices/tokenSlice";
-const link = "http://54.183.217.110/";
 
 const Products = (props) => {
   const [classNamay, setClassNamay] = useState("fabric");
@@ -52,7 +51,7 @@ const Products = (props) => {
     setSpinner(true);
     axios
       .post(
-        link + "products/getFromSlug",
+        process.env.REACT_APP_AMAZON_SERVER_LINK + "products/getFromSlug",
         JSON.stringify({
           slug: location.pathname,
         }),
@@ -67,7 +66,9 @@ const Products = (props) => {
         setProducts(response.data);
         setSpinner(false);
         return axios
-          .get("http://localhost:8000/customerAuth/getToken")
+          .get(
+            process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/getToken"
+          )
           .then(function (response) {
             if (response.data.token) {
               cookies.set("eff_customer", response.data.token);

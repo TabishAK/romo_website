@@ -89,7 +89,10 @@ const Signin_Signup = (props) => {
       setError(result.error.details[0].message);
     } else {
       axios
-        .post("http://localhost:8000/customerAuth/signup", signupFormData)
+        .post(
+          process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",
+          signupFormData
+        )
         .then((response) => {
           dispatch(addToken(true));
 
@@ -138,7 +141,10 @@ const Signin_Signup = (props) => {
       setSigninFormError(result.error.details[0].message);
     } else {
       axios
-        .post("http://localhost:8000/customerAuth/signin", signinFormData)
+        .post(
+          process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signin",
+          signinFormData
+        )
         .then((response) => {
           console.log(response);
           cookies.set("eff_customer", response.data);

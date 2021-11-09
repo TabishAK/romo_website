@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./services/store";
 import { positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
-
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 
