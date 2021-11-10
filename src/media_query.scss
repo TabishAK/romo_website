@@ -125,6 +125,32 @@
   }
 }
 @media (min-width: 576px) and (max-width: 766px) {
+  .brouchers .broucher-card .row img {
+    border: solid 3px white;
+    box-shadow: 3px 3px 4px #888;
+    width: 100%;
+  }
+
+  .brouchers .broucher-card .row .sub-cat-name {
+    margin-bottom: 30px;
+    font-size: 28px !important;
+    color: black;
+    font-family: "Quickpen";
+    border-bottom: 1px solid;
+    width: -moz-fit-content;
+    margin-top: 22px;
+    width: fit-content;
+  }
+
+  .brouchers .broucher-heading h1 {
+    color: black;
+    text-align: center;
+    margin-top: -32px;
+    font-family: "Quickpen";
+    font-weight: bolder;
+    margin-bottom: 109px;
+  }
+
   .modal-content {
     width: 30rem !important;
   }

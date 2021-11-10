@@ -7,6 +7,7 @@ import Joi from "joi-browser";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../services/slices/tokenSlice";
 import { useAlert } from "react-alert";
+import PhoneInput from "react-phone-number-input";
 
 const Signin_Signup = (props) => {
   const [modalClass, setModalClass] = useState("modal fade");
@@ -83,11 +84,11 @@ const Signin_Signup = (props) => {
   const signup = (e) => {
     e.preventDefault();
 
-    console.log();
     const result = validate();
     if (result.error) {
       setError(result.error.details[0].message);
     } else {
+      setError("");
       axios
         .post(
           process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",
@@ -122,7 +123,7 @@ const Signin_Signup = (props) => {
             slugForBroucher: location.pathname,
           });
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => setError(error.response.data));
     }
   };
 
@@ -244,6 +245,10 @@ const Signin_Signup = (props) => {
     }
   };
 
+  const handleContactInput = (e) => {
+    setSignupFormData({ ...signupFormData, contact_no: e });
+  };
+
   return (
     <>
       <button
@@ -293,12 +298,12 @@ const Signin_Signup = (props) => {
                         value={signupFormData.email}
                         placeholder="Email"
                       />
-                      <input
-                        type="email"
+                      <PhoneInput
+                        international
+                        defaultCountry="US"
                         name="contact_no"
-                        onChange={handleForm}
                         value={signupFormData.contact_no}
-                        placeholder="Contact Number"
+                        onChange={handleContactInput}
                       />
                       <input
                         onChange={handleForm}
@@ -352,13 +357,6 @@ const Signin_Signup = (props) => {
                         type="password"
                         placeholder="Password"
                       />
-                      {/* <a
-                        style={{
-                          marginBottom: "2rem",
-                        }}
-                      >
-                        Forgot your password?
-                      </a> */}
 
                       {signinFormError ? (
                         <p

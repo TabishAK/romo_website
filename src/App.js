@@ -1,24 +1,25 @@
+import { fetchSubcategories } from "../src/services/slices/subCategorySlice";
+import { fetchMaincategories } from "./services/slices/mainCategorySlice";
 import SpecificProducts from "./pages/specificProducts/specificProducts";
+import VerificationPage from "./pages/VerificationPage/verificationPage";
 import "../node_modules/video-react/dist/video-react.css";
 import logo2 from "./images/logo_updated/eff_logos4.png";
 import logo from "./images/logo_updated/eff_logos2.png";
+import Brouchers from "./pages/brouchers/brouchers";
 import AboutEFF from "./pages/about_eff/about_eff";
+import Sideba from "./components/sidebar/sidebar";
 import Products from "./pages/products/products";
 import { Route, Switch } from "react-router-dom";
+import "react-phone-number-input/style.css";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import Home from "./pages/home/home";
-import { useState, useEffect } from "react";
+import Blog from "./pages/blog/blog";
 import "../src/media_query.scss";
 import "./App.scss";
-import Blog from "./pages/blog/blog";
-import Sideba from "./components/sidebar/sidebar";
-import Brouchers from "./pages/brouchers/brouchers";
-import { axios } from "axios";
-import { useDispatch } from "react-redux";
-import { fetchSubcategories } from "../src/services/slices/subCategorySlice";
-import { fetchMaincategories } from "./services/slices/mainCategorySlice";
-import VerificationPage from "./pages/VerificationPage/verificationPage";
+import ContactPage from "./pages/contactPage/contactPage";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -84,6 +85,7 @@ function App() {
             />
           )}
         />
+
         <Route
           exact
           path="/brouchers"
@@ -120,8 +122,20 @@ function App() {
           )}
         />
 
-        <Route exact path="/verified" component={() => <VerificationPage />} />
-
+        <Route
+          exact
+          path="/contact_us"
+          component={() => (
+            <ContactPage
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+            />
+          )}
+        />
         <Route
           exact
           path="/:product_name"

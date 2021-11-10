@@ -11,6 +11,18 @@
       span {
         margin: 0 16px;
         width: 14rem;
+        .PhoneInput {
+          top: -5px;
+          position: relative;
+          width: 14.5rem;
+          input {
+            width: fit-content;
+            background: transparent;
+            border: 1px solid gainsboro;
+            border-radius: 18px;
+            outline: none;
+          }
+        }
         label {
           font-family: "Noah Grotesque Regular";
           float: left;

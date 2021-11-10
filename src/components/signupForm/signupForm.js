@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./signupForm.scss";
 import { useLocation } from "react-router-dom";
 import Joi from "joi-browser";
 import { useAlert } from "react-alert";
 import axios from "axios";
+import PhoneInput from "react-phone-number-input";
 
 const SignupForm = (props) => {
   const location = useLocation();
   const [error, setError] = useState();
   const alert = useAlert();
+
+  useEffect(() => {
+    setSignupFormData({
+      first_name: "",
+      last_name: "",
+      email: "",
+      contact_no: "",
+      password: "",
+      confirm_password: "",
+      slugForBroucher: location.pathname,
+    });
+  }, [props.isShowSignup]);
 
   let [signupFormData, setSignupFormData] = useState({
     first_name: "",
@@ -62,6 +75,8 @@ const SignupForm = (props) => {
     if (result.error) {
       setError(result.error.details[0].message);
     } else {
+      setError("");
+
       axios
         .post(
           process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",
@@ -70,13 +85,26 @@ const SignupForm = (props) => {
         .then((response) => {
           props.closeSignupModal();
           alert.success("Registerd! Please verify your email.");
+          setSignupFormData({
+            first_name: "",
+            last_name: "",
+            email: "",
+            contact_no: "",
+            password: "",
+            confirm_password: "",
+            slugForBroucher: location.pathname,
+          });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => setError(error.response.data));
     }
   };
 
   const handleForm = (e) => {
     setSignupFormData({ ...signupFormData, [e.target.name]: e.target.value });
+  };
+
+  const handleContactInput = (e) => {
+    setSignupFormData({ ...signupFormData, contact_no: e });
   };
 
   return (
@@ -142,18 +170,12 @@ const SignupForm = (props) => {
 
               <span>
                 <label>Contact No</label>
-                <input
-                  style={{
-                    fontSize: "12px",
-                    padding: "20px",
-                    fontWeight: "400",
-                  }}
-                  type="text"
-                  placeholder="Contact No"
+                <PhoneInput
+                  international
+                  defaultCountry="US"
                   name="contact_no"
-                  onChange={handleForm}
                   value={signupFormData.contact_no}
-                  className="login-box mb-4"
+                  onChange={handleContactInput}
                 />
               </span>
             </div>
@@ -167,7 +189,7 @@ const SignupForm = (props) => {
                     padding: "20px",
                     fontWeight: "400",
                   }}
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   onChange={handleForm}
                   value={signupFormData.password}
@@ -184,7 +206,7 @@ const SignupForm = (props) => {
                     padding: "20px",
                     fontWeight: "400",
                   }}
-                  type="text"
+                  type="password"
                   placeholder="Confrim Password"
                   name="confirm_password"
                   onChange={handleForm}
