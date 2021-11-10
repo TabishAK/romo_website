@@ -6,6 +6,7 @@ import SignupForm from "../signupForm/signupForm";
 import { isloggedin } from "../../utlis/utils";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../services/slices/tokenSlice";
+import { Link } from "react-router-dom";
 
 const AdminControls = (props) => {
   const cookies = Cookie();
@@ -101,8 +102,12 @@ const AdminControls = (props) => {
                 )}
               </center>
               <li>Careers</li>
-              <li>Brouchers</li>
-              <li>Contact Us</li>
+              <li>
+                <Link to="/brouchers">Brouchers</Link>
+              </li>
+              <li>
+                <Link to="/contact_us">Contact Us</Link>
+              </li>
             </ul>
           </li>
           <li>

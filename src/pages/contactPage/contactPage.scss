@@ -1,0 +1,63 @@
+.contact-page {
+  .icon-section {
+    margin-top: 5rem;
+    .row {
+      text-align: -webkit-center;
+      margin-top: 4rem;
+      position: relative;
+      .col-xl-3 {
+        svg {
+          font-size: 7rem;
+          fill: #dddddd;
+        }
+
+        h5 {
+          text-transform: uppercase;
+          text-align: center;
+          color: gray;
+        }
+      }
+    }
+    h1 {
+      text-align: center;
+      font-family: "Raleway";
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 5rem;
+    }
+  }
+  .form-map {
+    margin-top: 7rem;
+    .row {
+      margin-right: 80px;
+      margin-left: 80px;
+      .col-xl-6 {
+        .form-contact-us {
+          display: grid;
+          textarea {
+            background: #eeeeee;
+            border: none;
+            padding: 16px;
+            border-radius: 9px;
+            width: 442px;
+            height: 120px;
+          }
+          input {
+            width: 75%;
+            height: 50px;
+          }
+        }
+        h3 {
+          text-align: left;
+          color: #6bc9cacf;
+        }
+        h5 {
+          font-size: 16px;
+          text-align: left;
+          color: black;
+          font-family: "Raleway";
+        }
+      }
+    }
+  }
+}

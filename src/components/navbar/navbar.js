@@ -252,7 +252,9 @@ const Navbar = (props) => {
             <li>
               <Link>CONTACT US</Link>
               <ul>
-                <li>Contact Us</li>
+                <Link to="/contact_us">
+                  <li>Contact Us</li>
+                </Link>
               </ul>
             </li>
           </ul>
