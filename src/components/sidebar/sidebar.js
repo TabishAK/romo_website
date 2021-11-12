@@ -30,7 +30,7 @@ const Sideba = (props) => {
 
   const styles = {
     root: {
-      position: "inherit",
+      position: "absolute",
       top: 0,
       left: 0,
       height: "176%",

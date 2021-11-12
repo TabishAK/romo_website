@@ -5,9 +5,7 @@ import { MdLocationOn } from "react-icons/md";
 import { FaPhone, FaFax, FaMailBulk } from "react-icons/fa";
 import Footer from "./../../components/footer/footer";
 const ContactPage = (props) => {
-  const [classNamay, setClassNamay] = useState("home");
-  // const [banner, setBanner] = useState();
-  // const [spinner, setSpinner] = useState(true);
+  const [classNamay, setClassNamay] = useState("contact-page");
 
   const makeBlur = () => {
     setClassNamay("contact-page blur");
@@ -18,7 +16,7 @@ const ContactPage = (props) => {
   };
 
   return (
-    <div className="contact-page">
+    <div className={classNamay}>
       <Navbar
         st={props.st}
         openRightMenu={props.openRightMenu}
@@ -66,7 +64,7 @@ const ContactPage = (props) => {
 
       <div className="container form-map">
         <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 form-container">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <h3>GET A FREE CASE EVALUATION TODAY!</h3>
             <h5>AVAILABLE 24 HOURS A DAY!</h5>
             <div className="form-contact-us">
