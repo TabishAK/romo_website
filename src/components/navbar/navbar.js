@@ -164,7 +164,14 @@ const Navbar = (props) => {
 
           <ul className={"where-to-buy " + whereToBuy} id="product-names">
             <li className="providers">
-              <Link>HALF PRICE DRAPES </Link>
+              <Link
+                to={{
+                  pathname: "https://www.halfpricedrapes.com/",
+                }}
+                target="_blank"
+              >
+                HALF PRICE DRAPES{" "}
+              </Link>
               <Link>All MODERN </Link>
               <Link>BIRCHLANE </Link>
             </li>

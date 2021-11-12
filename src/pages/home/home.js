@@ -7,13 +7,18 @@ import Footer from "../../components/footer/footer";
 import React from "react";
 import "./home.scss";
 import horseGIF from "../../images/horse.gif";
+import Cookie from "cookie-universal";
 import { useState, useEffect } from "react";
+import { addToken } from "../../services/slices/tokenSlice";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const Home = (props) => {
   const [classNamay, setClassNamay] = useState("home");
   const [banner, setBanner] = useState();
   const [spinner, setSpinner] = useState(true);
+  const cookies = Cookie();
+  const dispatch = useDispatch();
 
   const makeBlur = () => {
     setClassNamay("home blur");
@@ -30,6 +35,19 @@ const Home = (props) => {
       .then((response) => {
         setBanner(response.data[0]);
         setSpinner(false);
+        return axios
+          .get(
+            process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/getToken"
+          )
+          .then(function (response) {
+            if (response.data.token) {
+              cookies.set("eff_customer", response.data.token);
+              dispatch(addToken(true));
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       })
       .catch((error) => console.log(error.response));
   }, []);
