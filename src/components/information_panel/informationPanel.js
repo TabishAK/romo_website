@@ -24,7 +24,7 @@ const InformationPanel = () => {
         established interior brands each with their own unique character and
         style.
       </p>
-      <ShowBrandsButton />
+
       <div className="row info-panel-images">
         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 card-1">
           <div id="all">

@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { GiCrossedBones } from "react-icons/gi";
+import { ImCancelCircle } from "react-icons/im";
 import MenuContent from "./menuContent";
 import Sidebar from "react-sidebar";
 import "./sidebar.scss";
@@ -85,7 +85,7 @@ const Sideba = (props) => {
     return (
       <div className="sidebar-content">
         <div className="heading-and-cross container">
-          <GiCrossedBones onClick={props.closeRightMenu} />
+          <ImCancelCircle onClick={props.closeRightMenu} />
         </div>
         <MenuContent
           subCategories={subCategories}

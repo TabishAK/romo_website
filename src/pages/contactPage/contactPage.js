@@ -30,27 +30,27 @@ const ContactPage = (props) => {
           <h1>Let's Connect!</h1>
         </center>
         <div className="row">
-          <div className="col-xl-3">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <MdLocationOn />
-            <h5 className="mt-3">OUR MAIN OFFICE</h5>
+            <h5 className="mt-4">OUR MAIN OFFICE</h5>
             <p className="mt-3">SoHo 94 Broadway St New York, NY 1001</p>
           </div>
-          <div className="col-xl-3">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <FaPhone />
-            <h5 className="mt-3">PHONE NUMBER</h5>
+            <h5 className="mt-4">PHONE NUMBER</h5>
             <p className="mt-3">
               234-9876-5400
               <br /> 888-0123-4567 (Toll Free)
             </p>
           </div>
-          <div className="col-xl-3">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <FaFax />
-            <h5 className="mt-3">FAX</h5>
+            <h5 className="mt-4">FAX</h5>
             <p className="mt-3">1-234-567-8900</p>
           </div>
-          <div className="col-xl-3">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <FaMailBulk />
-            <h5 className="mt-3">MAIL</h5>
+            <h5 className="mt-4">MAIL</h5>
             <p className="mt-3">hello@eff.com</p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const ContactPage = (props) => {
 
       <div className="container form-map">
         <div className="row">
-          <div className="col-xl-6">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 form-container">
             <h3>GET A FREE CASE EVALUATION TODAY!</h3>
             <h5>AVAILABLE 24 HOURS A DAY!</h5>
             <div className="form-contact-us">
@@ -105,7 +105,7 @@ const ContactPage = (props) => {
               Submit{" "}
             </button>
           </div>
-          <div className="col-xl-6">
+          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.0318848775632!2d-121.80277684917284!3d37.695450224393376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fe62d7b1d18c1%3A0x723709a3d8a98a5b!2sExclusive%20Fabrics%20%26%20Furnishings%2C%20LLC!5e0!3m2!1sen!2s!4v1636547475033!5m2!1sen!2s"
               width="100%"
