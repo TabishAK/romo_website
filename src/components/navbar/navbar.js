@@ -1,12 +1,10 @@
 import logo from "../../images/logo_updated/eff_logos2.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./navbar.scss";
-import { useSelector, useDispatch } from "react-redux";
-import Cookie from "cookie-universal";
+import { useSelector } from "react-redux";
 import AdminControls from "./adminControl";
-import { addToken } from "../../services/slices/tokenSlice";
 
 const Navbar = (props) => {
   const [display, setDisplay] = useState();
@@ -354,12 +352,12 @@ const Navbar = (props) => {
           display={display}
           handleLoginClick={props.handleLoginClick}
         />
-        <div className="hamburger">
+        {/* <div className="hamburger">
           <GiHamburgerMenu
             onClick={props.openRightMenu}
             style={{ fill: props.st.color }}
           />
-        </div>
+        </div> */}
       </div>
     </>
   );

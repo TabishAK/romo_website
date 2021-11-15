@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import News from "./../../components/productCarousel/productCarousel";
-import horseGIF from "../../images/horse.gif";
 import ImageViewer from "react-simple-image-viewer";
 import Signin_Signup from "../../components/signin_signup/signin_signup";
 import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
 import Cookie from "cookie-universal";
 import { addToken } from "../../services/slices/tokenSlice";
+import HorseLoader from "../../components/Loader/horseLoader";
 
 const Products = (props) => {
   const [classNamay, setClassNamay] = useState("fabric");
@@ -97,10 +97,7 @@ const Products = (props) => {
   };
 
   return spinner ? (
-    <div className="loader">
-      <img src={horseGIF} style={{ width: "15%" }} alt="loading" />
-      <h1>Loading ...</h1>
-    </div>
+    <HorseLoader />
   ) : (
     <div className={classNamay}>
       <Navbar

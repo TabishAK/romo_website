@@ -369,6 +369,26 @@
 }
 
 @media (max-width: 575px) {
+  .nav-bar .admin-controls {
+    position: absolute;
+    top: 37px;
+    right: 5px;
+  }
+  .bm-burger-button {
+    width: 30px;
+    height: 24px;
+    left: 10px;
+    top: 40px;
+  }
+  .nav-bar .logo-section img {
+    cursor: pointer;
+    width: 180px;
+    position: relative;
+    top: -25px;
+    z-index: 1;
+    height: 155px;
+  }
+
   .contact-page {
     .form-map {
       .row {

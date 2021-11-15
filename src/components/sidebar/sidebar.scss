@@ -1,14 +1,135 @@
-.heading-and-cross {
-  display: flex;
-  position: relative;
-  top: 25px;
+// .heading-and-cross {
+//   display: flex;
+//   position: relative;
+//   top: 25px;
 
-  svg {
-    z-index: 2;
-    font-size: 35px;
-    left: 85%;
-    position: absolute;
-    top: 6px;
-    fill: gray;
-  }
+//   svg {
+//     z-index: 2;
+//     font-size: 35px;
+//     left: 85%;
+//     position: absolute;
+//     top: 6px;
+//     fill: gray;
+//   }
+// }
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 45px;
+  top: 55px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #6bc9ca;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #6bc9ca;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  left: -10px;
+  position: relative;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+.outer-menu {
+  margin: 0;
+  padding: 0;
+  max-width: 30%;
+}
+.outer-menu > li {
+  list-style: none;
+  margin: 0;
+  cursor: pointer;
+  padding: 8px;
+  background: #cdcdcd;
+}
+
+.outer-menu > li ul {
+  margin: 0;
+  padding: 0;
+}
+
+.outer-menu > li ul > li {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  padding: 5px;
+  background: black;
+  color: white;
+}
+
+//@at-root
+
+.main-field {
+  line-height: 3rem;
+  color: white;
+  font-weight: 500;
+  font-family: "Noah Grotesque Regular";
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+}
+.main-categories {
+  position: relative;
+  border-top: 1px solid gray;
+  padding: 15px 0px 0px 0px;
+  color: whitesmoke;
+  font-weight: 400;
+  left: 2rem;
+  line-height: 28px;
+  font-family: "Noah Grotesque Regular";
+}
+.sub-categories {
+  position: relative;
+  left: 2rem;
+  color: gainsboro;
+  line-height: 28px;
+  font-family: "Noah Grotesque Regular";
 }

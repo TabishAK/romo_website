@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import React, { useEffect } from "react";
 import "./productCarousel.scss";
 import Loader from "../Loader/loader1";
+
 import { useMediaQuery } from "react-responsive";
 import { VscZoomIn } from "react-icons/vsc";
 var createClass = require("create-react-class");
