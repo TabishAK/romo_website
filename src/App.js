@@ -20,6 +20,7 @@ import Blog from "./pages/blog/blog";
 import "../src/media_query.scss";
 import "./App.scss";
 import ContactPage from "./pages/contactPage/contactPage";
+import Careers from "./pages/careers/careers";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -136,6 +137,22 @@ function App() {
             />
           )}
         />
+
+        <Route
+          exact
+          path="/careers"
+          component={() => (
+            <Careers
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+            />
+          )}
+        />
+
         <Route
           exact
           path="/:product_name"

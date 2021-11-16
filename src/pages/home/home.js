@@ -14,11 +14,11 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 
 const Home = (props) => {
-  const [classNamay, setClassNamay] = useState("home");
   const [banner, setBanner] = useState();
   const [spinner, setSpinner] = useState(true);
   const cookies = Cookie();
   const dispatch = useDispatch();
+  const [classNamay, setClassNamay] = useState("home");
 
   const makeBlur = () => {
     setClassNamay("home blur");

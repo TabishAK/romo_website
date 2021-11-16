@@ -237,21 +237,30 @@ const Navbar = (props) => {
               <ul>
                 <Link to="/about">
                   <li>About Exclusive Fabrics</li>
-                  <li>Leadership</li>
-                  <li>Facilities</li>
                 </Link>
+                <li>Leadership</li>
+                <li>Facilities</li>
               </ul>
             </li>
             <li>
               <Link> BRANDS </Link>
               <ul>
-                <li>Half Price Drapes</li>
+                <Link
+                  to={{
+                    pathname: "https://www.halfpricedrapes.com/",
+                  }}
+                  target="_blank"
+                >
+                  <li>Half Price Drapes</li>
+                </Link>
               </ul>
             </li>
             <li>
               <Link> CAREER</Link>
               <ul>
-                <li>Careers</li>
+                <Link to="/careers">
+                  <li>Careers</li>
+                </Link>
               </ul>
             </li>
             <li>
