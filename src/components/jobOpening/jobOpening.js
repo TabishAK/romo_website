@@ -12,27 +12,29 @@ import { addToken } from "../../services/slices/tokenSlice";
 const JobOpening = () => {
   const [isShowApplyForm, setIsShowApplyForm] = useState(false);
   const [jobPost, setJobPost] = useState();
-  // const [token, setToken] = useState();
-
   const [userID, setUserID] = useState();
   const cookies = Cookie();
   const dispatch = useDispatch();
   const ref = useRef();
+  const token = useSelector((state) => state.token.token);
 
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/getToken")
-      .then(function (response) {
-        if (response.data.token) {
-          cookies.set("eff_customer", response.data.token);
-          setUserID(jwt_decode(response.data.token));
-          dispatch(addToken(response.data.token));
-          // setToken(response.data.token);
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (token != null) {
+      axios
+        .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/getToken")
+        .then(function (response) {
+          if (response.data.token) {
+            cookies.set("eff_customer", response.data.token);
+            setUserID(jwt_decode(response.data.token));
+            dispatch(addToken(response.data.token));
+            console.log("Successfully Captured Token");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+          console.log("Not Captured Token");
+        });
+    }
 
     const checkIfClickedOutside = (e) => {
       if (isShowApplyForm && ref.current && !ref.current.contains(e.target)) {
@@ -43,7 +45,7 @@ const JobOpening = () => {
     return () => {
       document.removeEventListener("click", checkIfClickedOutside);
     };
-  }, []);
+  }, [isShowApplyForm]);
 
   const [jobOpenings] = useState([
     {
@@ -87,8 +89,7 @@ const JobOpening = () => {
     setJobPost(jp);
   };
 
-  const token = useSelector((state) => state.token.token);
-
+  console.log();
   console.log(userID);
 
   return (
