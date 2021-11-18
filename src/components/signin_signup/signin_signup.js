@@ -229,7 +229,7 @@ const Signin_Signup = (props) => {
           link.setAttribute(
             "download",
             `${
-              props.products.subCategory
+              props.products && props.products.subCategory
                 ? props.products.subCategory.subCategory_name
                 : props.products.subCategory_name
             }.pdf`

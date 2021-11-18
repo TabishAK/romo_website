@@ -29,7 +29,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Called BC");
+    console.log("Called BC 2");
     dispatch(fetchSubcategories());
     dispatch(fetchMaincategories());
   }, [dispatch]);
