@@ -2,16 +2,17 @@ import { GiTie } from "react-icons/gi";
 import "./jobOpening.scss";
 import { useState, useRef, useEffect } from "react";
 import Signin_Signup from "./../signin_signup/signin_signup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ApplyForm from "./../applyForm/applyForm";
 import Cookie from "cookie-universal";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { addToken } from "../../services/slices/tokenSlice";
+
 const JobOpening = () => {
   const [isShowApplyForm, setIsShowApplyForm] = useState(false);
   const [jobPost, setJobPost] = useState();
-  const [token, setToken] = useState();
+  // const [token, setToken] = useState();
 
   const [userID, setUserID] = useState();
   const cookies = Cookie();
@@ -26,7 +27,7 @@ const JobOpening = () => {
           cookies.set("eff_customer", response.data.token);
           setUserID(jwt_decode(response.data.token));
           dispatch(addToken(response.data.token));
-          setToken(response.data.token);
+          // setToken(response.data.token);
         }
       })
       .catch(function (error) {
@@ -42,7 +43,7 @@ const JobOpening = () => {
     return () => {
       document.removeEventListener("click", checkIfClickedOutside);
     };
-  }, [isShowApplyForm]);
+  }, []);
 
   const [jobOpenings] = useState([
     {
@@ -85,6 +86,8 @@ const JobOpening = () => {
     setIsShowApplyForm(true);
     setJobPost(jp);
   };
+
+  const token = useSelector((state) => state.token.token);
 
   console.log(userID);
 
