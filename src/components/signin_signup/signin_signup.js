@@ -95,8 +95,6 @@ const Signin_Signup = (props) => {
           signupFormData
         )
         .then((response) => {
-          dispatch(addToken(true));
-
           document.getElementsByClassName("modal-backdrop")[0].style.opacity =
             "0";
           document.getElementsByClassName("modal-backdrop")[1].style.opacity =
@@ -149,7 +147,7 @@ const Signin_Signup = (props) => {
         .then((response) => {
           console.log(response);
           cookies.set("eff_customer", response.data);
-          dispatch(addToken(true));
+          dispatch(addToken(response.data));
           setSigninFormData({ email: "", password: "" });
 
           document.getElementsByClassName("modal-backdrop")[0].style.opacity =
@@ -211,9 +209,11 @@ const Signin_Signup = (props) => {
     });
     if (t) {
       fetch(
-        props.products.subCategory
-          ? props.products.subCategory.pdf
-          : props.products.pdf,
+        props.products
+          ? props.products.subCategory
+            ? props.products.subCategory.pdf
+            : props.products.pdf
+          : "",
         {
           method: "GET",
           headers: {
@@ -258,7 +258,7 @@ const Signin_Signup = (props) => {
         style={props.style}
         onClick={downloadBroucher}
       >
-        Download Broucher
+        {props.label ? props.label : "Download Broucher"}
       </button>
       <center>
         <div id="login" className={modalClass} role="dialog">

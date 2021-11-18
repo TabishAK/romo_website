@@ -42,7 +42,7 @@ const Home = (props) => {
           .then(function (response) {
             if (response.data.token) {
               cookies.set("eff_customer", response.data.token);
-              dispatch(addToken(true));
+              dispatch(addToken(response.data.token));
             }
           })
           .catch(function (error) {

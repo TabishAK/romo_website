@@ -1,9 +1,8 @@
 import { ImAirplane, ImLocation2 } from "react-icons/im";
 import { FaBriefcaseMedical } from "react-icons/fa";
 import { BsFillHouseFill } from "react-icons/bs";
-import { GiMoneyStack } from "react-icons/gi";
+import { GiMoneyStack, GiCoffeeCup } from "react-icons/gi";
 import { RiShirtFill } from "react-icons/ri";
-import { GiCoffeeCup } from "react-icons/gi";
 import "./eff_benefits.scss";
 
 const Eff_Benefits = () => {

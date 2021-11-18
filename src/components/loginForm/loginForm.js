@@ -40,7 +40,7 @@ const LoginForm = (props) => {
         )
         .then((response) => {
           cookies.set("eff_customer", response.data);
-          dispatch(addToken(true));
+          dispatch(addToken(response.data));
           props.closeSigninModal();
           setSigninFormData({
             email: "",

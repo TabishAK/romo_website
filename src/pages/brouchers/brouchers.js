@@ -62,7 +62,6 @@ const Brouchers = (props) => {
                     </div>
                   </div>
 
-                  {console.log(c)}
                   <span className="mt-3">
                     <Signin_Signup
                       products={c}

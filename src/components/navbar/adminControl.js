@@ -62,7 +62,7 @@ const AdminControls = (props) => {
 
   const logout = () => {
     cookies.remove("eff_customer");
-    dispatch(addToken(false));
+    dispatch(addToken(null));
   };
 
   return (
