@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import Cookie from "cookie-universal";
 import LoginForm from "../loginForm/loginForm";
 import SignupForm from "../signupForm/signupForm";
-import { isloggedin } from "../../utlis/utils";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../services/slices/tokenSlice";
 import { Link } from "react-router-dom";
@@ -12,7 +11,7 @@ const AdminControls = (props) => {
   const cookies = Cookie();
   const ref = useRef();
   const ref2 = useRef();
-  const dispatch = useDispatch(addToken());
+  const dispatch = useDispatch();
 
   const [isShowLogin, setIsShowLogin] = useState(false);
   const [isShowSignup, setIsShowSignup] = useState(false);

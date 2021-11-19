@@ -3,7 +3,6 @@ import "./applyForm.scss";
 import { useLocation } from "react-router-dom";
 import Joi from "joi-browser";
 import { useAlert } from "react-alert";
-import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import jwt_decode from "jwt-decode";
 
@@ -11,6 +10,7 @@ const SignupForm = (props) => {
   const location = useLocation();
   const [error, setError] = useState();
   const alert = useAlert();
+  const [userID, setUserID] = useState();
 
   let [applyFormData, setApplyFormData] = useState({
     first_name: "",
@@ -19,9 +19,13 @@ const SignupForm = (props) => {
     contact_no: "",
     job_post: props.jobPost,
     resume: null,
+    userID: userID,
   });
 
   useEffect(() => {
+    if (props.token !== null) {
+      setUserID(jwt_decode(props.token));
+    }
     setApplyFormData({
       first_name: "",
       last_name: "",
@@ -29,8 +33,9 @@ const SignupForm = (props) => {
       contact_no: "",
       job_post: props.jobPost,
       resume: null,
+      userID: userID,
     });
-  }, [props.isShowApplyForm]);
+  }, [props.isShowApplyForm, props.token]);
 
   var schema = {
     first_name: Joi.string().min(3).max(10).required().label("First Name"),
@@ -59,13 +64,14 @@ const SignupForm = (props) => {
       setError("");
     }
 
-    let formData = new FormData();
-    formData.append("first_name", applyFormData.first_name);
-    formData.append("last_name", applyFormData.last_name);
-    formData.append("email", applyFormData.email);
-    formData.append("contact_no", applyFormData.contact_no);
-    formData.append("job_post", applyFormData.job_post);
-    formData.append("resume", applyFormData.resume);
+    props.setIsShowApplyForm(false);
+    // let formData = new FormData();
+    // formData.append("first_name", applyFormData.first_name);
+    // formData.append("last_name", applyFormData.last_name);
+    // formData.append("email", applyFormData.email);
+    // formData.append("contact_no", applyFormData.contact_no);
+    // formData.append("job_post", applyFormData.job_post);
+    // formData.append("resume", applyFormData.resume);
     //   axios
     //     .post(
     //       process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",

@@ -12,20 +12,19 @@ import { addToken } from "../../services/slices/tokenSlice";
 const JobOpening = () => {
   const [isShowApplyForm, setIsShowApplyForm] = useState(false);
   const [jobPost, setJobPost] = useState();
-  const [userID, setUserID] = useState();
+
   const cookies = Cookie();
   const dispatch = useDispatch();
   const ref = useRef();
   const token = useSelector((state) => state.token.token);
 
   useEffect(() => {
-    if (token != null) {
+    if (token === null) {
       axios
         .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/getToken")
         .then(function (response) {
           if (response.data.token) {
             cookies.set("eff_customer", response.data.token);
-            setUserID(jwt_decode(response.data.token));
             dispatch(addToken(response.data.token));
             console.log("Successfully Captured Token");
           }
@@ -89,9 +88,6 @@ const JobOpening = () => {
     setJobPost(jp);
   };
 
-  console.log();
-  console.log(userID);
-
   return (
     <>
       <div className="job-openings">
@@ -113,6 +109,8 @@ const JobOpening = () => {
           <table className="mt-5">
             <div className="for-apply" ref={ref}>
               <ApplyForm
+                setIsShowApplyForm={setIsShowApplyForm}
+                token={token}
                 jobPost={jobPost}
                 isShowApplyForm={isShowApplyForm}
                 closeSigninModal={closeSigninModal}
