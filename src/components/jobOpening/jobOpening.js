@@ -5,7 +5,6 @@ import Signin_Signup from "./../signin_signup/signin_signup";
 import { useDispatch, useSelector } from "react-redux";
 import ApplyForm from "./../applyForm/applyForm";
 import Cookie from "cookie-universal";
-import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { addToken } from "../../services/slices/tokenSlice";
 

@@ -165,7 +165,9 @@ const Signin_Signup = (props) => {
 
           document.getElementsByClassName("modal")[0].style.display = "none";
         })
-        .catch((error) => setSigninFormError(error.response.data));
+        .catch(
+          (error) => error.response && setSigninFormError(error.response.data)
+        );
 
       setSigninFormData({ email: "", password: "" });
     }

@@ -48,6 +48,7 @@ const SignupForm = (props) => {
     contact_no: Joi.string().required().label("Contact Number"),
     job_post: Joi.string(),
     resume: Joi.allow("").required(),
+    userID: Joi.allow("").required(),
   };
 
   function validate() {
@@ -82,7 +83,7 @@ const SignupForm = (props) => {
         props.setIsShowApplyForm(false);
         console.log(response);
       })
-      .catch((error) => setError(error.response.data));
+      .catch((error) => console.log(error));
   };
 
   const handleFileSelected = (e) => {
