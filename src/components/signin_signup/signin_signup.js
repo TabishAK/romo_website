@@ -165,7 +165,7 @@ const Signin_Signup = (props) => {
 
           document.getElementsByClassName("modal")[0].style.display = "none";
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => setSigninFormError(error.response.data));
 
       setSigninFormData({ email: "", password: "" });
     }
@@ -365,7 +365,7 @@ const Signin_Signup = (props) => {
                             lineHeight: "18px",
                             color: "#fd1b1b",
                             position: "relative",
-                            top: "-6px",
+                            top: "15px",
                           }}
                         >
                           {signinFormError}

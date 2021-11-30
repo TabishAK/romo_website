@@ -5,6 +5,7 @@ import Joi from "joi-browser";
 import { useAlert } from "react-alert";
 import PhoneInput from "react-phone-number-input";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 const SignupForm = (props) => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const SignupForm = (props) => {
       contact_no: "",
       job_post: props.jobPost,
       resume: null,
-      userID: userID,
+      userID: userID && userID.id,
     });
   }, [props.isShowApplyForm, props.token]);
 
@@ -64,33 +65,24 @@ const SignupForm = (props) => {
       setError("");
     }
 
-    props.setIsShowApplyForm(false);
-    // let formData = new FormData();
-    // formData.append("first_name", applyFormData.first_name);
-    // formData.append("last_name", applyFormData.last_name);
-    // formData.append("email", applyFormData.email);
-    // formData.append("contact_no", applyFormData.contact_no);
-    // formData.append("job_post", applyFormData.job_post);
-    // formData.append("resume", applyFormData.resume);
-    //   axios
-    //     .post(
-    //       process.env.REACT_APP_AMAZON_SERVER_LINK + "customerAuth/signup",
-    //       signupFormData
-    //     )
-    //     .then((response) => {
-    //       props.closeSignupModal();
-    //       alert.success("Registerd! Please verify your email.");
-    //       setSignupFormData({
-    //         first_name: "",
-    //         last_name: "",
-    //         email: "",
-    //         contact_no: "",
-    //         password: "",
-    //         confirm_password: "",
-    //         slugForBroucher: location.pathname,
-    //       });
-    //     })
-    //     .catch((error) => setError(error.response.data));
+    console.log(applyFormData);
+
+    let formData = new FormData();
+    formData.append("first_name", applyFormData.first_name);
+    formData.append("last_name", applyFormData.last_name);
+    formData.append("email", applyFormData.email);
+    formData.append("contact_no", applyFormData.contact_no);
+    formData.append("job_post", applyFormData.job_post);
+    formData.append("resume", applyFormData.resume);
+    formData.append("userID", applyFormData.userID);
+
+    axios
+      .post(process.env.REACT_APP_AMAZON_SERVER_LINK + "apply_job/", formData)
+      .then((response) => {
+        props.setIsShowApplyForm(false);
+        console.log(response);
+      })
+      .catch((error) => setError(error.response.data));
   };
 
   const handleFileSelected = (e) => {
