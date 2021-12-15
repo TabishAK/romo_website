@@ -78,12 +78,12 @@ const SignupForm = (props) => {
     formData.append("userID", applyFormData.userID);
 
     axios
-      .post(process.env.REACT_APP_AMAZON_SERVER_LINK + "apply_job/", formData)
+      .post(process.env.REACT_APP_DEVELOPMENT_LINK + "apply_job/", formData, {})
       .then((response) => {
         props.setIsShowApplyForm(false);
         console.log(response);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.message));
   };
 
   const handleFileSelected = (e) => {

@@ -21,6 +21,8 @@ import "../src/media_query.scss";
 import "./App.scss";
 import ContactPage from "./pages/contactPage/contactPage";
 import Careers from "./pages/careers/careers";
+import VideoLibrary from "./pages/video-library/video-library";
+import Leadership from "./pages/leadership/leadership";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -110,6 +112,42 @@ function App() {
           path="/about"
           component={() => (
             <AboutEFF
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/leadership"
+          component={() => (
+            <Leadership
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/video-library"
+          component={() => (
+            <VideoLibrary
               st={{
                 gradient: "",
                 color: "#828282",

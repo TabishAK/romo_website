@@ -93,6 +93,28 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .leadership .our-team .container .row .col-xl-6 p {
+    margin-bottom: 1rem !important;
+  }
+
+  .leadership .our-team .container .row .col-xl-6 h1 {
+    margin-bottom: 5px !important;
+  }
+
+  .leadership .our-team .container .row .col-xl-6 h5 {
+    margin-top: 0rem !important;
+  }
+
+  .leadership .container img {
+    width: 100% !important;
+  }
+
+  .leadership .container .container-heading {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    font-size: 40px !important;
+  }
+
   .contact-page .form-map .row .col-xl-6 .form-contact-us {
     place-items: center;
   }
@@ -168,6 +190,22 @@
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  .leadership .who-are-we .container .who-are-we-question div {
+    margin-top: 55px !important;
+    margin-right: 10px !important;
+  }
+
+  .leadership .who-are-we .container .who-are-we-question {
+    display: grid !important;
+  }
+
+  .leadership .container .container-heading {
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+    font-size: 30px !important;
+    margin-bottom: 90px !important;
+  }
+
   .contact-page {
     .form-map {
       .row {
@@ -382,8 +420,23 @@
 }
 
 @media (max-width: 575px) {
+  .leadership .container .container-heading {
+    margin-bottom: 165px !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 35px !important;
+  }
+
+  .leadership .who-are-we .container .who-are-we-question {
+    display: grid !important;
+  }
+  .leadership .who-are-we .container .who-are-we-question div {
+    margin-top: 42px !important;
+    margin-right: 0 !important;
+  }
   .nav-bar .admin-controls {
-    position: absolute;
+    position: absolute !important;
     top: 37px;
     right: 5px;
   }

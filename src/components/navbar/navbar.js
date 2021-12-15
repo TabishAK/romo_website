@@ -208,7 +208,7 @@ const Navbar = (props) => {
               </li>
             </Link>
 
-            <Link to="#">
+            <Link to="/video-library">
               <li
                 style={{
                   fontSize: 17,

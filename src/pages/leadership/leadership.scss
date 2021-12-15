@@ -1,0 +1,232 @@
+.leadership {
+  .container {
+    .container-heading {
+      text-align: center;
+      padding-left: 20%;
+      padding-right: 20%;
+      font-size: 55px;
+    }
+
+    img {
+      width: 85%;
+      margin-top: 2rem;
+      z-index: 1;
+    }
+  }
+
+  .who-are-we {
+    background: #f2f2f2;
+    position: relative;
+    top: -22rem;
+    z-index: -1;
+    display: grid;
+
+    .container {
+      margin-top: 20rem;
+      margin-bottom: 3rem;
+
+      .who-are-we-question {
+        display: flex;
+
+        .heading {
+          position: relative;
+          top: 2rem;
+        }
+        div {
+          margin-top: 100px;
+          margin-right: 75px;
+
+          h1 {
+            width: max-content;
+          }
+
+          .paragraph {
+          }
+        }
+      }
+    }
+  }
+
+  .best-features {
+    margin-top: -16rem;
+    .container {
+      h6 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #6bc9ca;
+      }
+      h1 {
+        text-align: center;
+        font-size: 45px;
+      }
+
+      .row {
+        .col-xl-6 {
+          margin-top: 2rem;
+          .panel {
+            border: 1px solid #828282;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            background: #f2f2f2;
+
+            .svg {
+              .icon {
+                svg {
+                  margin-right: 10px;
+                  font-size: 45px;
+                  position: relative;
+                  top: -6px;
+                  background: #f2f2f2;
+                  color: #6bc9ca;
+                  border-radius: 30px;
+                  padding: 5px;
+                }
+              }
+            }
+
+            .text {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our-team {
+    .container {
+      .row {
+        margin-top: 5rem;
+        .col-xl-6 {
+          h5 {
+            background: #6bc9ca;
+            width: fit-content;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 29px;
+            font-weight: 300;
+            font-family: "Raleway";
+            color: white;
+            margin-bottom: 2rem;
+            margin-top: 8rem;
+          }
+          h1 {
+            margin-bottom: 2rem;
+          }
+
+          p {
+            margin-bottom: 2rem;
+          }
+
+          .row {
+            .col-xl-6 {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-us-section {
+    display: grid;
+    .container {
+      .row {
+        margin-top: 5rem;
+        margin-bottom: -8rem;
+        .col-xl-6 {
+          img {
+            width: 95%;
+            height: 80%;
+          }
+          hr {
+            width: 60%;
+          }
+          h1 {
+            margin-top: 6rem;
+          }
+          .below-about-us-heading {
+            margin-bottom: 3rem;
+          }
+          .about-us-section-heading {
+            color: #6bc9ca;
+          }
+
+          .heading-for-about {
+            margin-bottom: 2rem;
+            p {
+              margin-left: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+}
+@-webkit-keyframes load {
+  from {
+    width: 0%;
+  }
+}
+@-moz-keyframes load {
+  from {
+    width: 0%;
+  }
+}
+@-o-keyframes load {
+  from {
+    width: 0%;
+  }
+}
+
+.bar {
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.bar::before {
+  content: attr(data-skill);
+  background-color: #f3b0ff;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before {
+  background-color: #ffcc33;
+}
+.bar.back::before {
+  background-color: #a6cfe3;
+}
+
+.bar.learning::before {
+  width: calc(30% - 10px);
+}
+.bar.basic::before {
+  width: calc(50% - 10px);
+}
+.bar.intermediate::before {
+  width: calc(70% - 10px);
+}
+.bar.advanced::before {
+  width: calc(90% - 10px);
+}
+.bar.expert::before {
+  width: calc(100% - 10px);
+}

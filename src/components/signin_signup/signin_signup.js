@@ -272,7 +272,7 @@ const Signin_Signup = (props) => {
                 </button>
                 <div className="container-changed" id="container">
                   <div className="form-container sign-up-container">
-                    <form>
+                    <form className="signin-signup-form">
                       <h1 className="login-form-heading">Create Account</h1>
 
                       <span>Please verify your email after signup!</span>
