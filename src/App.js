@@ -23,6 +23,7 @@ import ContactPage from "./pages/contactPage/contactPage";
 import Careers from "./pages/careers/careers";
 import VideoLibrary from "./pages/video-library/video-library";
 import Leadership from "./pages/leadership/leadership";
+import Facilities from "./pages/facilities/facilities";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -130,6 +131,24 @@ function App() {
           path="/leadership"
           component={() => (
             <Leadership
+              st={{
+                gradient: "",
+                color: "#828282",
+                logo: logo,
+                position: "relative",
+              }}
+              openRightMenu={openRightMenu}
+              closeRightMenu={closeRightMenu}
+              display={display}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/facilities"
+          component={() => (
+            <Facilities
               st={{
                 gradient: "",
                 color: "#828282",

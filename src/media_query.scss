@@ -19,6 +19,10 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .facilities .construction-and-co .row {
+    margin-bottom: 6rem !important;
+  }
+
   .footer .column-2 {
     margin-left: 0 !important;
   }
@@ -93,6 +97,37 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .facilities .world-team .container .row .col-xl-6 img {
+    margin-top: 10rem !important;
+  }
+
+  .facilities .certifications .container .certification-text {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .facilities .construction-and-co .row {
+    margin-bottom: 4rem !important;
+  }
+
+  .facilities .construction-and-co .row .text-middle h3 {
+    font-size: 20px !important;
+  }
+
+  .facilities .construction-and-co .row .text-middle p {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .facilities .image-with-two-div .two-div .row .col-xl-6 .text-div {
+    padding: 45px 28px !important;
+    width: 315px !important;
+  }
+
+  .facilities .image-with-two-div .container .building {
+    width: 100% !important;
+  }
+
   .leadership .our-team .container .row .col-xl-6 p {
     margin-bottom: 1rem !important;
   }
@@ -190,6 +225,24 @@
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  .facilities .certifications .container .certification-text {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .facilities .image-with-two-div .container h1 {
+    font-size: 32px !important;
+  }
+
+  .left {
+    text-align: -webkit-center !important;
+    margin-top: 5rem !important;
+  }
+  .facilities .image-with-two-div .container .building {
+    width: 100% !important;
+    height: 25rem !important;
+  }
+
   .leadership .who-are-we .container .who-are-we-question div {
     margin-top: 55px !important;
     margin-right: 10px !important;
@@ -420,6 +473,17 @@
 }
 
 @media (max-width: 575px) {
+  .left {
+    text-align: -webkit-center !important;
+    margin-top: 5rem !important;
+  }
+  .facilities .image-with-two-div .container .building {
+    width: 100% !important;
+    height: 25rem !important;
+  }
+  .facilities .image-with-two-div .container h1 {
+    font-size: 32px !important;
+  }
   .leadership .container .container-heading {
     margin-bottom: 165px !important;
     text-align: center !important;
