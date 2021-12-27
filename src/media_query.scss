@@ -473,6 +473,9 @@
 }
 
 @media (max-width: 575px) {
+  .modal {
+    left: 0 !important;
+  }
   .left {
     text-align: -webkit-center !important;
     margin-top: 5rem !important;
@@ -568,7 +571,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 0 0px;
-    height: 75%;
+    height: 100%;
     text-align: center;
   }
   .login-form-heading {
@@ -590,7 +593,7 @@
   }
   .overlay-panel {
     padding: 0 15px !important;
-    height: 58% !important;
+    height: 100% !important;
     width: 50% !important;
   }
   .modal-content {
