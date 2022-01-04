@@ -473,6 +473,13 @@
 }
 
 @media (max-width: 575px) {
+  .sign-in-container {
+    form {
+      position: relative !important;
+      top: 0px !important;
+    }
+  }
+
   .modal {
     left: 0 !important;
   }
