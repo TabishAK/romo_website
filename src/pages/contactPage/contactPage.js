@@ -1,11 +1,19 @@
 import Navbar from "./../../components/navbar/navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./contactPage.scss";
 import { MdLocationOn } from "react-icons/md";
 import { FaPhone, FaFax, FaMailBulk } from "react-icons/fa";
 import Footer from "./../../components/footer/footer";
+import HorseLoader from "../../components/Loader/horseLoader";
 const ContactPage = (props) => {
   const [classNamay, setClassNamay] = useState("contact-page");
+  const [spinner, setSpinner] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSpinner(false);
+    }, 1000);
+  });
 
   const makeBlur = () => {
     setClassNamay("contact-page blur");
@@ -15,7 +23,9 @@ const ContactPage = (props) => {
     setClassNamay("contact-page");
   };
 
-  return (
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className={classNamay}>
       <Navbar
         st={props.st}

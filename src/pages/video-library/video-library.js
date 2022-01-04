@@ -1,11 +1,14 @@
 import Navbar from "./../../components/navbar/navbar";
 import "./video-library.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./../../components/footer/footer";
 import { Link } from "react-router-dom";
+import HorseLoader from "../../components/Loader/horseLoader";
 
 const VideoLibrary = (props) => {
   const [classNamay, setClassNamay] = useState("video-library");
+  const [spinner, setSpinner] = useState(true);
+
   const makeBlur = () => {
     setClassNamay("video-library blur");
   };
@@ -14,7 +17,15 @@ const VideoLibrary = (props) => {
     setClassNamay("video-library");
   };
 
-  return (
+  useEffect(() => {
+    setTimeout(() => {
+      setSpinner(false);
+    }, 1000);
+  });
+
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className="video-library">
       <Navbar
         st={props.st}

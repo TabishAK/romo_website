@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { ImDownload } from "react-icons/im";
 import axios from "axios";
 import Signin_Signup from "./../../components/signin_signup/signin_signup";
+import HorseLoader from "../../components/Loader/horseLoader";
 require("dotenv").config();
 
 const Brouchers = (props) => {
   const [classNamay, setClassNamay] = useState("brouchers");
   const [categories, setCategories] = useState();
+  const [spinner, setSpinner] = useState(true);
 
   const makeBlur = () => {
     setClassNamay("brouchers blur");
@@ -24,12 +26,14 @@ const Brouchers = (props) => {
       .get(process.env.REACT_APP_AMAZON_SERVER_LINK + "subCategories/")
       .then((response) => {
         setCategories(response.data);
-        console.log(response.data);
+        setSpinner(false);
       })
       .catch((error) => console.log(error.response));
   }, []);
 
-  return (
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className={classNamay}>
       <Navbar
         st={props.st}

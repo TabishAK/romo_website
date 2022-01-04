@@ -20,10 +20,10 @@ import Blog from "./pages/blog/blog";
 import "../src/media_query.scss";
 import "./App.scss";
 import ContactPage from "./pages/contactPage/contactPage";
-// import Careers from "./pages/careers/careers";
-// import VideoLibrary from "./pages/video-library/video-library";
-// import Leadership from "./pages/leadership/leadership";
-// import Facilities from "./pages/facilities/facilities";
+import Careers from "./pages/careers/careers";
+import VideoLibrary from "./pages/video-library/video-library";
+import Leadership from "./pages/leadership/leadership";
+import Facilities from "./pages/facilities/facilities";
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -122,7 +122,7 @@ function App() {
             />
           )}
         />
-        {/* <Route
+        <Route
           exact
           path="/leadership"
           component={() => (
@@ -139,7 +139,6 @@ function App() {
             />
           )}
         />
-
         <Route
           exact
           path="/facilities"
@@ -157,7 +156,6 @@ function App() {
             />
           )}
         />
-
         <Route
           exact
           path="/video-library"
@@ -174,7 +172,7 @@ function App() {
               display={display}
             />
           )}
-        /> */}
+        />
         <Route
           exact
           path="/contact_us"
@@ -189,7 +187,7 @@ function App() {
             />
           )}
         />
-        {/* {/* <Route
+        <Route
           exact
           path="/careers"
           component={() => (
@@ -201,8 +199,8 @@ function App() {
                 position: "relative",
               }}
             />
-          )} */}
-        /> */}
+          )}
+        />
         <Route
           exact
           path="/:product_name"

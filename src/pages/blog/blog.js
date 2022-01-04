@@ -1,12 +1,19 @@
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import Card from "../../components/card/card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./blogs.scss";
+import HorseLoader from "../../components/Loader/horseLoader";
 
 const Blog = (props) => {
   const [classNamay, setClassNamay] = useState("blogs");
+  const [spinner, setSpinner] = useState(true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setSpinner(false);
+    }, 1000);
+  });
   const makeBlur = () => {
     setClassNamay("blogs blur");
   };
@@ -15,7 +22,9 @@ const Blog = (props) => {
     setClassNamay("blogs");
   };
 
-  return (
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className={classNamay}>
       <Navbar
         st={props.st}

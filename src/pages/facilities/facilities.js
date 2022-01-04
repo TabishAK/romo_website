@@ -1,6 +1,6 @@
 import Navbar from "../../components/navbar/navbar";
 import "./facilities.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import facilities from "../../images/facilities/1.jpg";
 import facilities2 from "../../images/facilities/2.jpg";
 import facilities3 from "../../images/facilities/3.jpeg";
@@ -18,9 +18,17 @@ import {
   MdOutlineRestaurantMenu,
 } from "react-icons/md";
 import { RiGovernmentLine } from "react-icons/ri";
+import HorseLoader from "../../components/Loader/horseLoader";
 
 const Facilities = (props) => {
   const [classNamay, setClassNamay] = useState("facilities");
+  const [spinner, setSpinner] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSpinner(false);
+    }, 1000);
+  });
 
   const makeBlur = () => {
     setClassNamay("facilities blur");
@@ -30,7 +38,9 @@ const Facilities = (props) => {
     setClassNamay("facilities");
   };
 
-  return (
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className={classNamay}>
       <Navbar
         st={props.st}

@@ -2,7 +2,7 @@ import Navbar from "../../components/navbar/navbar";
 import Footer from "./../../components/footer/footer";
 import leadershipMainImage from "../../images/leadership/12.jpg";
 import "./leadership.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GiJugglingSeal } from "react-icons/gi";
 import { AiOutlineMobile } from "react-icons/ai";
 import { TiSocialAtCircular } from "react-icons/ti";
@@ -13,8 +13,10 @@ import img3 from "../../images/leadership/emp3.jpg";
 import img4 from "../../images/leadership/emp4.jpg";
 import aboutUs from "../../images/leadership/about-us.jpg";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import HorseLoader from "../../components/Loader/horseLoader";
 const Leadership = (props) => {
   const [classNamay, setClassNamay] = useState("leadership");
+  const [spinner, setSpinner] = useState(true);
 
   const makeBlur = () => {
     setClassNamay("leadership blur");
@@ -24,7 +26,14 @@ const Leadership = (props) => {
     setClassNamay("leadership");
   };
 
-  return (
+  useEffect(() => {
+    setTimeout(() => {
+      setSpinner(false);
+    }, 1000);
+  });
+  return spinner ? (
+    <HorseLoader />
+  ) : (
     <div className={classNamay}>
       <Navbar st={props.st} makeBlur={makeBlur} removeBlur={removeBlur} />
 
