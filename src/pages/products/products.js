@@ -64,6 +64,7 @@ const Products = (props) => {
       .then(function (response) {
         setClassNamay("fabric");
         setProducts(response.data);
+        console.log("Check data", response.data);
         setSpinner(false);
         return axios
           .get(
@@ -111,7 +112,10 @@ const Products = (props) => {
         <div className="row">
           <div className="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 description">
             <h1 className="sub-category-name">
-              {products && products[0].subCategory.subCategory_name}..
+              {products &&
+                products[0] &&
+                products[0].subCategory.subCategory_name}
+              ..
             </h1>
 
             <p className="description-text">
@@ -142,7 +146,11 @@ const Products = (props) => {
           </div>
           <div className="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12 image">
             <img
-              src={products && products[0].subCategory.subCategory_image}
+              src={
+                products &&
+                products[0] &&
+                products[0].subCategory.subCategory_image
+              }
               alt="life-style"
             />
           </div>
